@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>TaskRefuge Waitlist (local)</title></head>
+<body>
+  <h1>TaskRefuge — Google Tasks refugee waitlist</h1>
+  <p>Local demo page for pipe_2026-10-30_001. Not published.</p>
+  <form id="f">
+    <input name="email" type="email" required placeholder="you@example.com">
+    <input name="list_count_estimate" type="number" placeholder="# of lists">
+    <button type="submit">Join waitlist</button>
+  </form>
+  <pre id="out"></pre>
+  <script>
+    document.getElementById('f').onsubmit = async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const body = Object.fromEntries(fd.entries());
+      if (body.list_count_estimate) body.list_count_estimate = Number(body.list_count_estimate);
+      const r = await fetch('http://127.0.0.1:3000/v1/waitlist', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body)
+      });
+      document.getElementById('out').textContent = await r.text();
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Local-only compose — do not point at paid cloud in this pipeline run
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: localdemo
+      POSTGRES_DB: taskrefuge
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+volumes:
+  pgdata:
