@@ -1,8 +1,8 @@
 # TaskRefuge (local demo)
 
-Local **demo** scaffold for a multi-list task manager for people leaving Google Tasks. This is not a production service, not an App Store app, and not a hosted product.
+Local **demo** for a multi-list task manager for people leaving Google Tasks. This is not a production service, not an App Store app, and not a hosted product.
 
-What is included: a stub FastAPI app, a static waitlist page, optional local Postgres/Redis via Docker Compose, a health check test, and placeholder iOS notes. The Google Tasks import route is a stub and does not call Google.
+What is included: a clickable task UI, a stub FastAPI app, a static waitlist page, optional local Postgres/Redis via Docker Compose, a health check test, and placeholder iOS notes. The Google Tasks import route is a stub and does not call Google. Tasks you add, complete, or delete in the demo stay in the browser.
 
 ## Run the API (port 3000)
 
@@ -16,17 +16,37 @@ curl http://127.0.0.1:3000/health
 
 Useful stub routes: `GET /health`, `GET /v1/lists`, `POST /v1/waitlist`, `POST /v1/import/google-tasks`.
 
+`GET /v1/lists` returns 40 mock lists. Several are pinned (Inbox, Today, Errands, and others). The API does not store tasks.
+
+## Open the task demo
+
+With the API already listening on port 3000, serve this repo from another terminal:
+
+```bash
+python3 -m http.server 8080
+```
+
+Open [http://127.0.0.1:8080/apps/demo/](http://127.0.0.1:8080/apps/demo/).
+
+The page loads lists from `GET http://127.0.0.1:3000/v1/lists` (or `localhost:3000` if you opened the page as `localhost`). The sidebar shows pinned lists and the rest. Select a list, then add a task, mark one complete, or delete one. Those edits are saved in `localStorage` on this browser only. If the API is not running, the page falls back to the same offline mock lists and labels the status **Offline mock**.
+
+You can also serve just the demo folder. Then the page is [http://127.0.0.1:8080/](http://127.0.0.1:8080/):
+
+```bash
+python3 -m http.server 8080 --directory apps/demo
+```
+
 ## Run the waitlist page
 
-The waitlist is a static HTML file. With the API already listening on port 3000, serve the page from another terminal:
+With the API on port 3000 and the repo server from the previous section still running, open [http://127.0.0.1:8080/apps/waitlist/](http://127.0.0.1:8080/apps/waitlist/). The form posts JSON to `http://127.0.0.1:3000/v1/waitlist`.
+
+Or serve that folder alone:
 
 ```bash
 python3 -m http.server 8080 --directory apps/waitlist
 ```
 
-Open `http://127.0.0.1:8080/`. The form posts JSON to `http://127.0.0.1:3000/v1/waitlist`.
-
-You can also exercise that endpoint without a browser:
+You can also exercise the endpoint without a browser:
 
 ```bash
 curl -s -X POST http://127.0.0.1:3000/v1/waitlist \
@@ -34,7 +54,9 @@ curl -s -X POST http://127.0.0.1:3000/v1/waitlist \
   -d '{"email":"you@example.com","list_count_estimate":12}'
 ```
 
-**CORS is not configured yet.** The API does not send `Access-Control-Allow-Origin`. A browser page served from another origin (including `python -m http.server` on port 8080, or a `file://` open of `apps/waitlist/index.html`) will be blocked when it calls port 3000. `curl` and same-process tests are unaffected.
+## CORS
+
+CORS allows pages served from `http://localhost` or `http://127.0.0.1` on any port, so the demo and waitlist can call the API from another local port. Other origins are rejected. Opening the HTML files via `file://` still will not work; use the local static server. This rule is for the local demo only.
 
 ## Docker (optional, local only)
 
