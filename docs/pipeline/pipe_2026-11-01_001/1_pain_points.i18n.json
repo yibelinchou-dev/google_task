@@ -1,0 +1,250 @@
+{
+  "pipeline_id": "pipe_2026-11-01_001",
+  "locale": "zh",
+  "generated_at": "2026-11-01T13:45:53Z",
+  "source_file": "runs/pipe_2026-11-01_001/1_pain_points.json",
+  "count": 20,
+  "items": [
+    {
+      "id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+      "title_zh": "产品「寿命」中位数从约4年降到约1.5年",
+      "summary_zh": "SaaSHub 产品坟场显示独立/SaaS 产品存活期骤降，作者归因于 vibe-coding 让功能变廉价、分发与营销成瓶颈。",
+      "keywords_zh": [
+        "分发",
+        "营销",
+        "saas",
+        "产品寿命",
+        "获客",
+        "独立开发"
+      ]
+    },
+    {
+      "id": "eef3c39b-a3c1-5527-98ea-0dc69c415f79",
+      "title_zh": "Ask HN：现在还能顺利注册 Apple Developer 吗？",
+      "summary_zh": "加拿大护照无法过身份核验、Delaware LLC 导致美区账号卡住，开发者入驻 Apple 生态受阻一个多月。",
+      "keywords_zh": [
+        "苹果开发者",
+        "入驻",
+        "身份核验",
+        "llc",
+        "上手"
+      ]
+    },
+    {
+      "id": "a644dcc3-67af-56b2-81fd-70b5746382a5",
+      "title_zh": "开源的跨工具 AI Agent 记忆层",
+      "summary_zh": "在 Claude Code/Codex/Cursor 间切换时要反复解释任务与踩坑，作者做跨 harness 的共享记忆以降低切换成本。",
+      "keywords_zh": [
+        "ai-agent",
+        "记忆",
+        "上下文",
+        "cursor",
+        "claude-code",
+        "可移植"
+      ]
+    },
+    {
+      "id": "f4d58d4e-dd26-52f2-a54c-1733270380a1",
+      "title_zh": "新建 Supabase 项目触发 pg_pgrst_no_exposed_schemas",
+      "summary_zh": "新项目一创建就报未暴露 schema，影响 PostgREST 上手与本地/云端一致性。",
+      "keywords_zh": [
+        "supabase",
+        "上手",
+        "schema",
+        "postgres",
+        "配置"
+      ]
+    },
+    {
+      "id": "01f588d3-0107-54bb-8ca6-5871861e3d8a",
+      "title_zh": "RSC 与 CDN 交互让 Next.js 在高负载下低效",
+      "summary_zh": "高流量场景下 RSC 与 CDN 缓存策略冲突，硬刷新与分类导航出现性能问题。",
+      "keywords_zh": [
+        "nextjs",
+        "rsc",
+        "cdn",
+        "性能",
+        "框架"
+      ]
+    },
+    {
+      "id": "abe5b04c-a0ab-5056-9aef-f2ec89264f7c",
+      "title_zh": "next.config.js 的 i18n 配置会弄坏 app directory",
+      "summary_zh": "旧版 i18n 配置与 App Router 冲突，导致路由/目录结构异常。",
+      "keywords_zh": [
+        "nextjs",
+        "国际化",
+        "app-directory",
+        "配置",
+        "框架"
+      ]
+    },
+    {
+      "id": "867ca7ee-4ea4-52e3-9a4e-2a5773f831b1",
+      "title_zh": "构建时堆内存耗尽（JS heap OOM）",
+      "summary_zh": "开发/构建过程中频繁 OOM，中大型 Next 项目本地体验差。",
+      "keywords_zh": [
+        "nextjs",
+        "内存",
+        "oom",
+        "构建",
+        "性能"
+      ]
+    },
+    {
+      "id": "b489fac9-d504-5680-9ba3-dffae6f2b527",
+      "title_zh": "Next.js 15.4.4+ 生产构建因第三方库崩溃",
+      "summary_zh": "开发服务器正常但生产构建在特定第三方库上失败，属版本回归。",
+      "keywords_zh": [
+        "nextjs",
+        "构建",
+        "回归",
+        "第三方",
+        "生产"
+      ]
+    },
+    {
+      "id": "23973963-b91b-5a5b-a038-c999bc24d7d5",
+      "title_zh": "新 middleware 拖慢生产环境路由",
+      "summary_zh": "启用 middleware 后生产路由变慢，影响高流量站点。",
+      "keywords_zh": [
+        "nextjs",
+        "middleware",
+        "路由",
+        "性能",
+        "生产"
+      ]
+    },
+    {
+      "id": "31cdd6a2-dd1f-552d-84b1-8cfe44c89209",
+      "title_zh": "构建时类名被压缩导致依赖类名的库失效",
+      "summary_zh": "生产 minify 改写 class 名，破坏 Typegoose 等依赖反射/类名的库。",
+      "keywords_zh": [
+        "nextjs",
+        "压缩",
+        "类名",
+        "webpack",
+        "构建"
+      ]
+    },
+    {
+      "id": "5bdc3d08-307b-5d44-9799-159f2837cee8",
+      "title_zh": "Apple Developer App：破碎且丢人",
+      "summary_zh": "入驻扫证件相机裁切错误，连注册都过不去，体验极差。",
+      "keywords_zh": [
+        "苹果开发者",
+        "入驻",
+        "证件扫描",
+        "相机",
+        "上手"
+      ]
+    },
+    {
+      "id": "0cda3e7d-ef27-5977-a20f-53b3e9418cd3",
+      "title_zh": "iPhone 上的 Duo 应用去哪了？",
+      "summary_zh": "Google Tasks 用户吐槽手机端缺少 Duo 相关能力，跨端体验不对齐。",
+      "keywords_zh": [
+        "google-tasks",
+        "iphone",
+        "duo",
+        "缺功能",
+        "一致性"
+      ]
+    },
+    {
+      "id": "bb95943e-4e02-553a-9556-16ea7949885e",
+      "title_zh": "需要改进：缺搜索与归档",
+      "summary_zh": "浏览器能关键词搜索而 App 不能；已完成任务无法归档带时间戳，Completed 区拥堵。",
+      "keywords_zh": [
+        "google-tasks",
+        "搜索",
+        "归档",
+        "已完成",
+        "ios"
+      ]
+    },
+    {
+      "id": "13d6d723-de8d-51cd-810c-373e6ebf9fb1",
+      "title_zh": "别再弹评价了！",
+      "summary_zh": "用户强烈反感频繁弹窗索要 App Store 评价。",
+      "keywords_zh": [
+        "google-tasks",
+        "评价骚扰",
+        "体验",
+        "ios"
+      ]
+    },
+    {
+      "id": "ee956b76-4dc4-5a61-a700-295eaa5bb7ec",
+      "title_zh": "无故挪动了 + 按钮",
+      "summary_zh": "肌肉记忆让用户在 iPad 旧位置空点，抱怨无意义的 UI 改动。",
+      "keywords_zh": [
+        "google-tasks",
+        "界面回退",
+        "肌肉记忆",
+        "ipad",
+        "添加按钮"
+      ]
+    },
+    {
+      "id": "e2c9afc2-11b0-5e12-a04e-fd3cb5fe094c",
+      "title_zh": "新版本是降级",
+      "summary_zh": "左下角列表/分类入口消失，用户找不到原先的多列表入口。",
+      "keywords_zh": [
+        "google-tasks",
+        "列表",
+        "分类",
+        "界面回退",
+        "导航"
+      ]
+    },
+    {
+      "id": "44f683e8-f2d8-50e0-87ef-865eb7ddb2f3",
+      "title_zh": "多列表不再高效",
+      "summary_zh": "汉堡菜单被拿掉后只能左右滑列表，重度多列表用户表示要换工具。",
+      "keywords_zh": [
+        "google-tasks",
+        "多列表",
+        "汉堡菜单",
+        "导航",
+        "切换"
+      ]
+    },
+    {
+      "id": "baa075ca-7355-5037-a6d8-0212ea13876d",
+      "title_zh": "重复任务不再出现在 Google 日历",
+      "summary_zh": "两次更新后同步仍坏，用户找不到正经工单入口。",
+      "keywords_zh": [
+        "google-tasks",
+        "重复任务",
+        "日历",
+        "同步",
+        "缺陷"
+      ]
+    },
+    {
+      "id": "28cc11b1-4a3d-563c-bc01-8699c61e31dd",
+      "title_zh": "gTasks 更好用",
+      "summary_zh": "吐槽官方客户端笨拙不可靠，不如第三方 gTasks 顺滑。",
+      "keywords_zh": [
+        "google-tasks",
+        "gtasks",
+        "笨拙",
+        "替代",
+        "体验"
+      ]
+    },
+    {
+      "id": "c179200b-0378-55a2-9f11-ed4820ab490d",
+      "title_zh": "老用户被 iOS 版折磨",
+      "summary_zh": "使用十年、每天多次、30–40 个列表的重度用户，换 iPhone 后因列表菜单回退被迫寻找替代。",
+      "keywords_zh": [
+        "google-tasks",
+        "ios",
+        "多列表",
+        "迁移",
+        "重度用户"
+      ]
+    }
+  ]
+}

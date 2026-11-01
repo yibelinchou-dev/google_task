@@ -1,0 +1,81 @@
+{
+  "title_zh": "面向 Google Tasks「难民」的多列表待办工具",
+  "one_liner_zh": "帮拥有几十个列表的重度用户恢复快速切列表、归档/搜索，并低摩擦迁出被 iOS 回退折磨的 Google Tasks。",
+  "target_personas": [
+    {
+      "name_zh": "Google Tasks 十年重度用户（30–40个列表）",
+      "quotes_zh": [
+        "我用了 Google Tasks 十多年，一天多次，有30–40个列表",
+        "我现在被迫去找别的东西了"
+      ]
+    },
+    {
+      "name_zh": "多列表 iPad/iPhone 待办切换者",
+      "quotes_zh": [
+        "这已经不再高效，我需要找新的了",
+        "作为最大的科技公司，它又笨又不稳定，远不如 gTasks 流畅"
+      ]
+    }
+  ],
+  "existing_solutions": [
+    {
+      "name_zh": "Todoist",
+      "weaknesses_zh": [
+        "迁几十个 Google Tasks 列表仍偏手工",
+        "未主打一键替代 Google Tasks"
+      ]
+    },
+    {
+      "name_zh": "Apple 提醒事项 / Things 3",
+      "weaknesses_zh": [
+        "提醒事项弱于多列表重度流",
+        "Things 仅苹果生态且日历能力不一"
+      ]
+    },
+    {
+      "name_zh": "gTasks（第三方客户端）",
+      "weaknesses_zh": [
+        "仍依赖 Google Tasks 后端与 API 限额",
+        "无法应对谷歌服务端砍功能"
+      ]
+    }
+  ],
+  "confidence_basis_rationale_zh": "八条 Google Tasks App Store 差评同指多列表导航回退与切换意图，且与 10-30 跑次同簇再现；但仍是单商店单产品——中等置信，宜 validate 而非 build+high。",
+  "unsupported_assumptions_zh": [
+    "新独立待办仅靠列表体验就能从 Todoist/Things 抢到付费转化。",
+    "谷歌不会在一个版本周期内恢复多列表下拉。",
+    "用户会把十年个人资料库交给独立开发者。"
+  ],
+  "validation_required": [
+    {
+      "experiment_zh": "触达 30 名提到列表/汉堡菜单/切换的 1★ 评论用户，提供引导导入 + $39/年创始价 waitlist。",
+      "success_criterion_zh": "≥8 回复；≥5 进 waitlist；≥3 完成导入试用。"
+    },
+    {
+      "experiment_zh": "做出可点多列表侧栏+搜索/归档原型；对 20+ 列表用户做 5 场可用性测试。",
+      "success_criterion_zh": "≥4/5 表示若导入可用会在 30 天内切换。"
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "claim_zh": "十年重度用户把 Tasks 当个人资料库，iOS 列表菜单回退后被迫寻找替代。"
+    },
+    {
+      "claim_zh": "汉堡/列表导航回退在多列表用户中产生明确切换意图。"
+    },
+    {
+      "claim_zh": "缺应用内搜索与归档，Completed 区拥堵，浏览器体验更好。"
+    },
+    {
+      "claim_zh": "用户已公开对比官方客户端不如第三方 gTasks。"
+    }
+  ],
+  "product_hypothesis_zh": "6–8 周 MVP：iOS 优先多列表侧栏、全文搜索、带时间戳归档、Google Tasks 导入与日历重复同步、迁移清单；以列表回退差评为获客钩子，功率用户 $4–8/月或 $40/年。",
+  "research_notes_zh": "11-01 全量重跑（HN+GitHub+App Store；PH/Reddit 仍无凭证）再次出现 Google Tasks App Store 回声：20 条合并帖中 8 条落在该簇。ICE 单帖最高是 Agent 记忆与产品寿命，但 Stage3 优先多成员 Tasks 簇。注意单源回声与赛道拥挤；下一步访谈与付费导入 waitlist。",
+  "commercial_assessment": {
+    "switching_cost_rationale_zh": "十年列表与个人资料库沉没成本高，谷歌生态锁定强；若导入顺畅则学习曲线中等。",
+    "workaround_rationale_zh": "左右滑列表、回浏览器搜索、继续用 gTasks 等权宜之计都笨拙，且未摆脱谷歌依赖。",
+    "persistence_rationale_zh": "更像谷歌消费端应用长期打磨不足；平台仍可能恢复 UI，故标为 unknown/platform，待观察响应。",
+    "economic_impact_notes_zh": "主要是每日多列表导航与日历同步摩擦分钟级损失，非 B2B 直接营收风险；可信迁移下功率用户或愿付 $3–8/月。"
+  }
+}

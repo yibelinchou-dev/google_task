@@ -1,0 +1,83 @@
+{
+  "pipeline_id": "pipe_2026-11-01_001",
+  "code_delivery_id": "3471e041-0d46-4bd2-b2d5-eb4f6ba96e95",
+  "created_at": "2026-11-01T13:47:52Z",
+  "product_title": "Multi-list task manager for Google Tasks refugees",
+  "deployment_environment": {
+    "name": "staging",
+    "url": "http://127.0.0.1:3000",
+    "infrastructure_provider": "local-docker-compose-demo",
+    "region": "local",
+    "instance_type": "laptop"
+  },
+  "deployment_timestamp": "2026-11-01T13:47:52Z",
+  "git_commit": "b3e90e0e7352994121ceac7c5be17cf64b9c1679",
+  "services_deployed": [
+    {
+      "name": "taskrefuge-api",
+      "version": "0.1.0-local",
+      "health_check_status": "healthy",
+      "uptime_percentage": 100.0,
+      "error_rate": 0.0
+    }
+  ],
+  "monitoring_setup": {
+    "dashboards": [
+      {
+        "name": "Local health",
+        "url": "http://127.0.0.1:3000/health",
+        "key_metrics": [
+          "status",
+          "latency"
+        ]
+      }
+    ],
+    "alerts": [
+      {
+        "name": "API down",
+        "metric": "health_status",
+        "threshold": "not healthy",
+        "severity": "critical",
+        "notification_channels": [
+          "local-log"
+        ]
+      }
+    ],
+    "log_aggregation": "other",
+    "apm_tool": "other"
+  },
+  "incident_response_plan": {
+    "on_call_schedule": "Solo operator \u2014 business hours Asia/Shanghai for this demo run",
+    "escalation_process": [
+      {
+        "level": 1,
+        "contact": "local operator",
+        "response_time_minutes": 30
+      }
+    ],
+    "runbook_urls": [
+      "file:///workspace/ai-pain-pipeline/runs/pipe_2026-11-01_001/6_codebase/README.md"
+    ]
+  },
+  "success_criteria_met": {
+    "deployment_successful": true,
+    "zero_downtime": true,
+    "all_tests_passed": true,
+    "performance_baseline_met": true,
+    "data_migration_successful": true
+  },
+  "metrics_baseline": {
+    "api_latency_p95_ms": 5.0,
+    "api_error_rate": 0.0,
+    "database_connections_active": 0,
+    "cache_hit_rate": 0.0,
+    "cpu_usage_percent": 5.0,
+    "memory_usage_percent": 10.0,
+    "disk_usage_percent": 1.0
+  },
+  "rollback_plan": {
+    "can_rollback": true,
+    "rollback_procedure": "Stop uvicorn process; checkout previous git commit in 6_codebase; restart local server.",
+    "estimated_rollback_minutes": 5
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "post_count": 20,
+  "theme_counts": {
+    "gtm_distribution": 1,
+    "vendor_lockin": 1
+  },
+  "multi_post_themes": {},
+  "posts": [
+    {
+      "source": "hackernews",
+      "object_id": "50204125",
+      "title": "Median product \"lifespan\" has fallen from ~4y down to ~1.5y",
+      "themes": [
+        "gtm_distribution"
+      ],
+      "comment_resonance": 0,
+      "ups": 92
+    },
+    {
+      "source": "hackernews",
+      "object_id": "50237680",
+      "title": "Ask HN: Is it not possible to enroll for Apple Developer anymore?",
+      "themes": [
+        "vendor_lockin"
+      ],
+      "comment_resonance": 0,
+      "ups": 32
+    },
+    {
+      "source": "hackernews",
+      "object_id": "50182883",
+      "title": "Open-source, cross-harness memory for AI agents",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 18
+    },
+    {
+      "source": "github_issues",
+      "object_id": "40617",
+      "title": "New created Supabase project triggers 'pg_pgrst_no_exposed_schemas' error",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 26
+    },
+    {
+      "source": "github_issues",
+      "object_id": "65335",
+      "title": "RSC and CDN interaction makes next.js inefficient for highload projects",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 118
+    },
+    {
+      "source": "github_issues",
+      "object_id": "53724",
+      "title": "I18n configuration in next.config.js breaks app directory",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 49
+    },
+    {
+      "source": "github_issues",
+      "object_id": "82511",
+      "title": "Reached heap limit Allocation failed - JavaScript heap out of memory",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 44
+    },
+    {
+      "source": "github_issues",
+      "object_id": "82640",
+      "title": "Next.js 15.4.4+ production builds broken when using a specific 3rd-party-library - dev server is fine",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "github_issues",
+      "object_id": "38273",
+      "title": "[NEXT-696] New middleware slows down routing in production",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 39
+    },
+    {
+      "source": "github_issues",
+      "object_id": "59594",
+      "title": "When building next js app, class names are minified which breaks libraries which depend on class names. (typegoose, webpack)",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 33
+    },
+    {
+      "source": "app_store",
+      "object_id": "13573594984",
+      "title": "Broken and Shameful",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 89
+    },
+    {
+      "source": "app_store",
+      "object_id": "14715538455",
+      "title": "Where’s the iPhone Duo app?",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "app_store",
+      "object_id": "14714148085",
+      "title": "Needs improvement.",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "app_store",
+      "object_id": "14611205518",
+      "title": "Stop asking for reviews!",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "app_store",
+      "object_id": "14578489629",
+      "title": "Moved the + button for no reason",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "app_store",
+      "object_id": "14577077262",
+      "title": "New version is a downgrade",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "app_store",
+      "object_id": "14561702660",
+      "title": "No Longer Efficient for Multiple Lists",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "app_store",
+      "object_id": "14557973507",
+      "title": "Repeating tasks no longer show up in Google Calendar",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "app_store",
+      "object_id": "14469563509",
+      "title": "gTasks is better",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    },
+    {
+      "source": "app_store",
+      "object_id": "14414718410",
+      "title": "Longtime user frustrated by iOS version",
+      "themes": [],
+      "comment_resonance": 0,
+      "ups": 40
+    }
+  ]
+}

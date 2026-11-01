@@ -1,0 +1,204 @@
+[
+  {
+    "sentiment": "mixed",
+    "keywords": [
+      "distribution",
+      "marketing",
+      "saas",
+      "product-lifespan",
+      "acquisition",
+      "indie"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "apple-developer",
+      "enrollment",
+      "identity-verification",
+      "llc",
+      "onboarding"
+    ]
+  },
+  {
+    "sentiment": "mixed",
+    "keywords": [
+      "ai-agents",
+      "memory",
+      "context",
+      "cursor",
+      "claude-code",
+      "portability"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "supabase",
+      "onboarding",
+      "schema",
+      "postgres",
+      "setup"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "nextjs",
+      "rsc",
+      "cdn",
+      "performance",
+      "framework"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "nextjs",
+      "i18n",
+      "app-directory",
+      "config",
+      "framework"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "nextjs",
+      "memory",
+      "oom",
+      "build",
+      "performance"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "nextjs",
+      "build",
+      "regression",
+      "third-party",
+      "production"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "nextjs",
+      "middleware",
+      "routing",
+      "performance",
+      "production"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "nextjs",
+      "minification",
+      "classnames",
+      "webpack",
+      "build"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "apple-developer",
+      "enrollment",
+      "id-scan",
+      "camera",
+      "onboarding"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "iphone",
+      "duo",
+      "missing-feature",
+      "parity"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "search",
+      "archive",
+      "completed-tasks",
+      "ios"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "reviews",
+      "nag",
+      "ux",
+      "ios"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "ui-regression",
+      "muscle-memory",
+      "ipad",
+      "add-button"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "lists",
+      "categories",
+      "ui-regression",
+      "navigation"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "multiple-lists",
+      "hamburger-menu",
+      "navigation",
+      "switching"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "recurring",
+      "google-calendar",
+      "sync",
+      "bug"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "gtasks",
+      "clunky",
+      "alternative",
+      "ux"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "google-tasks",
+      "ios",
+      "multiple-lists",
+      "migration",
+      "power-user"
+    ]
+  }
+]

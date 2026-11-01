@@ -1,0 +1,429 @@
+{
+  "pipeline_id": "pipe_2026-11-01_001",
+  "generated_at": "2026-11-01T13:45:39Z",
+  "count": 20,
+  "pain_points": [
+    {
+      "id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+      "source": "hackernews",
+      "source_url": "https://news.ycombinator.com/item?id=50204125",
+      "title": "Median product \"lifespan\" has fallen from ~4y down to ~1.5y",
+      "raw_content": "The \"product graveyard\" of SaaSHub has been tracking the status (and lifespan) of hundreds of thousands of products. It's been hovering around 4y for quite some time. However, there's a sharp decline in 2026 leading to about 1.5y these days. https://www.saashub.com/product-graveyard That's a huge drop. And, it matches my \"human\" observations. A lot of products are being vibe coded, released, and soon after that abandoned. It's become too cheap to produce software. So, a lot of people have been experimenting for 'free' with their ideas - only to find out that they weren't viable... or that they couldn't bring customers in. Distribution and marketing have become much more important than before - within the context that everyone can build \"features\" for free.\n\nAnyhow, I expect this trend of shortening product lifespan to continue even further down. Or maybe, at some point people will realised that there are no users for their products as every user can \"build\" their own and custom product. Leaving us with a dozen huge platforms that host and help you build those apps. Until then - it's a crazy gold rush and a lot of makers are abandoning their empty buckets.",
+      "signals": {
+        "upvotes": 92,
+        "comments_count": 34,
+        "sentiment": "mixed"
+      },
+      "extracted_keywords": [
+        "distribution",
+        "marketing",
+        "saas",
+        "product-lifespan",
+        "acquisition",
+        "indie"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "ask_hn"
+    },
+    {
+      "id": "eef3c39b-a3c1-5527-98ea-0dc69c415f79",
+      "source": "hackernews",
+      "source_url": "https://news.ycombinator.com/item?id=50237680",
+      "title": "Ask HN: Is it not possible to enroll for Apple Developer anymore?",
+      "raw_content": "I've been trying to enroll for Apple Developer for over a month and nothing works.\n\nThe Apple Developer app won't accept my Canadian passport for identity verification. The enrollment is for a Delaware LLC, so my Apple account region is set to US. I can't switch the account region to Canada either, because I haven't lived there in years and don't have a Canadian bank card.\n\nIf I enroll through the website, the enrollment gets approved, I accept the term and, when it's time to pay, all my cards get declined. I tried ~7 bank cards (debit, credit, personal, business), all with matching billing addresses. All US cards. All the banks tell me they didn't decline transactions from Apple. I tried no VPN, VPN and residential VPN. I tried from my MacBook, iPhone, Safari, Chrome, incognito, non-incognito.\n\nPhone support is unavailable every time I check. I tried talking to regular Apple Store customer support but after repeating myself over 5 times with different agents, the last person I got transferred to told me they couldn't help with Developer stuff.\n\nIf I email Developer support, they reply ~5 days later with unhelpful canned responses like \"have you tried Safari incognito?\", \"you should try the Developer app instead\" or \"make sure your billing address matches your bank information\". I'm at support email #9 and enrollment attempt #3.\n\nHas anyone had similar issues and been able to fix them?",
+      "signals": {
+        "upvotes": 32,
+        "comments_count": 17,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "apple-developer",
+        "enrollment",
+        "identity-verification",
+        "llc",
+        "onboarding"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "ask_hn"
+    },
+    {
+      "id": "a644dcc3-67af-56b2-81fd-70b5746382a5",
+      "source": "hackernews",
+      "source_url": "https://news.ycombinator.com/item?id=50182883",
+      "title": "Open-source, cross-harness memory for AI agents",
+      "raw_content": "Earlier this year, my co-founder and I found ourselves frequently switching between different coding agents (Claude Code, Codex, Cursor) anytime we ran out of shaky usage limits or a newer, better model came out.\n\nWe became increasingly frustrated with having to re-explain our tasks, workflows, common mistake patterns, etc. anytime we switched agents. We found no good free alternatives out there, so we built our own and fully open-sourced it!\n\nBeacon hooks into 20+ different agent harnesses, captures session telemetry (prompts, tool calls, command executions, etc) in one normalized format, and distills it into common patterns and repeatable workflows with a human-approval step. This compounded knowledge is then accessible to any future agent via skills / MCP.\n\nWe believe your agent data is yours to own and should not be locked behind any frontier lab's ecosystem or closed memory infrastructure. We built Beacon to make working across agents way more transparent and efficient.\n\nTry it out and tell us what you think: https://github.com/Asymptote-Labs/agent-beacon",
+      "signals": {
+        "upvotes": 18,
+        "comments_count": 14,
+        "sentiment": "mixed"
+      },
+      "extracted_keywords": [
+        "ai-agents",
+        "memory",
+        "context",
+        "cursor",
+        "claude-code",
+        "portability"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "ask_hn"
+    },
+    {
+      "id": "f4d58d4e-dd26-52f2-a54c-1733270380a1",
+      "source": "github_issues",
+      "source_url": "https://github.com/supabase/supabase/issues/40617",
+      "title": "New created Supabase project triggers 'pg_pgrst_no_exposed_schemas' error",
+      "raw_content": "# Bug report\n\n<!-- \n\n⚠️ We receive a lot of bug reports which have already been solved or discussed. If you are looking for help, please try these first:\n\n- Docs: https://docs.supabase.com\n- Discussions: https://github.com/supabase/supabase/discussions\n- Discord: https://discord.supabase.com\n\nBefore opening a bug report, please verify the following: \n\n-->\n\n- [x] I confirm this is a bug with Supabase, not with my own application. \n- [ ] I confirm I have searched the [Docs](https://docs.supabase.com), GitHub [Discussions](https://github.com/supabase/supabase/discussions), and [Discord](https://discord.supabase.com). \n\n## Describe the bug\n\nWhen creating a new Supabase project or accessing the database via ConnectionString from a C# .NET 9 Backend Service with Entity Framework triggers the error: schema \"pg_pgrst_no_exposed_schemas\" does not exist\n\nNo tables, migrations, or custom schemas exist in the project yet. The error appears on a fresh project without any user changes. This prevents PostgREST from initializing and querying metadata for the project.\n\nAlso trying to update the db with entity framework 'dotnet ef database update' does not work and the same error occurs in the logs.\n\nError appears in Postgres and  PostgREST logs and dashboard shows \"Unhealthy\" status only for PostgREST\n\nPostgres error in logs: schema \"pg_pgrst_no_exposed_schemas\" does not exist\n\nPostgREST error: Failed to load the schema cache using db-schemas=pg_pgrst_no_exposed_schemas and db-extra-search-path=public,extensions. {\"code\":\"3F000\",\"details\":null,\"hint\":null,\"message\":\"schema \\\"pg_pgrst_no_exposed_schemas\\\" does not exist\"}\n\nAPI gateway error log: 503 HEAD /rest-admin/v1/ready\n\n## To Reproduce\n\nSteps to reproduce the behavior, please provide code snippets or a repository:\n\n1. Go to supabase dashboard and create a new project\n2. Click on Postgres Logs\n3. Observe above mentioned errors in Postgres and PostgREST logs\n\n## Expected Behavior:\n\nPostgres should initialize without errors, even if the project has no tables yet.\n\n## Actual Behavior:\n\nPostgres throws: schema \"pg_pgrst_no_exposed_schemas\" does not exist\n\nPostgREST throws error: Failed to load the schema cache using db-schemas=pg_pgrst_no_exposed_schemas and db-extra-search-path=public,extensions. {\"code\":\"3F000\",\"details\":null,\"hint\":null,\"message\":\"schema \\\"pg_pgrst_no_exposed_schemas\\\" does not exist\"}\n\n## Screenshots\nPostgres logs error:\n\n<img width=\"614\" height=\"35\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/f1eb5831-8e92-4672-9f39-2f0940f65f6e\" />\n\n## System information\n\n- OS: Windows 11\n- Browser (if applies) Chrome\n\n## Additional context\nProject region tested was eu-central-1",
+      "signals": {
+        "upvotes": 26,
+        "comments_count": 26,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "supabase",
+        "onboarding",
+        "schema",
+        "postgres",
+        "setup"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "supabase/supabase"
+    },
+    {
+      "id": "01f588d3-0107-54bb-8ca6-5871861e3d8a",
+      "source": "github_issues",
+      "source_url": "https://github.com/vercel/next.js/issues/65335",
+      "title": "RSC and CDN interaction makes next.js inefficient for highload projects",
+      "raw_content": "### Link to the code that reproduces this issue\n\nhttps://codesandbox.io/p/devbox/rsc-test-m43xq4\n\n### To Reproduce\n\n1. Build the application next build\r\n2. Start the application next start\r\n3. Navigate to category 1\r\n4. Navigate to category 2 with hard refresh\n\n### Current vs. Expected behavior\n\n**Current Behavior**\r\n\r\n<img width=\"815\" alt=\"Screenshot 2024-05-03 at 15 07 20\" src=\"https://github.com/vercel/next.js/assets/37213006/b5599ca4-eedd-45e3-9dec-31c5b6edf18e\">\r\n\r\nProduct 1 appears in category 1 and category 2\r\n\r\nCurrently they return return identical data, but have a different `rsc` hash\r\n\r\n**Expected Behaviour**\r\n\r\nIf the data is the same there should be only one `rsc` hash. \r\n\r\nWith a high throughput global ecommerce site I want to cache identical data close to the customer in a CDN. The different `rsc` hashes mean that I will get CDN cache misses and traffic will have to go back to the server, potentially a distance from the customer and with a slower response time. \r\n\n\n### Provide environment information\n\n```bash\nOperating System:\r\n  Platform: darwin\r\n  Arch: arm64\r\n  Version: Darwin Kernel Version 23.4.0: Fri Mar 15 00:10:42 PDT 2024; root:xnu-10063.101.17~1/RELEASE_ARM64_T6000\r\n  Available memory (MB): 65536\r\n  Available CPU cores: 10\r\nBinaries:\r\n  Node: 18.18.0\r\n  npm: 10.1.0\r\n  Yarn: 1.22.19\r\n  pnpm: N/A\r\nRelevant Packages:\r\n  next: 14.2.3 // Latest available version is detected (14.2.3).\r\n  eslint-config-next: 14.1.0\r\n  react: 18.3.1\r\n  react-dom: 18.3.1\r\n  typescript: 5.4.5\r\nNext.js Config:\r\n  output: N/A\n```\n\n\n### Which area(s) are affected? (Select all that apply)\n\nPerformance\n\n### Which stage(s) are affected? (Select all that apply)\n\nnext start (local)\n\n### Additional context\n\nHi I'm trying to work out how I make the RSC requests work with a CDN when self hosting Nextjs. Is there any more info on this subject. I'm working on an ecommerce site with 100,000 products. Those products could appear in numerous product listing pages (search result pages). Each of those PLP pages are given unique URLs for SEO purposes. Take for example the following URLs:\r\n\r\n/mens/\r\n/mens/trainers\r\n/mens/trainers/brand\r\n/mens/trainers/brand?facet-price=%3A168\r\n\r\nThey could all have the same products in. Due to the way the rsc hash is calculated that means I get a different _rsc params on each listing page, even though the contents of that response is exactly the same.\r\n\r\nproduct/299336/?_rsc=1vl30\r\nproduct/299336/?_rsc=qe3go\r\nproduct/299336/?_rsc=1vg99\r\nproduct/299336/?_rsc=1stsw\r\n\r\nI have even gone to different areas of the site cart, checkout, order history, all with links back to the same product, they each produce different _rsc params, but still the data returned is identical?\r\n\r\nOn a high throughput site I want to be able to cache identical data in the CDN close to the customer. At the moment that would be impossible as there would be to many variations on the rsc hash to make the caching effective.\r\n\r\nFor solutions I think I only have 2 options:\r\n\r\nCache all rsc requests in the CDN - this would end up caching loads of duplicate data and get cache misses when they should be hits\r\nPass all request through to the Nextjs server. - With this solution I would worry the server would be overloaded at peak periods.\r\nIn both cases there would be an extra cost to the client\r\n\r\nI'm trying to understand why the rsc has is different when it is always returning identical data? What is the purpose of this hash? As mentioned before could this just be set to _rsc=1? We would also have issues with the Vary header as it is currently returned like this:\r\n\r\nVary:  RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url\r\n\r\nIn this case the Next-Router-State-Tree and Next-Url will be set on where you are coming from and do not necessarily have an impact on the data need for the page we are going to. The Vary header will again have an impact on the CDN\r\n\r\nThis issue has been rasied in the following discussion thread https://github.com/vercel/next.js/discussions/59167\r\n\n\n<sub>[NEXT-3327](https://linear.app/vercel/issue/NEXT-3327/rsc-and-cdn-interaction-makes-nextjs-inefficient-for-highload-projects)</sub>",
+      "signals": {
+        "upvotes": 118,
+        "comments_count": 83,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "nextjs",
+        "rsc",
+        "cdn",
+        "performance",
+        "framework"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "vercel/next.js"
+    },
+    {
+      "id": "abe5b04c-a0ab-5056-9aef-f2ec89264f7c",
+      "source": "github_issues",
+      "source_url": "https://github.com/vercel/next.js/issues/53724",
+      "title": "I18n configuration in next.config.js breaks app directory",
+      "raw_content": "### Verify canary release\r\n\r\n- [X] I verified that the issue exists in the latest Next.js canary release\r\n\r\n### Provide environment information\r\n\r\n```bash\r\nOperating System:\r\n      Platform: darwin\r\n      Arch: x64\r\n      Version: Darwin Kernel Version 22.6.0: Wed Jul  5 22:21:56 PDT 2023; root:xnu-8796.141.3~6/RELEASE_X86_64\r\n    Binaries:\r\n      Node: 20.5.0\r\n      npm: 9.8.0\r\n      Yarn: 3.5.0\r\n      pnpm: 8.6.12\r\n    Relevant Packages:\r\n      next: 13.4.14-canary.0\r\n      eslint-config-next: 13.4.13\r\n      react: 18.2.0\r\n      react-dom: 18.2.0\r\n      typescript: 5.1.6\r\n    Next.js Config:\r\n      output: N/A\r\n```\r\n\r\n\r\n### Which area(s) of Next.js are affected? (leave empty if unsure)\r\n\r\nApp Router, Internationalization (i18n), Routing (next/router, next/navigation, next/link)\r\n\r\n### Link to the code that reproduces this issue or a replay of the bug\r\n\r\nhttps://github.com/fabio-nettis/next-i18n-error\r\n\r\n### To Reproduce\r\n\r\nThis issue is directly related to my previous issue #53665 You can find more about the discovery process of this bug in [this discussion](https://github.com/vercel/next.js/discussions/53667). \r\n\r\n1. Clone the repository \r\n2. Try to navigate to any of the defined pages\r\n3. You will encounter a not found error for each of the defined routes. \r\n\r\nOnce you have seen the error you can then do the following steps to revert the broken app folder:\r\n\r\n1. Remove `i18n` key from next config\r\n2. Try to navigate to any of the defined pages\r\n3. See the defined page\r\n\r\n### Describe the Bug\r\n\r\nSince version 13.4.13-canary.0 an application previously working fine on version 13.4.12 returns a 404 status code for every page in the app folder when the `i18n` setting is set in the next config file.\r\n\r\n### Expected Behavior\r\n\r\nSetting the `i18n` in the next config file should not break the whole application' routing.\r\n\r\n### Which browser are you using? (if relevant)\r\n\r\nChrome 114.0.5735.106 (Official Build) (x86_64)\r\n\r\n### How are you deploying your application? (if relevant)\r\n\r\nnext dev\n\n<sub>[NEXT-1512](https://linear.app/vercel/issue/NEXT-1512/i18n-configuration-in-nextconfigjs-breaks-app-directory)</sub>",
+      "signals": {
+        "upvotes": 49,
+        "comments_count": 49,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "nextjs",
+        "i18n",
+        "app-directory",
+        "config",
+        "framework"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "vercel/next.js"
+    },
+    {
+      "id": "867ca7ee-4ea4-52e3-9a4e-2a5773f831b1",
+      "source": "github_issues",
+      "source_url": "https://github.com/vercel/next.js/issues/82511",
+      "title": "Reached heap limit Allocation failed - JavaScript heap out of memory",
+      "raw_content": "### Link to the code that reproduces this issue\n\nhttps://github.com/NeoSahadeo/Avg-NextJS-experience\n\n### To Reproduce\n\n1. run pnpm run dev or pnpm next dev\n\n\n\n### Current vs. Expected behavior\n\nExpected:\n\n```\n\n<--- Last few GCs --->\n\n[3314:0xde692d0]   178177 ms: Scavenge 2024.1 (2060.6) -> 2016.6 (2060.6) MB, 4.90 / 0.00 ms  (average mu = 0.692, current mu = 0.515) allocation failure;\n[3314:0xde692d0]   178198 ms: Scavenge 2024.3 (2060.6) -> 2016.7 (2060.8) MB, 4.67 / 0.00 ms  (average mu = 0.692, current mu = 0.515) allocation failure;\n[3314:0xde692d0]   181163 ms: Mark-Compact 2617.4 (2653.9) -> 2214.5 (2274.8) MB, 2633.36 / 0.00 ms  (average mu = 0.565, current mu = 0.404) allocation failure; scavenge might not succeed\n\n\n<--- JS stacktrace --->\n\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\n----- Native stack trace -----\n\n 1: 0xb8cf03 node::OOMErrorHandler(char const*, v8::OOMDetails const&) [node]\n 2: 0xf04610 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [node]\n 3: 0xf048f7 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [node]\n 4: 0x1116545  [node]\n 5: 0x112e3c8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]\n 6: 0x11044e1 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]\n 7: 0x1105675 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]\n 8: 0x10e2cc6 v8::internal::Factory::NewFillerObject(int, v8::internal::AllocationAlignment, v8::internal::AllocationType, v8::internal::AllocationOrigin) [node]\n 9: 0x153e806 v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [node]\n10: 0x7f0d36e99ef6\n\n<--- Last few GCs --->\n\n[4029:0x19bec2d0]   182670 ms: Scavenge 2017.4 (2046.8) -> 2016.5 (2047.1) MB, 1.96 / 0.00 ms  (average mu = 0.603, current mu = 0.443) allocation failure;\n[4029:0x19bec2d0]   182676 ms: Scavenge 2017.5 (2047.1) -> 2016.5 (2047.1) MB, 5.03 / 0.00 ms  (average mu = 0.603, current mu = 0.443) allocation failure;\n[4029:0x19bec2d0]   184729 ms: Mark-Compact 2610.5 (2640.1) -> 2214.1 (2244.8) MB, 1737.89 / 0.00 ms  (average mu = 0.444, current mu = 0.171) allocation failure; scavenge might not succeed\n\n\n<--- JS stacktrace --->\n\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\n----- Native stack trace -----\n\n 1: 0xb8cf03 node::OOMErrorHandler(char const*, v8::OOMDetails const&) [node]\n 2: 0xf04610 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [node]\n 3: 0xf048f7 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [node]\n 4: 0x1116545  [node]\n 5: 0x112e3c8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]\n 6: 0x11044e1 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]\n 7: 0x1105675 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]\n 8: 0x10e220a v8::internal::Factory::AllocateRawWithAllocationSite(v8::internal::Handle<v8::internal::Map>, v8::internal::AllocationType, v8::internal::Handle<v8::internal::AllocationSite>) [node]\n 9: 0x10ef6a8 v8::internal::Factory::NewJSObjectFromMap(v8::internal::Handle<v8::internal::Map>, v8::internal::AllocationType, v8::internal::Handle<v8::internal::AllocationSite>) [node]\n10: 0x134b2bf v8::internal::JSObject::New(v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::Handle<v8::internal::AllocationSite>) [node]\n11: 0x1358546 v8::internal::JSDate::New(v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Handle<v8::internal::JSReceiver>, double) [node]\n12: 0xf8b430 v8::internal::Builtin_DateConstructor(int, unsigned long*, v8::internal::Isolate*) [node]\n13: 0x1977df6  [node]\n ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command was killed with SIGABRT (Aborted): next dev\n```\n\n### Provide environment information\n\n```bash\nnext info crashes.\n\nSystem info:\nHost: 82H8 IdeaPad 3 15ITL6\nKernel: 6.15.9-zen1-1-zen\nUptime: 12 mins\nPackages: 2352 (pacman), 48 (flatpak)\nShell: bash 5.3.3\nResolution: 1920x1080\nDE: Hyprland\nTerminal: alacritty\nCPU: 11th Gen Intel i3-1115G4 (4) @ 4.100GHz\nGPU: Intel Tiger Lake-LP GT2 [UHD Graphics G4]\nMemory: 4144MiB / 11738MiB\n\nBinaries:\nnode version: v20.19.2  (I tried using 18.18 with the same result) \npnpm version: 10.14.0\nnpm version: 10.8.2\n```\n\n### Which area(s) are affected? (Select all that apply)\n\nRuntime\n\n### Which stage(s) are affected? (Select all that apply)\n\nnext dev (local)\n\n### Additional context\n\nI believe that I used Nextjs roughly a month ago to setup a project and it ran just fine. Unfortunately I do not have the project with me. next `v14.2.31` works just fine.",
+      "signals": {
+        "upvotes": 44,
+        "comments_count": 44,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "nextjs",
+        "memory",
+        "oom",
+        "build",
+        "performance"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "vercel/next.js"
+    },
+    {
+      "id": "b489fac9-d504-5680-9ba3-dffae6f2b527",
+      "source": "github_issues",
+      "source_url": "https://github.com/vercel/next.js/issues/82640",
+      "title": "Next.js 15.4.4+ production builds broken when using a specific 3rd-party-library - dev server is fine",
+      "raw_content": "### Link to the code that reproduces this issue\n\nhttps://github.com/soulchild/next-dynamics-web-api-reproduction\n\n### To Reproduce\n\nThe repo contains the exact same example, once with Next.js 15.4.3 (working as intended) and Next.js 15.4.6 (build breaks with a weird error). To reproduce, run `npm i && npm run build` in both `next-15.4.3` and  `next-15.4.6`.\n\n**The issue is not encountered when using the development server with `npm run dev`**. Both versions show the same (correct) \"authentication error\". Enabling TurboPack for the production build doesn't help. Disabling TurboPack for the development server also doesn't suddenly introduce the error for the Next.js 15.4.3 example.\n\n### Current vs. Expected behavior\n\n## `next.js-15.4.3` \n\nThe result of the build is the following, correctly showing that the credentials are wrong/missing, proving that in general the communication works:\n\n```bash\n> next build\n\n   ▲ Next.js 15.4.3\n\n   Creating an optimized production build ...\n ✓ Compiled successfully in 0ms\n   Skipping validation of types\n   Skipping linting\n ✓ Collecting page data\nError occurred prerendering page \"/\". Read more: https://nextjs.org/docs/messages/prerender-error\nError: Unexpected Error\n    at a.handleHttpError (.next/server/app/page.js:5:11637)\n    at IncomingMessage.<anonymous> (.next/server/app/page.js:5:18823) {\n  status: 401,\n  statusText: '',\n  statusMessage: 'Unauthorized',\n  headers: [Object],\n  digest: '1482060732'\n}\n```\n\n## `next.js-15.4.6` \n\nThe result shows a rather obscure error, indicating that the Next.js build somehow broke the external `dynamics-web-api` library. This started happening with Next.js 15.4.4. \n\n```bash\n> next build\n\n   ▲ Next.js 15.4.6\n\n   Creating an optimized production build ...\n ✓ Compiled successfully in 0ms\n   Skipping validation of types\n   Skipping linting\n ✓ Collecting page data\nError occurred prerendering page \"/\". Read more: https://nextjs.org/docs/messages/prerender-error\nTypeError: Cannot read properties of undefined (reading 'toString')\n    at a3 (.next/server/app/page.js:13:2043)\n    at async aZ (.next/server/app/page.js:13:257) {\n  digest: '2393984709'\n}\n``` \n\n### Provide environment information\n\n```bash\nOperating System:\n  Platform: darwin\n  Arch: arm64\n  Version: Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000\n  Available memory (MB): 32768\n  Available CPU cores: 10\nBinaries:\n  Node: 24.2.0\n  npm: 11.3.0\n  Yarn: 1.22.22\n  pnpm: 10.14.0\nRelevant Packages:\n  next: 15.4.6 // Latest available version is detected (15.4.6).\n  eslint-config-next: 15.4.6\n  react: 19.1.0\n  react-dom: 19.1.0\n  typescript: 5.9.2\nNext.js Config:\n  output: standalone\n```\n\n### Which area(s) are affected? (Select all that apply)\n\nNot sure\n\n### Which stage(s) are affected? (Select all that apply)\n\nnext build (local)\n\n### Additional context\n\n_No response_",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 40,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "nextjs",
+        "build",
+        "regression",
+        "third-party",
+        "production"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "vercel/next.js"
+    },
+    {
+      "id": "23973963-b91b-5a5b-a038-c999bc24d7d5",
+      "source": "github_issues",
+      "source_url": "https://github.com/vercel/next.js/issues/38273",
+      "title": "[NEXT-696] New middleware slows down routing in production",
+      "raw_content": "### Verify canary release\r\n\r\n- [X] I verified that the issue exists in the latest Next.js canary release\r\n\r\n### Provide environment information\r\n\r\nOperating System:\r\n  Platform: win32\r\n  Arch: x64\r\n  Version: Windows 10 Pro   \r\nBinaries:\r\n  Node: 16.14.2\r\n  npm: N/A\r\n  Yarn: N/A\r\n  pnpm: N/A\r\nRelevant packages:\r\n  next: 12.2.0\r\n  eslint-config-next: 12.2.0\r\n  react: 18.2.0\r\n  react-dom: 18.2.0\r\n\r\n### What browser are you using? (if relevant)\r\n\r\nChrome 103.0.5060.66\r\n\r\n### How are you deploying your application? (if relevant)\r\n\r\nnext start\r\n\r\n### Describe the Bug\r\n\r\nNew middleware slows down on routing in production (dev is okay), example code that slows down:\r\n\r\n```js\r\nimport { NextResponse } from 'next/server';\r\n\r\nconst Middleware = (req) => {\r\n  /** To lower case redirect. */\r\n  if (req.nextUrl.pathname === req.nextUrl.pathname.toLowerCase())\r\n    return NextResponse.next();\r\n\r\n  return NextResponse.redirect(new URL(req.nextUrl.origin + req.nextUrl.pathname.toLowerCase()));\r\n};\r\n\r\nexport default Middleware;\r\n```\r\n\r\n### Expected Behavior\r\n\r\nWork as expected with no slow down, with previous `_middleware.js` there was no problem\r\n\r\n### To Reproduce\r\n\r\nCreate `middleware.js` file under root folder and use code from example\n\n<sub>[NEXT-696](https://linear.app/vercel/issue/NEXT-696/new-middleware-slows-down-routing-in-production)</sub>",
+      "signals": {
+        "upvotes": 39,
+        "comments_count": 39,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "nextjs",
+        "middleware",
+        "routing",
+        "performance",
+        "production"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "vercel/next.js"
+    },
+    {
+      "id": "31cdd6a2-dd1f-552d-84b1-8cfe44c89209",
+      "source": "github_issues",
+      "source_url": "https://github.com/vercel/next.js/issues/59594",
+      "title": "When building next js app, class names are minified which breaks libraries which depend on class names. (typegoose, webpack)",
+      "raw_content": "### Link to the code that reproduces this issue\n\nhttps://github.com/tar-aldev/broken-class-names\n\n### To Reproduce\n\nFirst serve it in dev mode to see how it should work\r\n1. copy .env.example and set credentials (or leave them as is)\r\n2. run mongodb via docker `docker-compose up`\r\n3. run next.js app via `npm run nx serve next-broken`\r\n4. IN browser see how it shows proper model name `BrokenModel`\r\n\r\nNow build app and run it in prod mode\r\n1. build the app with `npm run nx build next-broken`\r\n2. serve it with `npm run nx run next-broken:serve:production`\r\n3. open browser or check the terminal of the IDE\r\n4. model name becomes `p` while it should still be `BrokenModel`\r\n\n\n### Current vs. Expected behavior\n\nI'd expect model names (based on class name) to not be minified as it breaks typegoose.\r\nIt worked fine in next.js 13 (\"next\": \"13.4.19\")\r\n\n\n### Verify canary release\n\n- [X] I verified that the issue exists in the latest Next.js canary release\n\n### Provide environment information\n\n```bash\nOperating System:\r\n  Platform: darwin\r\n  Arch: arm64\r\n  Version: Darwin Kernel Version 23.0.0: Fri Sep 15 14:41:43 PDT 2023; root:xnu-10002.1.13~1/RELEASE_ARM64_T6000\r\nBinaries:\r\n  Node: 18.18.2\r\n  npm: 9.8.1\r\n  Yarn: N/A\r\n  pnpm: 8.9.2\r\nRelevant Packages:\r\n  next: 14.0.5-canary.10\r\n  eslint-config-next: 13.4.4\r\n  react: 18.2.0\r\n  react-dom: 18.2.0\r\n  typescript: 5.2.2\r\nNext.js Config:\r\n  output: N/A\n```\n\n\n### Which area(s) are affected? (Select all that apply)\n\nNot sure\n\n### Additional context\n\nIt breaks since next 14\r\nIf I disable minification in `next.conif.js`\r\n```\r\nwebpack: (config) => {\r\n    config.optimization.minimize = false;\r\n    return config;\r\n  },\r\n```\r\n\r\nThen it works, but the build is not optimized which is not acceptable for prod.\r\n\r\nAs a workaround I could use `TerserPlugin` and set `keep_classnames: true` and then it works fine. (see with-terser` branch in github repo.\r\nBut it would be nice to get an official guideline.",
+      "signals": {
+        "upvotes": 33,
+        "comments_count": 33,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "nextjs",
+        "minification",
+        "classnames",
+        "webpack",
+        "build"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "vercel/next.js"
+    },
+    {
+      "id": "5bdc3d08-307b-5d44-9799-159f2837cee8",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id640199958",
+      "title": "Broken and Shameful",
+      "raw_content": "This app is like an example of a terrible app you should avoid when creating your own app, and I haven’t even made it through enrollment.  The enrollment process asks for your id, and pulls up a camera via with a rectangular box meant to outline your ID.  When you take a photo with your ID perfectly within the box … the resulting photo is cropped square.  The information on the sides of your ID are clipped away and the app tells you that your photo is not clear.  I clicked a button to try again and the app crashed.  Reopening, I took the photo from further away so that when it was clipped square, you could see all of it.  Nope, that photo is unclear it says.  I did this a few times from my 2021 MacBook Pro camera and decided to try the other option, connecting to my iPhone 17.  This time, it told me there was a problem taking the photo after I snapped it, and when I tried to take it again, the app beach-balled until I restated it.  This does not",
+      "signals": {
+        "upvotes": 89,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "apple-developer",
+        "enrollment",
+        "id-scan",
+        "camera",
+        "onboarding"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Apple Developer"
+    },
+    {
+      "id": "0cda3e7d-ef27-5977-a20f-53b3e9418cd3",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "Where’s the iPhone Duo app?",
+      "raw_content": "Google has the resources to have had this ready on launch. Disappointing.",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "iphone",
+        "duo",
+        "missing-feature",
+        "parity"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    },
+    {
+      "id": "bb95943e-4e02-553a-9556-16ea7949885e",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "Needs improvement.",
+      "raw_content": "It’s like the tool isn’t fully baked. Browser version works better because you can key word search, but not in the app. Neither version let you archive completed tasks for future reference. They just accumulate in the Completed section below which would get congested and have no time stamp relevance when the task was completed. \n\nThe Tasks app is like so many other Google products. They don’t improve. They start ok but then there is no long term cycle of development. Google can and should do better if they want to retain subscribers.",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "search",
+        "archive",
+        "completed-tasks",
+        "ios"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    },
+    {
+      "id": "13d6d723-de8d-51cd-810c-373e6ebf9fb1",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "Stop asking for reviews!",
+      "raw_content": "Stop asking for reviews!",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "reviews",
+        "nag",
+        "ux",
+        "ios"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    },
+    {
+      "id": "ee956b76-4dc4-5a61-a700-295eaa5bb7ec",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "Moved the + button for no reason",
+      "raw_content": "Now I'm sitting like an idiot tapping the bottle middle of the ipad screen where the button was. Muscle memory is strong, and this change is useless",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "ui-regression",
+        "muscle-memory",
+        "ipad",
+        "add-button"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    },
+    {
+      "id": "e2c9afc2-11b0-5e12-a04e-fd3cb5fe094c",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "New version is a downgrade",
+      "raw_content": "Where is the list of categories that used to be in the lower left hand menu button?- where have they gone with the new version",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "lists",
+        "categories",
+        "ui-regression",
+        "navigation"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    },
+    {
+      "id": "44f683e8-f2d8-50e0-87ef-865eb7ddb2f3",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "No Longer Efficient for Multiple Lists",
+      "raw_content": "I absolutely despise that the little hamburger menu was taken away to flip through the many lists I have. Instead I have to waste more time scrolling side to side instead of picking from a list now. I need to find a new now because this is no longer efficient.",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "multiple-lists",
+        "hamburger-menu",
+        "navigation",
+        "switching"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    },
+    {
+      "id": "baa075ca-7355-5037-a6d8-0212ea13876d",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "Repeating tasks no longer show up in Google Calendar",
+      "raw_content": "There have been 2 updates and this issue still hasn’t been fixed. How do I put in an actual support ticket?",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "recurring",
+        "google-calendar",
+        "sync",
+        "bug"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    },
+    {
+      "id": "28cc11b1-4a3d-563c-bc01-8699c61e31dd",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "gTasks is better",
+      "raw_content": "For the biggest tech company this side of the Sun, it’s clunky, unreliable, not nearly as smooth and intuitive as gTasks, and I simply don’t like it.",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "gtasks",
+        "clunky",
+        "alternative",
+        "ux"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    },
+    {
+      "id": "c179200b-0378-55a2-9f11-ed4820ab490d",
+      "source": "app_store",
+      "source_url": "https://apps.apple.com/app/id1353634006",
+      "title": "Longtime user frustrated by iOS version",
+      "raw_content": "I’ve used Google Tasks for 10+ years, multiple times a day, with 30–40 lists containing everything from daily tasks to personal notes, memories, work information, and even detailed lists of what’s in my storage bins. It’s become an important personal reference system.\n\nAfter switching from Android to iPhone about a year ago, I’ve been extremely frustrated by how limited the iOS version is compared with Android. And now, in the latest update, a particularly useful feature appears to have been removed: the drop-down menu in the upper-left corner that let you quickly see and select from all your lists.\n\nWith dozens of lists, having to scroll horizontally through them is significantly slower and more cumbersome. I genuinely don’t understand why such a basic and useful feature would be removed.\n\nPlease bring it back—and please give the iOS version the same functionality as Android. Longtime users like me depend on this app, and it’s frustrating to see it become less useful over time. I’m now being forced to look for something different. Ugg!",
+      "signals": {
+        "upvotes": 40,
+        "comments_count": 0,
+        "sentiment": "negative"
+      },
+      "extracted_keywords": [
+        "google-tasks",
+        "ios",
+        "multiple-lists",
+        "migration",
+        "power-user"
+      ],
+      "extracted_at": "2026-11-01T13:45:39Z",
+      "source_label": "Google Tasks: Get Things Done"
+    }
+  ]
+}

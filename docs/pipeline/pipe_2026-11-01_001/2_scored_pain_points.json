@@ -1,0 +1,697 @@
+{
+  "pipeline_id": "pipe_2026-11-01_001",
+  "scored_at": "2026-11-01T13:46:23Z",
+  "input_file": "runs/pipe_2026-11-01_001/1_pain_points.json",
+  "count": 20,
+  "scored": [
+    {
+      "pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+      "title": "Median product \"lifespan\" has fallen from ~4y down to ~1.5y",
+      "ice_score": {
+        "impact": 8,
+        "confidence": 7,
+        "ease": 6,
+        "total": 336
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "comments_48h": 121,
+        "cluster_id": "misc@ask_hn",
+        "cluster_size": 1,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": false,
+          "persistence_hint": "unknown"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "SaaSHub graveyard shows median product lifespan collapsing ~4y→1.5y; OP ties it to vibe-coding making features cheap while distribution/marketing become the bottleneck. Clear indie founder WTP for validation/GTM tooling before building empty products.",
+      "red_flags": [
+        "Single Ask HN thread",
+        "Macro insight hard to narrow into one product"
+      ]
+    },
+    {
+      "pain_point_id": "eef3c39b-a3c1-5527-98ea-0dc69c415f79",
+      "title": "Ask HN: Is it not possible to enroll for Apple Developer anymore?",
+      "ice_score": {
+        "impact": 6,
+        "confidence": 7,
+        "ease": 4,
+        "total": 168
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "comments_48h": 97,
+        "google_trends_score": 100,
+        "cluster_id": "billing_pricing@ask_hn",
+        "cluster_size": 1,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": false,
+          "persistence_hint": "unknown"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Apple Developer enrollment blocked for weeks by passport/ID verification and Delaware LLC vs Canada region mismatch. Real founder pain, but solution sits inside Apple's compliance stack—hard for an indie tool to own end-to-end.",
+      "red_flags": [
+        "Apple-controlled process",
+        "Niche enrollment edge cases"
+      ]
+    },
+    {
+      "pain_point_id": "a644dcc3-67af-56b2-81fd-70b5746382a5",
+      "title": "Open-source, cross-harness memory for AI agents",
+      "ice_score": {
+        "impact": 8,
+        "confidence": 7,
+        "ease": 8,
+        "total": 448
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "comments_48h": 55,
+        "google_trends_score": 100,
+        "cluster_id": "migration@ask_hn",
+        "cluster_size": 1,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": false,
+          "persistence_hint": "unknown"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Founders switching Claude Code/Codex/Cursor lose task/workflow memory each time usage limits flip. Cross-harness open memory is a concrete product shape with high ease for an MVP sidecar, though agent tooling moves weekly.",
+      "red_flags": [
+        "Fast-moving agent UX",
+        "Open-source may commoditize quickly"
+      ]
+    },
+    {
+      "pain_point_id": "f4d58d4e-dd26-52f2-a54c-1733270380a1",
+      "title": "New created Supabase project triggers 'pg_pgrst_no_exposed_schemas' error",
+      "ice_score": {
+        "impact": 5,
+        "confidence": 7,
+        "ease": 5,
+        "total": 175
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 44,
+        "cluster_id": "migration@supabase_supabase",
+        "cluster_size": 1,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": false,
+          "persistence_hint": "unknown"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1,
+          "github_issue_state": "open",
+          "persistence_prefill_score": 6
+        }
+      },
+      "ai_reasoning": "New Supabase projects hit pg_pgrst_no_exposed_schemas—onboarding friction for Postgres/API newcomers. Likely fixable upstream; weak as a standalone commercial wedge versus docs/templates.",
+      "red_flags": [
+        "Upstream bug likely",
+        "Narrow developer niche"
+      ]
+    },
+    {
+      "pain_point_id": "01f588d3-0107-54bb-8ca6-5871861e3d8a",
+      "title": "RSC and CDN interaction makes next.js inefficient for highload projects",
+      "ice_score": {
+        "impact": 7,
+        "confidence": 4,
+        "ease": 3,
+        "total": 84
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 46,
+        "cluster_id": "misc@vercel_next_js",
+        "cluster_size": 4,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.75,
+          "workaround_ratio": 0.25,
+          "single_source_echo": true,
+          "persistence_hint": "platform_bug"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1,
+          "github_issue_state": "open",
+          "persistence_prefill_score": 4
+        }
+      },
+      "ai_reasoning": "RSC+CDN interaction hurts high-load Next.js deployments; many comments/upvotes show resonance. Fixing requires framework-depth work—poor ease for an external product unless packaged as observability/cache guidance SaaS.",
+      "red_flags": [
+        "Framework-core issue",
+        "Hard for third party to ship durable fix"
+      ]
+    },
+    {
+      "pain_point_id": "abe5b04c-a0ab-5056-9aef-f2ec89264f7c",
+      "title": "I18n configuration in next.config.js breaks app directory",
+      "ice_score": {
+        "impact": 5,
+        "confidence": 4,
+        "ease": 4,
+        "total": 80
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 0,
+        "cluster_id": "misc@vercel_next_js",
+        "cluster_size": 4,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.75,
+          "workaround_ratio": 0.25,
+          "single_source_echo": true,
+          "persistence_hint": "platform_bug"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1,
+          "github_issue_state": "open",
+          "persistence_prefill_score": 4
+        }
+      },
+      "ai_reasoning": "Legacy i18n config breaks App Router; well-known migration footgun. Better as docs/codemod than new product; confidence high that pain is real, ease middling for commercial tooling.",
+      "red_flags": [
+        "Already partially documented",
+        "One-time migration pain"
+      ]
+    },
+    {
+      "pain_point_id": "867ca7ee-4ea4-52e3-9a4e-2a5773f831b1",
+      "title": "Reached heap limit Allocation failed - JavaScript heap out of memory",
+      "ice_score": {
+        "impact": 6,
+        "confidence": 5,
+        "ease": 4,
+        "total": 120
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 46,
+        "cluster_id": "dev_oom@vercel_next_js",
+        "cluster_size": 1,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 1.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": false,
+          "persistence_hint": "platform_bug"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1,
+          "github_issue_state": "open",
+          "persistence_prefill_score": 4
+        }
+      },
+      "ai_reasoning": "JS heap OOM during next dev/build frustrates mid-size apps. Memory/profiling assist tools exist; differentiation is thin unless tied to Next-specific recipes.",
+      "red_flags": [
+        "Competing profilers",
+        "Environment-specific"
+      ]
+    },
+    {
+      "pain_point_id": "b489fac9-d504-5680-9ba3-dffae6f2b527",
+      "title": "Next.js 15.4.4+ production builds broken when using a specific 3rd-party-library - dev server is fine",
+      "ice_score": {
+        "impact": 6,
+        "confidence": 5,
+        "ease": 3,
+        "total": 90
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 59,
+        "cluster_id": "build_regression@vercel_next_js",
+        "cluster_size": 1,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 1.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": false,
+          "persistence_hint": "platform_bug"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1,
+          "github_issue_state": "open",
+          "persistence_prefill_score": 4
+        }
+      },
+      "ai_reasoning": "15.4.4+ production builds break with a specific third-party lib while dev works—classic regression. Valuable CI canary signal but narrow and version-tied for a product business.",
+      "red_flags": [
+        "Version-specific",
+        "Upstream will patch"
+      ]
+    },
+    {
+      "pain_point_id": "23973963-b91b-5a5b-a038-c999bc24d7d5",
+      "title": "[NEXT-696] New middleware slows down routing in production",
+      "ice_score": {
+        "impact": 6,
+        "confidence": 3,
+        "ease": 3,
+        "total": 54
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 46,
+        "cluster_id": "misc@vercel_next_js",
+        "cluster_size": 4,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.75,
+          "workaround_ratio": 0.25,
+          "single_source_echo": true,
+          "persistence_hint": "platform_bug"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1,
+          "github_issue_state": "open",
+          "persistence_prefill_score": 4
+        }
+      },
+      "ai_reasoning": "Middleware slowing production routing is a known Next performance tax. Observability wrappers possible, but core fix belongs to framework maintainers.",
+      "red_flags": [
+        "Framework-owned",
+        "Older issue lineage"
+      ]
+    },
+    {
+      "pain_point_id": "31cdd6a2-dd1f-552d-84b1-8cfe44c89209",
+      "title": "When building next js app, class names are minified which breaks libraries which depend on class names. (typegoose, webpack)",
+      "ice_score": {
+        "impact": 5,
+        "confidence": 5,
+        "ease": 4,
+        "total": 100
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 100,
+        "cluster_id": "misc@vercel_next_js",
+        "cluster_size": 4,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.75,
+          "workaround_ratio": 0.25,
+          "single_source_echo": true,
+          "persistence_hint": "platform_bug"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 4,
+          "github_issue_state": "open",
+          "persistence_prefill_score": 6
+        }
+      },
+      "ai_reasoning": "Production minify renames classes and breaks reflection-heavy libs. Niche webpack/Next config pain; solvable with known flags more than a new SaaS.",
+      "red_flags": [
+        "Known workarounds",
+        "Niche library users"
+      ]
+    },
+    {
+      "pain_point_id": "5bdc3d08-307b-5d44-9799-159f2837cee8",
+      "title": "Broken and Shameful",
+      "ice_score": {
+        "impact": 6,
+        "confidence": 5,
+        "ease": 3,
+        "total": 90
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "cluster_id": "misc@apple_developer",
+        "cluster_size": 1,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": false,
+          "persistence_hint": "unknown"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Apple Developer app ID scan crops wrong and blocks enrollment—mirrors the HN enrollment thread. Strong UX shame signal but again Apple-gated; hard commercial wedge.",
+      "red_flags": [
+        "Platform monopoly",
+        "Compliance constraints"
+      ]
+    },
+    {
+      "pain_point_id": "0cda3e7d-ef27-5977-a20f-53b3e9418cd3",
+      "title": "Where’s the iPhone Duo app?",
+      "ice_score": {
+        "impact": 4,
+        "confidence": 2,
+        "ease": 5,
+        "total": 40
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 100,
+        "cluster_id": "misc@google_tasks_get_things_done",
+        "cluster_size": 8,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": true,
+          "persistence_hint": "structural"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Missing iPhone Duo parity for Google Tasks is a thin single-feature complaint; weak alone but adds to Google Tasks dissatisfaction cluster in this App Store slice.",
+      "red_flags": [
+        "Single feature ask",
+        "Unclear WTP"
+      ]
+    },
+    {
+      "pain_point_id": "bb95943e-4e02-553a-9556-16ea7949885e",
+      "title": "Needs improvement.",
+      "ice_score": {
+        "impact": 7,
+        "confidence": 4,
+        "ease": 6,
+        "total": 168
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "cluster_id": "misc@google_tasks_get_things_done",
+        "cluster_size": 8,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": true,
+          "persistence_hint": "structural"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Power users want keyword search in-app plus archive with timestamps instead of an endless Completed dump. Concrete feature gaps that a Tasks alternative can own on day one.",
+      "red_flags": [
+        "App Store only",
+        "Feature parity race"
+      ]
+    },
+    {
+      "pain_point_id": "13d6d723-de8d-51cd-810c-373e6ebf9fb1",
+      "title": "Stop asking for reviews!",
+      "ice_score": {
+        "impact": 3,
+        "confidence": 2,
+        "ease": 7,
+        "total": 42
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "cluster_id": "misc@google_tasks_get_things_done",
+        "cluster_size": 8,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": true,
+          "persistence_hint": "structural"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Review-nag fatigue is real but generic and low willingness-to-pay for a dedicated product; keep as UX hygiene note inside a Tasks alternative, not a standalone bet.",
+      "red_flags": [
+        "Generic complaint",
+        "No switch intent"
+      ]
+    },
+    {
+      "pain_point_id": "ee956b76-4dc4-5a61-a700-295eaa5bb7ec",
+      "title": "Moved the + button for no reason",
+      "ice_score": {
+        "impact": 5,
+        "confidence": 3,
+        "ease": 6,
+        "total": 90
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "cluster_id": "misc@google_tasks_get_things_done",
+        "cluster_size": 8,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": true,
+          "persistence_hint": "structural"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Moving the + button breaks iPad muscle memory—classic UI regression. Alone it's minor; with list-menu removals it reinforces 'Google Tasks iOS is regressing' narrative.",
+      "red_flags": [
+        "Cosmetic alone",
+        "Low WTP alone"
+      ]
+    },
+    {
+      "pain_point_id": "e2c9afc2-11b0-5e12-a04e-fd3cb5fe094c",
+      "title": "New version is a downgrade",
+      "ice_score": {
+        "impact": 7,
+        "confidence": 4,
+        "ease": 6,
+        "total": 168
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "cluster_id": "misc@google_tasks_get_things_done",
+        "cluster_size": 8,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": true,
+          "persistence_hint": "structural"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "List/category entry removed from lower-left menu—users call the new version a downgrade. Directly supports multi-list navigation as the core Jobs-to-be-done for a refugee product.",
+      "red_flags": [
+        "One-product cluster",
+        "Google may restore UI"
+      ]
+    },
+    {
+      "pain_point_id": "44f683e8-f2d8-50e0-87ef-865eb7ddb2f3",
+      "title": "No Longer Efficient for Multiple Lists",
+      "ice_score": {
+        "impact": 7,
+        "confidence": 4,
+        "ease": 5,
+        "total": 140
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 0,
+        "cluster_id": "misc@google_tasks_get_things_done",
+        "cluster_size": 8,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": true,
+          "persistence_hint": "structural"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Hamburger menu removal forces horizontal list scrolling; user explicitly says they must find a new tool. Clear switch intent for multi-list power workflows.",
+      "red_flags": [
+        "Single review",
+        "Crowded task apps"
+      ]
+    },
+    {
+      "pain_point_id": "baa075ca-7355-5037-a6d8-0212ea13876d",
+      "title": "Repeating tasks no longer show up in Google Calendar",
+      "ice_score": {
+        "impact": 6,
+        "confidence": 3,
+        "ease": 5,
+        "total": 90
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "cluster_id": "misc@google_tasks_get_things_done",
+        "cluster_size": 8,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": true,
+          "persistence_hint": "structural"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Recurring tasks stop appearing in Google Calendar after updates; users can't file a real ticket. Calendar sync reliability is a migration table-stakes feature for alternatives.",
+      "red_flags": [
+        "May be transient bug",
+        "Google Calendar dependency"
+      ]
+    },
+    {
+      "pain_point_id": "28cc11b1-4a3d-563c-bc01-8699c61e31dd",
+      "title": "gTasks is better",
+      "ice_score": {
+        "impact": 6,
+        "confidence": 3,
+        "ease": 5,
+        "total": 90
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "cluster_id": "misc@google_tasks_get_things_done",
+        "cluster_size": 8,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": true,
+          "persistence_hint": "structural"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "Users openly prefer third-party gTasks over official Google Tasks UX—validates willingness to leave first-party client if smoothness returns, though still Google-backend dependent.",
+      "red_flags": [
+        "Competitor already exists",
+        "Backend lock-in"
+      ]
+    },
+    {
+      "pain_point_id": "c179200b-0378-55a2-9f11-ed4820ab490d",
+      "title": "Longtime user frustrated by iOS version",
+      "ice_score": {
+        "impact": 8,
+        "confidence": 6,
+        "ease": 6,
+        "total": 288
+      },
+      "market_signals": {
+        "comment_resonance": 0,
+        "theme_mentions": 1,
+        "google_trends_score": 0,
+        "cluster_id": "migration@google_tasks_get_things_done",
+        "cluster_size": 1,
+        "cluster_source_count": 1,
+        "commercial_hints": {
+          "switch_intent_ratio": 0.0,
+          "platform_bug_ratio": 0.0,
+          "workaround_ratio": 0.0,
+          "single_source_echo": false,
+          "persistence_hint": "unknown"
+        },
+        "external_signals": {
+          "switch_intent_score": 1,
+          "workaround_score": 1
+        }
+      },
+      "ai_reasoning": "10+ year daily user with 30–40 lists treats Tasks as a personal reference system; after Android→iPhone, list-menu regressions force looking for alternatives. Highest-intensity persona in this App Store cluster.",
+      "red_flags": [
+        "Single-product App Store evidence",
+        "High switching cost of decade of lists"
+      ]
+    }
+  ]
+}

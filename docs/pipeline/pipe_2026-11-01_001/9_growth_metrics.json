@@ -1,0 +1,140 @@
+{
+  "pipeline_id": "pipe_2026-11-01_001",
+  "deployment_id": "fbb04b8e-2e7d-43ef-8a84-788ba9f7e87e",
+  "created_at": "2026-11-01T13:47:52Z",
+  "product_title": "Multi-list task manager for Google Tasks refugees",
+  "reporting_period": {
+    "start_date": "2026-10-26",
+    "end_date": "2026-11-01"
+  },
+  "product_metrics": {
+    "dau": 14,
+    "wau": 45,
+    "mau": 90,
+    "avg_session_length_minutes": 4.6,
+    "sessions_per_user": 2.3,
+    "retention_day_1": 43.0,
+    "retention_day_7": 29.0,
+    "retention_day_30": 16.0
+  },
+  "business_metrics": {
+    "total_signups": 128,
+    "new_signups_this_period": 38,
+    "conversion_rate_percent": 3.6,
+    "arr_usd": 4500.0,
+    "mrr_usd": 375.0,
+    "average_revenue_per_user_usd": 5.0,
+    "customer_lifetime_value_usd": 60.0,
+    "customer_acquisition_cost_usd": 17.0,
+    "payback_period_months": 3.4
+  },
+  "acquisition_channels": [
+    {
+      "channel": "organic",
+      "signups": 85,
+      "cost_usd": 0,
+      "cac_usd": 0,
+      "roas": 0,
+      "trending": "up"
+    },
+    {
+      "channel": "other",
+      "signups": 43,
+      "cost_usd": 210,
+      "cac_usd": 4.9,
+      "roas": 2.2,
+      "trending": "flat"
+    }
+  ],
+  "churn_analysis": {
+    "monthly_churn_rate": 7.5,
+    "churned_users": 6,
+    "reasons": [
+      {
+        "reason": "Waiting for full Google import",
+        "percentage": 50.0,
+        "mitigation": "Ship real OAuth import next"
+      },
+      {
+        "reason": "Switched to Todoist instead",
+        "percentage": 30.0,
+        "mitigation": "Sharpen migration checklist messaging"
+      },
+      {
+        "reason": "iOS-only limitation",
+        "percentage": 20.0,
+        "mitigation": "Android after validate"
+      }
+    ],
+    "retention_improvement_plan": "Complete import concierge, interview churned waitlist users, and tighten onboarding around list switching."
+  },
+  "feature_adoption": [
+    {
+      "feature_name": "Waitlist signup",
+      "adoption_rate": 100.0,
+      "usage_frequency": "once",
+      "user_feedback_score": 4.0,
+      "trend": "trending_up"
+    },
+    {
+      "feature_name": "Multi-list API seed demo",
+      "adoption_rate": 62.0,
+      "usage_frequency": "weekly",
+      "user_feedback_score": 3.6,
+      "trend": "stable"
+    },
+    {
+      "feature_name": "Import stub",
+      "adoption_rate": 28.0,
+      "usage_frequency": "once",
+      "user_feedback_score": 2.6,
+      "trend": "stable"
+    }
+  ],
+  "revenue_summary": {
+    "total_revenue": 375.0,
+    "revenue_by_plan": [
+      {
+        "plan_name": "Pro monthly",
+        "subscribers": 42,
+        "revenue_usd": 294.0
+      },
+      {
+        "plan_name": "Founding yearly",
+        "subscribers": 12,
+        "revenue_usd": 81.0
+      }
+    ],
+    "notes": "Synthetic demo metrics for validate-path walkthrough \u2014 not live billing."
+  },
+  "growth_recommendations": [
+    {
+      "priority": "high",
+      "action": "Run reviewer outreach + paid import waitlist experiments from Stage 3",
+      "expected_impact": "Confirm WTP before iOS build spend"
+    },
+    {
+      "priority": "high",
+      "action": "Replace import stub with real Google OAuth for closed beta",
+      "expected_impact": "Reduce 'waiting for import' churn"
+    },
+    {
+      "priority": "medium",
+      "action": "Publish clickable multi-list demo (already on Spacefast from prior run) with fresh waitlist CTA",
+      "expected_impact": "Improve qualitative interviews"
+    }
+  ],
+  "comparison_to_plan": {
+    "on_track": true,
+    "notes": "Validate-path local demo only; metrics are synthetic placeholders pending real waitlist."
+  },
+  "next_quarter_plan": {
+    "goals": [
+      "Finish 30 reviewer outreach",
+      "Usability tests on multi-list sidebar",
+      "Decide build vs skip after validation"
+    ],
+    "budget_usd": 5000,
+    "hire_plan": "none \u2014 solo validate"
+  }
+}

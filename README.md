@@ -65,3 +65,15 @@ docker compose -f docker/docker-compose.yml up -d
 ```
 
 Postgres and Redis are for local experiments. The API stub does not connect to them. The compose file uses a throwaway local database password; do not reuse it outside this demo.
+
+## Opportunity research
+
+The demo follows an ai-pain-pipeline run checked in under [`docs/pipeline/`](docs/pipeline/).
+
+Run [`pipe_2026-11-01_001`](docs/pipeline/pipe_2026-11-01_001/) (2026-11-01) rescanned Hacker News, GitHub Issues, and the App Store (Product Hunt and Reddit were skipped: no credentials). The top opportunity is **Multi-list task manager for Google Tasks refugees**, score **3360**, recommendation **validate**, confidence **medium**. The reports mark the score tier high and still keep validate/medium, because the cluster is one App Store product. Stage 3 preferred that multi-member Google Tasks cluster over higher single-post ICE scores (the top single post was open-source agent memory at 448).
+
+- Index: [`docs/pipeline/README.md`](docs/pipeline/README.md)
+- Chinese exec summary: [`docs/pipeline/full-exec-summary.zh.md`](docs/pipeline/full-exec-summary.zh.md)
+- Opportunity report: [`docs/pipeline/full-opportunity-report.md`](docs/pipeline/full-opportunity-report.md)
+
+Stage JSON, digests, judgments, and slim raw tops for that run live in the run folder. Product code stays in `apps/`.

@@ -1,0 +1,182 @@
+[
+  {
+    "pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+    "title_zh": "产品「寿命」中位数从约4年降到约1.5年",
+    "ai_reasoning_zh": "SaaSHub 坟场显示产品寿命中位数约4年→1.5年；作者把瓶颈指向分发/营销。独立开发者对上线前验证与获客工具有付费意愿。",
+    "red_flags_zh": [
+      "仅单条 Ask HN",
+      "宏观洞察难收窄成产品"
+    ]
+  },
+  {
+    "pain_point_id": "eef3c39b-a3c1-5527-98ea-0dc69c415f79",
+    "title_zh": "Ask HN：还能顺利注册 Apple Developer 吗？",
+    "ai_reasoning_zh": "护照/身份核验与 LLC 区域设置卡住入驻数周。痛真实，但流程在苹果合规栈内，外部产品难端到端接管。",
+    "red_flags_zh": [
+      "苹果掌控流程",
+      "入驻边界案例偏窄"
+    ]
+  },
+  {
+    "pain_point_id": "a644dcc3-67af-56b2-81fd-70b5746382a5",
+    "title_zh": "开源跨工具 AI Agent 记忆",
+    "ai_reasoning_zh": "在 Claude Code/Codex/Cursor 间切换会丢任务与踩坑记忆；跨 harness 记忆 sidecar 形态清晰、MVP 容易，但赛道变化快。",
+    "red_flags_zh": [
+      "Agent UX 变化极快",
+      "开源易被快速同质化"
+    ]
+  },
+  {
+    "pain_point_id": "f4d58d4e-dd26-52f2-a54c-1733270380a1",
+    "title_zh": "新建 Supabase 项目触发未暴露 schema",
+    "ai_reasoning_zh": "新项目即报 pg_pgrst_no_exposed_schemas，上手摩擦明显，更像上游/文档问题而非独立商业切口。",
+    "red_flags_zh": [
+      "多半可上游修复",
+      "开发者利基偏窄"
+    ]
+  },
+  {
+    "pain_point_id": "01f588d3-0107-54bb-8ca6-5871861e3d8a",
+    "title_zh": "RSC 与 CDN 交互拖累高负载 Next",
+    "ai_reasoning_zh": "高票高评证明共鸣；修复偏框架内核，外部产品易度低，除非做成观测/缓存指导 SaaS。",
+    "red_flags_zh": [
+      "框架内核问题",
+      "第三方难交付持久修复"
+    ]
+  },
+  {
+    "pain_point_id": "abe5b04c-a0ab-5056-9aef-f2ec89264f7c",
+    "title_zh": "i18n 配置弄坏 App Router",
+    "ai_reasoning_zh": "旧 i18n 与 App Router 冲突是已知迁移坑；更适合文档/codemod，而非新产品。",
+    "red_flags_zh": [
+      "已有部分文档",
+      "一次性迁移痛"
+    ]
+  },
+  {
+    "pain_point_id": "867ca7ee-4ea4-52e3-9a4e-2a5773f831b1",
+    "title_zh": "Next 构建/开发 OOM",
+    "ai_reasoning_zh": "中大型项目堆内存爆掉体验差；已有剖析工具，差异化薄。",
+    "red_flags_zh": [
+      "剖析工具竞争",
+      "环境相关"
+    ]
+  },
+  {
+    "pain_point_id": "b489fac9-d504-5680-9ba3-dffae6f2b527",
+    "title_zh": "15.4.4+ 生产构建因第三方库崩溃",
+    "ai_reasoning_zh": "开发正常、生产失败的版本回归；适合 CI 金丝雀信号，商业面窄。",
+    "red_flags_zh": [
+      "版本绑定",
+      "上游会修"
+    ]
+  },
+  {
+    "pain_point_id": "23973963-b91b-5a5b-a038-c999bc24d7d5",
+    "title_zh": "Middleware 拖慢生产路由",
+    "ai_reasoning_zh": "已知性能税；观测封装可行，核心修复归框架。",
+    "red_flags_zh": [
+      "框架侧问题",
+      "历史 issue"
+    ]
+  },
+  {
+    "pain_point_id": "31cdd6a2-dd1f-552d-84b1-8cfe44c89209",
+    "title_zh": "类名压缩破坏依赖反射的库",
+    "ai_reasoning_zh": "生产 minify 改写 class 名；多半用已知配置即可，难撑独立 SaaS。",
+    "red_flags_zh": [
+      "已有规避",
+      "用户群窄"
+    ]
+  },
+  {
+    "pain_point_id": "5bdc3d08-307b-5d44-9799-159f2837cee8",
+    "title_zh": "Apple Developer App 入驻扫描翻车",
+    "ai_reasoning_zh": "证件扫描裁切错误阻断入驻，与 HN 入驻帖互证；商业切口仍被苹果卡住。",
+    "red_flags_zh": [
+      "平台垄断",
+      "合规约束"
+    ]
+  },
+  {
+    "pain_point_id": "0cda3e7d-ef27-5977-a20f-53b3e9418cd3",
+    "title_zh": "iPhone 上 Duo 能力缺失",
+    "ai_reasoning_zh": "单点功能抱怨，单独弱，但并入 Google Tasks 不满簇。",
+    "red_flags_zh": [
+      "单功能诉求",
+      "付费意愿不明"
+    ]
+  },
+  {
+    "pain_point_id": "bb95943e-4e02-553a-9556-16ea7949885e",
+    "title_zh": "缺应用内搜索与归档",
+    "ai_reasoning_zh": "浏览器能搜 App 不能；Completed 无法带时间戳归档。替代品第一天就能吃下的具体缺口。",
+    "red_flags_zh": [
+      "仅 App Store",
+      "功能对等竞赛"
+    ]
+  },
+  {
+    "pain_point_id": "13d6d723-de8d-51cd-810c-373e6ebf9fb1",
+    "title_zh": "别再弹评价",
+    "ai_reasoning_zh": "评价骚扰真实但通用，单独产品付费弱，只作 UX 卫生项。",
+    "red_flags_zh": [
+      "通用抱怨",
+      "无切换意图"
+    ]
+  },
+  {
+    "pain_point_id": "ee956b76-4dc4-5a61-a700-295eaa5bb7ec",
+    "title_zh": "+ 按钮无故挪动",
+    "ai_reasoning_zh": "破坏 iPad 肌肉记忆；单独弱，与列表菜单回退一起强化「iOS 版在倒退」叙事。",
+    "red_flags_zh": [
+      "单独偏表面",
+      "单独付费弱"
+    ]
+  },
+  {
+    "pain_point_id": "e2c9afc2-11b0-5e12-a04e-fd3cb5fe094c",
+    "title_zh": "新版本是降级：列表入口消失",
+    "ai_reasoning_zh": "左下角列表/分类入口没了，直接支撑「多列表导航」作为难民产品 JTBD。",
+    "red_flags_zh": [
+      "单产品簇",
+      "谷歌可能恢复 UI"
+    ]
+  },
+  {
+    "pain_point_id": "44f683e8-f2d8-50e0-87ef-865eb7ddb2f3",
+    "title_zh": "多列表不再高效",
+    "ai_reasoning_zh": "汉堡菜单被撤后只能左右滑；用户明确说要找新工具，切换意图清楚。",
+    "red_flags_zh": [
+      "单条评论",
+      "待办赛道拥挤"
+    ]
+  },
+  {
+    "pain_point_id": "baa075ca-7355-5037-a6d8-0212ea13876d",
+    "title_zh": "重复任务不同步到日历",
+    "ai_reasoning_zh": "更新两次仍坏，找不到工单入口；日历同步是替代品迁移桌面要求。",
+    "red_flags_zh": [
+      "或短暂缺陷",
+      "依赖 Google 日历"
+    ]
+  },
+  {
+    "pain_point_id": "28cc11b1-4a3d-563c-bc01-8699c61e31dd",
+    "title_zh": "gTasks 更好用",
+    "ai_reasoning_zh": "公开偏好第三方客户端，说明愿离开官方壳，但仍绑 Google 后端。",
+    "red_flags_zh": [
+      "竞品已在",
+      "后端锁定"
+    ]
+  },
+  {
+    "pain_point_id": "c179200b-0378-55a2-9f11-ed4820ab490d",
+    "title_zh": "十年重度用户被 iOS 版折磨",
+    "ai_reasoning_zh": "每天多次、30–40 列表当个人资料库；换 iPhone 后列表菜单回退逼其找替代，是本簇强度最高人设。",
+    "red_flags_zh": [
+      "单产品 App Store 证据",
+      "十年列表迁移成本高"
+    ]
+  }
+]

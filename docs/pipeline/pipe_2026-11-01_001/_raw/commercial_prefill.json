@@ -1,0 +1,33 @@
+{
+  "pipeline_id": "pipe_2026-11-01_001",
+  "focus_pain_point_id": "a644dcc3-67af-56b2-81fd-70b5746382a5",
+  "focus_title": "Open-source, cross-harness memory for AI agents",
+  "ice_total": 448,
+  "cluster_id": "migration@ask_hn",
+  "cluster_size": 1,
+  "related_pain_point_ids": [],
+  "suggested_scores": {
+    "pain_score": 8,
+    "switching_willingness": 1,
+    "workaround_quality_score": 1,
+    "persistence_score": 5,
+    "competition_score": 5
+  },
+  "persistence_prefill": {
+    "root_cause_type": "unknown",
+    "owner": "platform",
+    "score": 5,
+    "rationale": "Cluster persistence_hint=unknown; no GitHub lifecycle data."
+  },
+  "switch_phrases": [],
+  "workaround_phrases": [],
+  "competitor_mentions": [],
+  "pricing_snippets": [],
+  "data_sources": {
+    "external_signals": true,
+    "pain_clusters": true,
+    "domain_focus": false,
+    "mode": "broad"
+  },
+  "agent_notes": "Prefill is heuristic — Agent must override with judgment and cite evidence_ledger. In focus mode, known_competitors from domain_context drive competitor_mentions."
+}
