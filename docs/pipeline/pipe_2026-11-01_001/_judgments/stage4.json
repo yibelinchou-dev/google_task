@@ -1,0 +1,239 @@
+{
+  "product_vision": "Build an iOS-first multi-list task app that lets longtime Google Tasks power users keep 30–40 lists, switch lists in one tap, archive and search history, and migrate with a guided import—so they are not stuck after Google’s list-menu regressions. North star: percentage of imported Google Tasks lists actively used weekly without users falling back to Google Tasks.",
+  "target_user_stories": [
+    {
+      "persona": "Longtime Google Tasks power user (30–40 lists)",
+      "story": "As a longtime Google Tasks power user with 30–40 lists, I want one-tap list switching and a visible list sidebar so that I can work across projects as fast as I did before the hamburger regression.",
+      "acceptance": [
+        "Sidebar or dropdown shows all lists within 200ms of open",
+        "Switching lists preserves scroll position and incomplete tasks",
+        "User can pin up to 10 favorite lists for quick access",
+        "Works offline for already-synced lists"
+      ]
+    },
+    {
+      "persona": "Multi-list iPad/iPhone task switcher",
+      "story": "As a multi-list iPad and iPhone user, I want archive with timestamps and full-text search so that I can recover old tasks without scrolling endless lists.",
+      "acceptance": [
+        "Archive stores completed/archived tasks with timestamps",
+        "Full-text search returns results across lists in under 500ms for 10k tasks",
+        "User can restore an archived task to its original list",
+        "Search highlights matching snippets"
+      ]
+    },
+    {
+      "persona": "Google Tasks refugee ready to switch",
+      "story": "As a Google Tasks refugee forced to look for alternatives, I want a guided Google Tasks import and migration checklist so that I can move decades of lists without manual re-entry.",
+      "acceptance": [
+        "OAuth or export-file import supports Google Tasks lists and tasks",
+        "Import progress shows lists completed and failures with retry",
+        "Migration checklist covers calendar sync, recurring tasks, and share links",
+        "Post-import summary email or in-app report lists counts migrated"
+      ]
+    },
+    {
+      "persona": "Paying power user",
+      "story": "As a paying power user, I want reliable Google Calendar recurring sync and a clear Pro upgrade so that my daily ritual stays intact after leaving Google Tasks.",
+      "acceptance": [
+        "Recurring tasks sync to Google Calendar when user connects account",
+        "Pro gate clearly lists multi-list sync, archive search, and import features",
+        "Billing uses App Store IAP with restore purchases",
+        "Sync failures surface actionable error messages"
+      ]
+    }
+  ],
+  "core_features": [
+    {
+      "name": "Multi-list sidebar switcher",
+      "description": "Restore fast navigation across dozens of lists with a persistent sidebar/dropdown and pin favorites for power users.",
+      "priority": "p0",
+      "effort_hours": 40,
+      "dependencies": [],
+      "acceptance_criteria": [
+        "Supports at least 50 lists without UI lag on recent iPhones",
+        "One-tap switch between lists",
+        "Pin/unpin favorites persists across relaunches"
+      ]
+    },
+    {
+      "name": "Google Tasks import concierge",
+      "description": "Guided import from Google Tasks (API and/or export) with progress, retries, and a migration checklist for calendar and recurring items.",
+      "priority": "p0",
+      "effort_hours": 60,
+      "dependencies": ["Multi-list sidebar switcher"],
+      "acceptance_criteria": [
+        "Imports lists and incomplete tasks with titles and notes",
+        "Shows per-list success/fail counts",
+        "Retry failed lists without re-importing successes"
+      ]
+    },
+    {
+      "name": "Archive and full-text search",
+      "description": "Archive completed work with timestamps and search across active and archived tasks.",
+      "priority": "p0",
+      "effort_hours": 35,
+      "dependencies": ["Multi-list sidebar switcher"],
+      "acceptance_criteria": [
+        "Archive action records timestamp and source list",
+        "Search covers title and notes fields",
+        "Restore from archive returns task to original list when possible"
+      ]
+    },
+    {
+      "name": "Google Calendar recurring sync",
+      "description": "Optional Google Calendar connection for recurring tasks so daily rituals survive migration.",
+      "priority": "p1",
+      "effort_hours": 45,
+      "dependencies": ["Google Tasks import concierge"],
+      "acceptance_criteria": [
+        "User can connect Google Calendar with OAuth",
+        "Recurring tasks create/update calendar events",
+        "Disconnect removes future sync without deleting local tasks"
+      ]
+    },
+    {
+      "name": "Pro subscription and IAP",
+      "description": "Freemium core with Pro unlocking multi-device sync, archive search depth, and import concierge.",
+      "priority": "p1",
+      "effort_hours": 30,
+      "dependencies": [],
+      "acceptance_criteria": [
+        "StoreKit 2 purchase and restore works on iOS",
+        "Paywall copy matches App Store review themes",
+        "Free tier allows limited lists for trial"
+      ]
+    },
+    {
+      "name": "Migration waitlist landing",
+      "description": "Lightweight web waitlist capturing App Store switch-intent reviewers before full App Store launch.",
+      "priority": "p2",
+      "effort_hours": 16,
+      "dependencies": [],
+      "acceptance_criteria": [
+        "Collects email and approximate list count",
+        "Confirms signup without spammy follow-up by default",
+        "Exports CSV for interview recruiting"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Power users can switch among 30+ lists efficiently",
+      "definition_of_done": "Median list-switch time under 300ms in Instruments on iPhone 13+ with 40 seeded lists",
+      "verification_method": "automated_test"
+    },
+    {
+      "criterion": "Google Tasks import completes for typical power-user datasets",
+      "definition_of_done": "Import of 40 lists / 2000 tasks succeeds with less than 1% task loss on fixture dataset",
+      "verification_method": "automated_test"
+    },
+    {
+      "criterion": "Archive and search recover historical tasks",
+      "definition_of_done": "QA script archives 100 tasks and finds each via search within 1s",
+      "verification_method": "manual_qa"
+    },
+    {
+      "criterion": "Switch-intent reviewers understand the value prop",
+      "definition_of_done": "At least 5 interview/waitlist users say import+list UX is reason to try",
+      "verification_method": "user_testing"
+    },
+    {
+      "criterion": "Pro monetization path is instrumented",
+      "definition_of_done": "Paywall view, start trial, and purchase events fire to analytics",
+      "verification_method": "analytics"
+    },
+    {
+      "criterion": "No production cloud spend required for Stage 8 demo",
+      "definition_of_done": "Local/demo deploy artifacts document staging URLs on localhost only",
+      "verification_method": "manual_qa"
+    }
+  ],
+  "success_metrics": {
+    "north_star": "Share of imported Google Tasks lists with at least one open action per week",
+    "key_metrics": [
+      {
+        "metric": "Import completion rate",
+        "baseline": "Unknown (pre-launch)",
+        "target": ">=80% of started imports finish",
+        "measurement_window": "weekly"
+      },
+      {
+        "metric": "List switch actions per DAU",
+        "baseline": "0 (pre-launch)",
+        "target": ">=8 switches/DAU for power cohort",
+        "measurement_window": "daily"
+      },
+      {
+        "metric": "Pro conversion from waitlist/trial",
+        "baseline": "0%",
+        "target": ">=5% within 30 days of trial start",
+        "measurement_window": "monthly"
+      },
+      {
+        "metric": "D7 retention for importers",
+        "baseline": "0%",
+        "target": ">=35%",
+        "measurement_window": "weekly"
+      }
+    ]
+  },
+  "constraints_and_assumptions": {
+    "technical_constraints": [
+      "iOS-first MVP; Android deferred to post-validate",
+      "Must respect Google API quotas and App Store privacy rules",
+      "Local/demo Stage 8 only — no paid cloud production spend in this run"
+    ],
+    "business_constraints": [
+      "Recommendation remains validate; PRD enables learning not forced scale",
+      "Crowded task market; differentiate on Google Tasks migration UX",
+      "Budget for MVP kept under solo/small-team 6–8 week effort"
+    ],
+    "assumptions": [
+      "Enough App Store switch-intent users will try a paid import waitlist",
+      "Google will not fully restore the old list UX for all users soon",
+      "Users will grant calendar/tasks permissions when migration value is clear"
+    ]
+  },
+  "risks_and_mitigations": [
+    {
+      "risk": "Google restores list UX and kills switch intent before launch",
+      "probability": "medium",
+      "impact": "high",
+      "mitigation": "Validate with interviews and waitlist first; keep MVP thin and import-led."
+    },
+    {
+      "risk": "Todoist/Things already satisfy migrants after a painful switch",
+      "probability": "high",
+      "impact": "medium",
+      "mitigation": "Lead with one-click Google Tasks import and multi-list fidelity competitors undersell."
+    },
+    {
+      "risk": "Google Tasks API limits block full import of large accounts",
+      "probability": "medium",
+      "impact": "high",
+      "mitigation": "Support export-file fallback and batch retries with clear progress UI."
+    },
+    {
+      "risk": "App Store rejection of subscription or Google data wording",
+      "probability": "low",
+      "impact": "medium",
+      "mitigation": "Use StoreKit 2, clear privacy nutrition labels, and avoid trademark misuse in title."
+    }
+  ],
+  "competitive_positioning": {
+    "unique_value_prop": "The Google Tasks refugee app: multi-list speed plus guided import/archive/search, not another generic Todoist clone.",
+    "why_us_over_competitors": [
+      "Positioned explicitly for Google Tasks power users with 30–40 lists",
+      "Import concierge and migration checklist reduce decade-long switching cost",
+      "Archive+search restores workflows reviewers say Google removed"
+    ],
+    "market_window": "Window is the App Store regression echo; validate before Google fixes or competitors ship one-click import."
+  },
+  "monetization_model": {
+    "model_type": "freemium",
+    "pricing_strategy": "Free limited lists for trial; Pro at $4–8/mo or ~$40/yr unlocking unlimited lists, archive search depth, import concierge, and calendar sync via App Store IAP.",
+    "target_arr": 500000,
+    "customer_acquisition_cost": 25
+  },
+  "timeline_estimate_weeks": 8
+}

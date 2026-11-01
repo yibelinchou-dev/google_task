@@ -1,0 +1,209 @@
+{
+  "pain_point_count": 20,
+  "cluster_count": 10,
+  "multi_member_clusters": 2,
+  "by_pain_point_id": {
+    "0cda3e7d-ef27-5977-a20f-53b3e9418cd3": "misc@google_tasks_get_things_done",
+    "bb95943e-4e02-553a-9556-16ea7949885e": "misc@google_tasks_get_things_done",
+    "13d6d723-de8d-51cd-810c-373e6ebf9fb1": "misc@google_tasks_get_things_done",
+    "ee956b76-4dc4-5a61-a700-295eaa5bb7ec": "misc@google_tasks_get_things_done",
+    "e2c9afc2-11b0-5e12-a04e-fd3cb5fe094c": "misc@google_tasks_get_things_done",
+    "44f683e8-f2d8-50e0-87ef-865eb7ddb2f3": "misc@google_tasks_get_things_done",
+    "baa075ca-7355-5037-a6d8-0212ea13876d": "misc@google_tasks_get_things_done",
+    "28cc11b1-4a3d-563c-bc01-8699c61e31dd": "misc@google_tasks_get_things_done",
+    "01f588d3-0107-54bb-8ca6-5871861e3d8a": "misc@vercel_next_js",
+    "abe5b04c-a0ab-5056-9aef-f2ec89264f7c": "misc@vercel_next_js",
+    "23973963-b91b-5a5b-a038-c999bc24d7d5": "misc@vercel_next_js",
+    "31cdd6a2-dd1f-552d-84b1-8cfe44c89209": "misc@vercel_next_js",
+    "0f1e3f6a-f992-5f7e-8164-7637f9b6e395": "misc@ask_hn",
+    "eef3c39b-a3c1-5527-98ea-0dc69c415f79": "billing_pricing@ask_hn",
+    "a644dcc3-67af-56b2-81fd-70b5746382a5": "migration@ask_hn",
+    "f4d58d4e-dd26-52f2-a54c-1733270380a1": "migration@supabase_supabase",
+    "867ca7ee-4ea4-52e3-9a4e-2a5773f831b1": "dev_oom@vercel_next_js",
+    "b489fac9-d504-5680-9ba3-dffae6f2b527": "build_regression@vercel_next_js",
+    "5bdc3d08-307b-5d44-9799-159f2837cee8": "misc@apple_developer",
+    "c179200b-0378-55a2-9f11-ed4820ab490d": "migration@google_tasks_get_things_done"
+  },
+  "clusters": [
+    {
+      "cluster_id": "misc@google_tasks_get_things_done",
+      "theme": "misc",
+      "product": "google_tasks_get_things_done",
+      "size": 8,
+      "source_count": 1,
+      "pain_point_ids": [
+        "0cda3e7d-ef27-5977-a20f-53b3e9418cd3",
+        "bb95943e-4e02-553a-9556-16ea7949885e",
+        "13d6d723-de8d-51cd-810c-373e6ebf9fb1",
+        "ee956b76-4dc4-5a61-a700-295eaa5bb7ec",
+        "e2c9afc2-11b0-5e12-a04e-fd3cb5fe094c",
+        "44f683e8-f2d8-50e0-87ef-865eb7ddb2f3",
+        "baa075ca-7355-5037-a6d8-0212ea13876d",
+        "28cc11b1-4a3d-563c-bc01-8699c61e31dd"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": true,
+        "persistence_hint": "structural"
+      }
+    },
+    {
+      "cluster_id": "misc@vercel_next_js",
+      "theme": "misc",
+      "product": "vercel_next_js",
+      "size": 4,
+      "source_count": 1,
+      "pain_point_ids": [
+        "01f588d3-0107-54bb-8ca6-5871861e3d8a",
+        "abe5b04c-a0ab-5056-9aef-f2ec89264f7c",
+        "23973963-b91b-5a5b-a038-c999bc24d7d5",
+        "31cdd6a2-dd1f-552d-84b1-8cfe44c89209"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.75,
+        "workaround_ratio": 0.25,
+        "single_source_echo": true,
+        "persistence_hint": "platform_bug"
+      }
+    },
+    {
+      "cluster_id": "misc@ask_hn",
+      "theme": "misc",
+      "product": "ask_hn",
+      "size": 1,
+      "source_count": 1,
+      "pain_point_ids": [
+        "0f1e3f6a-f992-5f7e-8164-7637f9b6e395"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "unknown"
+      }
+    },
+    {
+      "cluster_id": "billing_pricing@ask_hn",
+      "theme": "billing_pricing",
+      "product": "ask_hn",
+      "size": 1,
+      "source_count": 1,
+      "pain_point_ids": [
+        "eef3c39b-a3c1-5527-98ea-0dc69c415f79"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "unknown"
+      }
+    },
+    {
+      "cluster_id": "migration@ask_hn",
+      "theme": "migration",
+      "product": "ask_hn",
+      "size": 1,
+      "source_count": 1,
+      "pain_point_ids": [
+        "a644dcc3-67af-56b2-81fd-70b5746382a5"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "unknown"
+      }
+    },
+    {
+      "cluster_id": "migration@supabase_supabase",
+      "theme": "migration",
+      "product": "supabase_supabase",
+      "size": 1,
+      "source_count": 1,
+      "pain_point_ids": [
+        "f4d58d4e-dd26-52f2-a54c-1733270380a1"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "unknown"
+      }
+    },
+    {
+      "cluster_id": "dev_oom@vercel_next_js",
+      "theme": "dev_oom",
+      "product": "vercel_next_js",
+      "size": 1,
+      "source_count": 1,
+      "pain_point_ids": [
+        "867ca7ee-4ea4-52e3-9a4e-2a5773f831b1"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 1.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "platform_bug"
+      }
+    },
+    {
+      "cluster_id": "build_regression@vercel_next_js",
+      "theme": "build_regression",
+      "product": "vercel_next_js",
+      "size": 1,
+      "source_count": 1,
+      "pain_point_ids": [
+        "b489fac9-d504-5680-9ba3-dffae6f2b527"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 1.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "platform_bug"
+      }
+    },
+    {
+      "cluster_id": "misc@apple_developer",
+      "theme": "misc",
+      "product": "apple_developer",
+      "size": 1,
+      "source_count": 1,
+      "pain_point_ids": [
+        "5bdc3d08-307b-5d44-9799-159f2837cee8"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "unknown"
+      }
+    },
+    {
+      "cluster_id": "migration@google_tasks_get_things_done",
+      "theme": "migration",
+      "product": "google_tasks_get_things_done",
+      "size": 1,
+      "source_count": 1,
+      "pain_point_ids": [
+        "c179200b-0378-55a2-9f11-ed4820ab490d"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "unknown"
+      }
+    }
+  ]
+}

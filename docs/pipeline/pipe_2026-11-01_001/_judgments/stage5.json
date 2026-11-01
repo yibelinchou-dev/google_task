@@ -1,0 +1,275 @@
+{
+  "architecture_overview": {
+    "diagram_description": "iOS client (SwiftUI) talks to a thin FastAPI backend for auth, sync, and Google import jobs. PostgreSQL stores users/lists/tasks; Redis queues import workers; optional local-only mode keeps tasks on-device until Pro sync is enabled. Waitlist is a static Next.js page posting to the same API.",
+    "key_components": [
+      {
+        "name": "iOS SwiftUI client",
+        "responsibility": "Multi-list sidebar, archive/search UI, StoreKit paywall, offline-first task editing"
+      },
+      {
+        "name": "FastAPI sync & import API",
+        "responsibility": "Auth, CRUD sync, Google OAuth import jobs, calendar sync webhooks"
+      },
+      {
+        "name": "PostgreSQL + Redis",
+        "responsibility": "Durable task data and async import/worker queue with retries"
+      },
+      {
+        "name": "Waitlist web (Next.js)",
+        "responsibility": "Capture switch-intent emails and list-count for interviews before App Store launch"
+      }
+    ],
+    "data_flow": "User edits tasks on device → local SQLite mirror → sync API upserts to Postgres when online. Import flow: OAuth → enqueue Redis job → worker pulls Google Tasks pages → writes lists/tasks → client polls job status. Calendar sync maps recurring tasks to Google Calendar events via separate OAuth scope."
+  },
+  "tech_stack": {
+    "frontend": {
+      "framework": "SwiftUI (iOS) + Next.js 15 (waitlist)",
+      "languages": ["Swift", "TypeScript"],
+      "key_libraries": ["StoreKit 2", "SwiftData/SQLite", "TanStack Query", "Tailwind"]
+    },
+    "backend": {
+      "framework": "FastAPI",
+      "language": "Python 3.12",
+      "runtime": "uvicorn",
+      "key_libraries": ["SQLAlchemy", "Pydantic v2", "httpx", "celery/rq", "Sentry SDK"]
+    },
+    "database": {
+      "primary": "PostgreSQL 16",
+      "cache": "Redis 7",
+      "search": "PostgreSQL full-text search"
+    },
+    "infrastructure": {
+      "hosting": "Local Docker Compose for demo; Railway/Neon optional later (not used this run)",
+      "container_orchestration": "Docker Compose (local/staging demo)",
+      "monitoring": ["Sentry (stub)", "structured logs"],
+      "ci_cd": "GitHub Actions (local workflow files only; no remote push in this run)"
+    }
+  },
+  "system_design": [
+    {
+      "component": "Task Sync Service",
+      "description": "Authenticated REST endpoints for lists/tasks with idempotent upserts and device sync tokens for conflict resolution.",
+      "technologies": ["FastAPI", "PostgreSQL", "JWT"],
+      "responsibilities": [
+        "CRUD for lists and tasks",
+        "Issue sync cursors",
+        "Enforce Pro feature gates server-side"
+      ]
+    },
+    {
+      "component": "Google Import Worker",
+      "description": "Background worker that paginates Google Tasks API or parses export files, writing progress events for the client.",
+      "technologies": ["Redis queue", "httpx", "Google APIs"],
+      "responsibilities": [
+        "OAuth token refresh",
+        "Batch import with retries",
+        "Emit per-list progress"
+      ]
+    },
+    {
+      "component": "iOS Offline Store",
+      "description": "On-device SQLite/SwiftData cache so list switching stays fast offline and syncs when network returns.",
+      "technologies": ["SwiftData", "SwiftUI"],
+      "responsibilities": [
+        "Local CRUD",
+        "Queue outbound mutations",
+        "Render sidebar and search"
+      ]
+    }
+  ],
+  "api_contracts": [
+    {
+      "endpoint": "/v1/lists",
+      "method": "GET",
+      "description": "Return all lists for the authenticated user ordered by pin then name.",
+      "request_schema": {"query": {"cursor": "string?"}},
+      "response_schema": {"lists": [{"id": "uuid", "name": "string", "pinned": "bool", "task_count": "int"}]},
+      "authentication": "Bearer JWT",
+      "rate_limits": "120/min per user"
+    },
+    {
+      "endpoint": "/v1/lists/{list_id}/tasks",
+      "method": "GET",
+      "description": "Page tasks in a list including incomplete by default; archive filter optional.",
+      "request_schema": {"query": {"status": "active|archived|all", "q": "string?"}},
+      "response_schema": {"tasks": [{"id": "uuid", "title": "string", "notes": "string?", "archived_at": "datetime?"}]},
+      "authentication": "Bearer JWT",
+      "rate_limits": "120/min per user"
+    },
+    {
+      "endpoint": "/v1/import/google-tasks",
+      "method": "POST",
+      "description": "Start a Google Tasks import job using stored OAuth credentials or uploaded export.",
+      "request_schema": {"body": {"source": "oauth|export", "export_file_id": "string?"}},
+      "response_schema": {"job_id": "uuid", "status": "queued"},
+      "authentication": "Bearer JWT + Pro entitlement",
+      "rate_limits": "5 starts/hour"
+    },
+    {
+      "endpoint": "/v1/import/jobs/{job_id}",
+      "method": "GET",
+      "description": "Poll import job progress including per-list counts and failures.",
+      "request_schema": {},
+      "response_schema": {"status": "queued|running|done|failed", "lists_done": "int", "errors": ["string"]},
+      "authentication": "Bearer JWT",
+      "rate_limits": "60/min"
+    },
+    {
+      "endpoint": "/v1/waitlist",
+      "method": "POST",
+      "description": "Capture waitlist email and approximate Google Tasks list count for validation interviews.",
+      "request_schema": {"body": {"email": "string", "list_count_estimate": "int?"}},
+      "response_schema": {"ok": "bool"},
+      "authentication": "none (rate-limited)",
+      "rate_limits": "10/hour/IP"
+    }
+  ],
+  "database_schema": {
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          {"name": "id", "type": "uuid", "nullable": false, "default": null},
+          {"name": "email", "type": "text", "nullable": false, "default": null},
+          {"name": "pro_entitled", "type": "boolean", "nullable": false, "default": "false"},
+          {"name": "created_at", "type": "timestamptz", "nullable": false, "default": "now()"}
+        ],
+        "primary_key": ["id"],
+        "indexes": ["email"],
+        "foreign_keys": []
+      },
+      {
+        "name": "lists",
+        "columns": [
+          {"name": "id", "type": "uuid", "nullable": false, "default": null},
+          {"name": "user_id", "type": "uuid", "nullable": false, "default": null},
+          {"name": "name", "type": "text", "nullable": false, "default": null},
+          {"name": "pinned", "type": "boolean", "nullable": false, "default": "false"},
+          {"name": "source", "type": "text", "nullable": true, "default": null}
+        ],
+        "primary_key": ["id"],
+        "indexes": ["user_id", "user_id,pinned"],
+        "foreign_keys": [{"column": "user_id", "references": "users.id"}]
+      },
+      {
+        "name": "tasks",
+        "columns": [
+          {"name": "id", "type": "uuid", "nullable": false, "default": null},
+          {"name": "list_id", "type": "uuid", "nullable": false, "default": null},
+          {"name": "title", "type": "text", "nullable": false, "default": null},
+          {"name": "notes", "type": "text", "nullable": true, "default": null},
+          {"name": "archived_at", "type": "timestamptz", "nullable": true, "default": null},
+          {"name": "search_vector", "type": "tsvector", "nullable": true, "default": null}
+        ],
+        "primary_key": ["id"],
+        "indexes": ["list_id", "search_vector"],
+        "foreign_keys": [{"column": "list_id", "references": "lists.id"}]
+      },
+      {
+        "name": "import_jobs",
+        "columns": [
+          {"name": "id", "type": "uuid", "nullable": false, "default": null},
+          {"name": "user_id", "type": "uuid", "nullable": false, "default": null},
+          {"name": "status", "type": "text", "nullable": false, "default": "queued"},
+          {"name": "progress_json", "type": "jsonb", "nullable": false, "default": "{}"},
+          {"name": "created_at", "type": "timestamptz", "nullable": false, "default": "now()"}
+        ],
+        "primary_key": ["id"],
+        "indexes": ["user_id", "status"],
+        "foreign_keys": [{"column": "user_id", "references": "users.id"}]
+      }
+    ]
+  },
+  "deployment_architecture": {
+    "environments": [
+      {
+        "name": "development",
+        "scaling": "single docker compose on laptop",
+        "backup_strategy": "none (ephemeral volumes)"
+      },
+      {
+        "name": "staging",
+        "scaling": "local demo only in this pipeline run (127.0.0.1)",
+        "backup_strategy": "pg_dump to runs/.../8_local_artifacts/"
+      },
+      {
+        "name": "production",
+        "scaling": "deferred — no paid cloud deploy this run",
+        "backup_strategy": "N/A until real hosting approved"
+      }
+    ],
+    "deployment_process": "Build iOS via Xcode locally; run API+DB via docker compose; Stage 8 writes local healthcheck artifacts only—no production cloud spend.",
+    "monitoring_alerts": [
+      "Import job failure rate > 5%",
+      "API p95 latency > 500ms",
+      "Auth error spike"
+    ]
+  },
+  "security_considerations": {
+    "authentication": "JWT access + refresh tokens; Google OAuth tokens encrypted at rest; StoreKit receipt validation for Pro.",
+    "authorization": "All list/task routes scoped by user_id; Pro gates enforced server-side for import and deep archive search.",
+    "data_protection": "TLS in transit; encrypt Google refresh tokens; minimize PII in logs; support account delete export.",
+    "compliance": ["App Store privacy nutrition labels", "Google API user data policy", "GDPR delete/export when EU users appear"],
+    "threat_mitigations": [
+      "Rate-limit waitlist and import starts",
+      "No secrets in client binaries",
+      "Local demo uses fake secrets in .env.example only"
+    ]
+  },
+  "scalability_plan": {
+    "expected_load": "Validate phase: hundreds of waitlist users and tens of importers; not millions DAU.",
+    "vertical_scaling": "Single API container + managed Postgres is enough through validate; bump CPU for import workers if needed.",
+    "horizontal_scaling": "Add more Redis workers for Google import; keep API stateless behind a load balancer later.",
+    "bottleneck_analysis": "Google Tasks API quota and import job throughput are the first bottlenecks, not web QPS.",
+    "performance_targets": [
+      "List switch local UI < 300ms",
+      "Sync upsert p95 < 200ms",
+      "Import 2000 tasks < 10 minutes under quota"
+    ]
+  },
+  "development_phases": [
+    {
+      "phase": "Phase 1 — Core lists + offline iOS shell",
+      "duration_weeks": 3,
+      "deliverables": [
+        "SwiftUI multi-list sidebar",
+        "Local SQLite CRUD",
+        "Basic FastAPI auth + lists API"
+      ],
+      "dependencies": [],
+      "success_criteria": [
+        "Demo with 40 seeded lists switches smoothly",
+        "Unit tests for list/task models pass"
+      ]
+    },
+    {
+      "phase": "Phase 2 — Import, archive/search, Pro gate",
+      "duration_weeks": 3,
+      "deliverables": [
+        "Google import worker",
+        "Archive + FTS",
+        "StoreKit paywall stub"
+      ],
+      "dependencies": ["Phase 1 — Core lists + offline iOS shell"],
+      "success_criteria": [
+        "Fixture import completes with <1% loss",
+        "Search finds archived tasks"
+      ]
+    },
+    {
+      "phase": "Phase 3 — Validate launch kit",
+      "duration_weeks": 2,
+      "deliverables": [
+        "Waitlist page",
+        "Calendar sync MVP",
+        "Local staging demo + metrics stubs"
+      ],
+      "dependencies": ["Phase 2 — Import, archive/search, Pro gate"],
+      "success_criteria": [
+        "Waitlist captures emails",
+        "Stage 8/9 local artifacts generated"
+      ]
+    }
+  ],
+  "estimated_effort_hours": 280
+}

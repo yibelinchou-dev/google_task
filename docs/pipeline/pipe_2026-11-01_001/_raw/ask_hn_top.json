@@ -1,0 +1,41 @@
+[
+  {
+    "source": "hackernews",
+    "source_label": "ask_hn",
+    "object_id": "50204125",
+    "title": "Median product \"lifespan\" has fallen from ~4y down to ~1.5y",
+    "selftext": "The \"product graveyard\" of SaaSHub has been tracking the status (and lifespan) of hundreds of thousands of products. It's been hovering around 4y for quite some time. However, there's a sharp decline in 2026 leading to about 1.5y these days. https://www.saashub.com/product-graveyard That's a huge drop. And, it matches my \"human\" observations. A lot of products are being vibe coded, released, and soon after that abandoned. It's become too cheap to produce software. So, a lot of people have been experimenting for 'free' with their ideas - only to find out that they weren't viable... or that they couldn't bring customers in. Distribution and marketing have become much more important than before - within the context that everyone can build \"features\" for free.\n\nAnyhow, I expect this trend of shortening product lifespan to continue even further down. Or maybe, at some point people will realised that there are no users for their products as every user can \"build\" their own and custom product. Leaving us with a dozen huge platforms that host and help you build those apps. Until then - it's a crazy gold rush and a lot of makers are abandoning their empty buckets.",
+    "ups": 92,
+    "num_comments": 34,
+    "permalink": "/item?id=50204125",
+    "author": "stanislavb",
+    "url": null,
+    "comment_resonance": 0
+  },
+  {
+    "source": "hackernews",
+    "source_label": "ask_hn",
+    "object_id": "50237680",
+    "title": "Ask HN: Is it not possible to enroll for Apple Developer anymore?",
+    "selftext": "I've been trying to enroll for Apple Developer for over a month and nothing works.\n\nThe Apple Developer app won't accept my Canadian passport for identity verification. The enrollment is for a Delaware LLC, so my Apple account region is set to US. I can't switch the account region to Canada either, because I haven't lived there in years and don't have a Canadian bank card.\n\nIf I enroll through the website, the enrollment gets approved, I accept the term and, when it's time to pay, all my cards get declined. I tried ~7 bank cards (debit, credit, personal, business), all with matching billing addresses. All US cards. All the banks tell me they didn't decline transactions from Apple. I tried no VPN, VPN and residential VPN. I tried from my MacBook, iPhone, Safari, Chrome, incognito, non-incognito.\n\nPhone support is unavailable every time I check. I tried talking to regular Apple Store customer support but after repeating myself over 5 times with different agents, the last person I got transferred to told me they couldn't help with Developer stuff.\n\nIf I email Developer support, they reply ~5 days later with unhelpful canned responses like \"have you tried Safari incognito?\", \"you should try the Developer app instead\" or \"make sure your billing address matches your bank information\". I'm at support email #9 and enrollment attempt #3.\n\nHas anyone had similar issues and been able to fix them?",
+    "ups": 32,
+    "num_comments": 17,
+    "permalink": "/item?id=50237680",
+    "author": "olalonde",
+    "url": null,
+    "comment_resonance": 0
+  },
+  {
+    "source": "hackernews",
+    "source_label": "ask_hn",
+    "object_id": "50182883",
+    "title": "Open-source, cross-harness memory for AI agents",
+    "selftext": "Earlier this year, my co-founder and I found ourselves frequently switching between different coding agents (Claude Code, Codex, Cursor) anytime we ran out of shaky usage limits or a newer, better model came out.\n\nWe became increasingly frustrated with having to re-explain our tasks, workflows, common mistake patterns, etc. anytime we switched agents. We found no good free alternatives out there, so we built our own and fully open-sourced it!\n\nBeacon hooks into 20+ different agent harnesses, captures session telemetry (prompts, tool calls, command executions, etc) in one normalized format, and distills it into common patterns and repeatable workflows with a human-approval step. This compounded knowledge is then accessible to any future agent via skills / MCP.\n\nWe believe your agent data is yours to own and should not be locked behind any frontier lab's ecosystem or closed memory infrastructure. We built Beacon to make working across agents way more transparent and efficient.\n\nTry it out and tell us what you think: https://github.com/Asymptote-Labs/agent-beacon",
+    "ups": 18,
+    "num_comments": 14,
+    "permalink": "/item?id=50182883",
+    "author": "shakshukan",
+    "url": null,
+    "comment_resonance": 0
+  }
+]

@@ -1,0 +1,389 @@
+{
+  "pipeline_id": "pipe_2026-11-01_001",
+  "mode": "broad",
+  "known_competitors": [],
+  "pain_point_count": 20,
+  "switch_intent_hits": 0,
+  "github_enriched": 7,
+  "by_pain_point_id": {
+    "0f1e3f6a-f992-5f7e-8164-7637f9b6e395": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "eef3c39b-a3c1-5527-98ea-0dc69c415f79": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "a644dcc3-67af-56b2-81fd-70b5746382a5": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "f4d58d4e-dd26-52f2-a54c-1733270380a1": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false,
+      "github": {
+        "repo": "supabase/supabase",
+        "number": 40617,
+        "state": "open",
+        "closed_at": null,
+        "labels": [
+          "postgREST",
+          "database",
+          "external-issue"
+        ],
+        "comments": 26,
+        "persistence_prefill": {
+          "root_cause_type": "unknown",
+          "owner": "platform",
+          "score": 6,
+          "rationale": "Open issue without clear fix trajectory."
+        }
+      }
+    },
+    "01f588d3-0107-54bb-8ca6-5871861e3d8a": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": true,
+      "github": {
+        "repo": "vercel/next.js",
+        "number": 65335,
+        "state": "open",
+        "closed_at": null,
+        "labels": [
+          "Performance",
+          "linear: next"
+        ],
+        "comments": 83,
+        "persistence_prefill": {
+          "root_cause_type": "platform_bug",
+          "owner": "platform",
+          "score": 4,
+          "rationale": "Open platform/engineering issue with bug/regression signals."
+        }
+      }
+    },
+    "abe5b04c-a0ab-5056-9aef-f2ec89264f7c": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": true,
+      "github": {
+        "repo": "vercel/next.js",
+        "number": 53724,
+        "state": "open",
+        "closed_at": null,
+        "labels": [
+          "Internationalization (i18n)",
+          "linear: next"
+        ],
+        "comments": 49,
+        "persistence_prefill": {
+          "root_cause_type": "platform_bug",
+          "owner": "platform",
+          "score": 4,
+          "rationale": "Open platform/engineering issue with bug/regression signals."
+        }
+      }
+    },
+    "867ca7ee-4ea4-52e3-9a4e-2a5773f831b1": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": true,
+      "github": {
+        "repo": "vercel/next.js",
+        "number": 82511,
+        "state": "open",
+        "closed_at": null,
+        "labels": [
+          "Runtime"
+        ],
+        "comments": 44,
+        "persistence_prefill": {
+          "root_cause_type": "platform_bug",
+          "owner": "platform",
+          "score": 4,
+          "rationale": "Open platform/engineering issue with bug/regression signals."
+        }
+      }
+    },
+    "b489fac9-d504-5680-9ba3-dffae6f2b527": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": true,
+      "github": {
+        "repo": "vercel/next.js",
+        "number": 82640,
+        "state": "open",
+        "closed_at": null,
+        "labels": [
+          "SWC"
+        ],
+        "comments": 40,
+        "persistence_prefill": {
+          "root_cause_type": "platform_bug",
+          "owner": "platform",
+          "score": 4,
+          "rationale": "Open platform/engineering issue with bug/regression signals."
+        }
+      }
+    },
+    "23973963-b91b-5a5b-a038-c999bc24d7d5": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": true,
+      "github": {
+        "repo": "vercel/next.js",
+        "number": 38273,
+        "state": "open",
+        "closed_at": null,
+        "labels": [
+          "bug",
+          "linear: next"
+        ],
+        "comments": 39,
+        "persistence_prefill": {
+          "root_cause_type": "platform_bug",
+          "owner": "platform",
+          "score": 4,
+          "rationale": "Open platform/engineering issue with bug/regression signals."
+        }
+      }
+    },
+    "31cdd6a2-dd1f-552d-84b1-8cfe44c89209": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": true,
+        "phrases": [
+          "workaround"
+        ],
+        "score": 4
+      },
+      "platform_bug_signal": false,
+      "github": {
+        "repo": "vercel/next.js",
+        "number": 59594,
+        "state": "open",
+        "closed_at": null,
+        "labels": [
+          "CSS"
+        ],
+        "comments": 33,
+        "persistence_prefill": {
+          "root_cause_type": "unknown",
+          "owner": "platform",
+          "score": 6,
+          "rationale": "Open issue without clear fix trajectory."
+        }
+      }
+    },
+    "5bdc3d08-307b-5d44-9799-159f2837cee8": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "0cda3e7d-ef27-5977-a20f-53b3e9418cd3": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "bb95943e-4e02-553a-9556-16ea7949885e": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "13d6d723-de8d-51cd-810c-373e6ebf9fb1": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "ee956b76-4dc4-5a61-a700-295eaa5bb7ec": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "e2c9afc2-11b0-5e12-a04e-fd3cb5fe094c": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "44f683e8-f2d8-50e0-87ef-865eb7ddb2f3": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "baa075ca-7355-5037-a6d8-0212ea13876d": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "28cc11b1-4a3d-563c-bc01-8699c61e31dd": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "c179200b-0378-55a2-9f11-ed4820ab490d": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    }
+  }
+}

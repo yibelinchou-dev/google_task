@@ -1,0 +1,222 @@
+[
+  {
+    "pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+    "impact": 8,
+    "confidence": 7,
+    "ease": 6,
+    "ai_reasoning": "SaaSHub graveyard shows median product lifespan collapsing ~4y→1.5y; OP ties it to vibe-coding making features cheap while distribution/marketing become the bottleneck. Clear indie founder WTP for validation/GTM tooling before building empty products.",
+    "red_flags": [
+      "Single Ask HN thread",
+      "Macro insight hard to narrow into one product"
+    ]
+  },
+  {
+    "pain_point_id": "eef3c39b-a3c1-5527-98ea-0dc69c415f79",
+    "impact": 6,
+    "confidence": 6,
+    "ease": 4,
+    "ai_reasoning": "Apple Developer enrollment blocked for weeks by passport/ID verification and Delaware LLC vs Canada region mismatch. Real founder pain, but solution sits inside Apple's compliance stack—hard for an indie tool to own end-to-end.",
+    "red_flags": [
+      "Apple-controlled process",
+      "Niche enrollment edge cases"
+    ]
+  },
+  {
+    "pain_point_id": "a644dcc3-67af-56b2-81fd-70b5746382a5",
+    "impact": 8,
+    "confidence": 6,
+    "ease": 8,
+    "ai_reasoning": "Founders switching Claude Code/Codex/Cursor lose task/workflow memory each time usage limits flip. Cross-harness open memory is a concrete product shape with high ease for an MVP sidecar, though agent tooling moves weekly.",
+    "red_flags": [
+      "Fast-moving agent UX",
+      "Open-source may commoditize quickly"
+    ]
+  },
+  {
+    "pain_point_id": "f4d58d4e-dd26-52f2-a54c-1733270380a1",
+    "impact": 5,
+    "confidence": 7,
+    "ease": 5,
+    "ai_reasoning": "New Supabase projects hit pg_pgrst_no_exposed_schemas—onboarding friction for Postgres/API newcomers. Likely fixable upstream; weak as a standalone commercial wedge versus docs/templates.",
+    "red_flags": [
+      "Upstream bug likely",
+      "Narrow developer niche"
+    ]
+  },
+  {
+    "pain_point_id": "01f588d3-0107-54bb-8ca6-5871861e3d8a",
+    "impact": 7,
+    "confidence": 7,
+    "ease": 3,
+    "ai_reasoning": "RSC+CDN interaction hurts high-load Next.js deployments; many comments/upvotes show resonance. Fixing requires framework-depth work—poor ease for an external product unless packaged as observability/cache guidance SaaS.",
+    "red_flags": [
+      "Framework-core issue",
+      "Hard for third party to ship durable fix"
+    ]
+  },
+  {
+    "pain_point_id": "abe5b04c-a0ab-5056-9aef-f2ec89264f7c",
+    "impact": 5,
+    "confidence": 7,
+    "ease": 4,
+    "ai_reasoning": "Legacy i18n config breaks App Router; well-known migration footgun. Better as docs/codemod than new product; confidence high that pain is real, ease middling for commercial tooling.",
+    "red_flags": [
+      "Already partially documented",
+      "One-time migration pain"
+    ]
+  },
+  {
+    "pain_point_id": "867ca7ee-4ea4-52e3-9a4e-2a5773f831b1",
+    "impact": 6,
+    "confidence": 6,
+    "ease": 4,
+    "ai_reasoning": "JS heap OOM during next dev/build frustrates mid-size apps. Memory/profiling assist tools exist; differentiation is thin unless tied to Next-specific recipes.",
+    "red_flags": [
+      "Competing profilers",
+      "Environment-specific"
+    ]
+  },
+  {
+    "pain_point_id": "b489fac9-d504-5680-9ba3-dffae6f2b527",
+    "impact": 6,
+    "confidence": 6,
+    "ease": 3,
+    "ai_reasoning": "15.4.4+ production builds break with a specific third-party lib while dev works—classic regression. Valuable CI canary signal but narrow and version-tied for a product business.",
+    "red_flags": [
+      "Version-specific",
+      "Upstream will patch"
+    ]
+  },
+  {
+    "pain_point_id": "23973963-b91b-5a5b-a038-c999bc24d7d5",
+    "impact": 6,
+    "confidence": 6,
+    "ease": 3,
+    "ai_reasoning": "Middleware slowing production routing is a known Next performance tax. Observability wrappers possible, but core fix belongs to framework maintainers.",
+    "red_flags": [
+      "Framework-owned",
+      "Older issue lineage"
+    ]
+  },
+  {
+    "pain_point_id": "31cdd6a2-dd1f-552d-84b1-8cfe44c89209",
+    "impact": 5,
+    "confidence": 6,
+    "ease": 4,
+    "ai_reasoning": "Production minify renames classes and breaks reflection-heavy libs. Niche webpack/Next config pain; solvable with known flags more than a new SaaS.",
+    "red_flags": [
+      "Known workarounds",
+      "Niche library users"
+    ]
+  },
+  {
+    "pain_point_id": "5bdc3d08-307b-5d44-9799-159f2837cee8",
+    "impact": 6,
+    "confidence": 6,
+    "ease": 3,
+    "ai_reasoning": "Apple Developer app ID scan crops wrong and blocks enrollment—mirrors the HN enrollment thread. Strong UX shame signal but again Apple-gated; hard commercial wedge.",
+    "red_flags": [
+      "Platform monopoly",
+      "Compliance constraints"
+    ]
+  },
+  {
+    "pain_point_id": "0cda3e7d-ef27-5977-a20f-53b3e9418cd3",
+    "impact": 4,
+    "confidence": 4,
+    "ease": 5,
+    "ai_reasoning": "Missing iPhone Duo parity for Google Tasks is a thin single-feature complaint; weak alone but adds to Google Tasks dissatisfaction cluster in this App Store slice.",
+    "red_flags": [
+      "Single feature ask",
+      "Unclear WTP"
+    ]
+  },
+  {
+    "pain_point_id": "bb95943e-4e02-553a-9556-16ea7949885e",
+    "impact": 7,
+    "confidence": 7,
+    "ease": 6,
+    "ai_reasoning": "Power users want keyword search in-app plus archive with timestamps instead of an endless Completed dump. Concrete feature gaps that a Tasks alternative can own on day one.",
+    "red_flags": [
+      "App Store only",
+      "Feature parity race"
+    ]
+  },
+  {
+    "pain_point_id": "13d6d723-de8d-51cd-810c-373e6ebf9fb1",
+    "impact": 3,
+    "confidence": 5,
+    "ease": 7,
+    "ai_reasoning": "Review-nag fatigue is real but generic and low willingness-to-pay for a dedicated product; keep as UX hygiene note inside a Tasks alternative, not a standalone bet.",
+    "red_flags": [
+      "Generic complaint",
+      "No switch intent"
+    ]
+  },
+  {
+    "pain_point_id": "ee956b76-4dc4-5a61-a700-295eaa5bb7ec",
+    "impact": 5,
+    "confidence": 6,
+    "ease": 6,
+    "ai_reasoning": "Moving the + button breaks iPad muscle memory—classic UI regression. Alone it's minor; with list-menu removals it reinforces 'Google Tasks iOS is regressing' narrative.",
+    "red_flags": [
+      "Cosmetic alone",
+      "Low WTP alone"
+    ]
+  },
+  {
+    "pain_point_id": "e2c9afc2-11b0-5e12-a04e-fd3cb5fe094c",
+    "impact": 7,
+    "confidence": 7,
+    "ease": 6,
+    "ai_reasoning": "List/category entry removed from lower-left menu—users call the new version a downgrade. Directly supports multi-list navigation as the core Jobs-to-be-done for a refugee product.",
+    "red_flags": [
+      "One-product cluster",
+      "Google may restore UI"
+    ]
+  },
+  {
+    "pain_point_id": "44f683e8-f2d8-50e0-87ef-865eb7ddb2f3",
+    "impact": 7,
+    "confidence": 7,
+    "ease": 5,
+    "ai_reasoning": "Hamburger menu removal forces horizontal list scrolling; user explicitly says they must find a new tool. Clear switch intent for multi-list power workflows.",
+    "red_flags": [
+      "Single review",
+      "Crowded task apps"
+    ]
+  },
+  {
+    "pain_point_id": "baa075ca-7355-5037-a6d8-0212ea13876d",
+    "impact": 6,
+    "confidence": 6,
+    "ease": 5,
+    "ai_reasoning": "Recurring tasks stop appearing in Google Calendar after updates; users can't file a real ticket. Calendar sync reliability is a migration table-stakes feature for alternatives.",
+    "red_flags": [
+      "May be transient bug",
+      "Google Calendar dependency"
+    ]
+  },
+  {
+    "pain_point_id": "28cc11b1-4a3d-563c-bc01-8699c61e31dd",
+    "impact": 6,
+    "confidence": 6,
+    "ease": 5,
+    "ai_reasoning": "Users openly prefer third-party gTasks over official Google Tasks UX—validates willingness to leave first-party client if smoothness returns, though still Google-backend dependent.",
+    "red_flags": [
+      "Competitor already exists",
+      "Backend lock-in"
+    ]
+  },
+  {
+    "pain_point_id": "c179200b-0378-55a2-9f11-ed4820ab490d",
+    "impact": 8,
+    "confidence": 7,
+    "ease": 6,
+    "ai_reasoning": "10+ year daily user with 30–40 lists treats Tasks as a personal reference system; after Android→iPhone, list-menu regressions force looking for alternatives. Highest-intensity persona in this App Store cluster.",
+    "red_flags": [
+      "Single-product App Store evidence",
+      "High switching cost of decade of lists"
+    ]
+  }
+]
