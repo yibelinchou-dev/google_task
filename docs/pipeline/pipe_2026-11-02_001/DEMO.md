@@ -1,38 +1,20 @@
-# PreFlight — validate prototype
+# PreFlight demo — pipe_2026-11-02_001
 
-**Run**: [`pipe_2026-11-02_001`](./)  
-**Date**: 2026-11-02  
-**Sources**: HN-only  
-**Score**: 1852  
-**Recommendation**: validate / medium
+Clickable validate-kit demo for **PreFlight** (pre-build demand & distribution toolkit).
 
-PreFlight is the clickable validate prototype for the opportunity:
+## Local
 
-> 面向 vibe-coded 独立 SaaS 的预构建需求验证与分发工具包
+- Open `apps/demo/index.html` in a browser (fully static).
+- Optional API: see `6_codebase/README.md` (`uvicorn` on `:3000`).
 
-The page is one self-contained file, [`apps/demo/index.html`](./apps/demo/index.html). It walks a founder through onboarding, a buyer-discovery worksheet, an interview script, a mock $99 concierge demand sprint, a distribution-wedge picker, a mock $29/mo waitlist, and a kill/continue dashboard. Answers stay in the browser (`localStorage`). Checkout is mock only: no payments, no OAuth, and no network writes.
+## Spacefast (private)
 
-This snapshot belongs to the pipe folder. Root `apps/` stays the TaskRefuge mainline.
+A private Spacefast preview exists. The live URL is shared in chat only.
 
-Stage 1–3 research for this run is in this folder: [sample-exec-summary.zh.md](./sample-exec-summary.zh.md) and [sample-opportunity-report.md](./sample-opportunity-report.md). Do not treat this note as a substitute for stage JSON.
+- Do not commit claim keys, door URLs, or `.env` secrets.
 
-## Open locally
+## Product
 
-From the demo directory:
-
-```bash
-cd docs/pipeline/pipe_2026-11-02_001/apps/demo
-python3 -m http.server
-```
-
-Then open `http://127.0.0.1:8000/`.
-
-## Private Spacefast
-
-Publish this folder’s contents (the static page under `apps/demo/`). Keep claim keys out of git. Do not add `.env` files or bind a domain from this repo.
-
-**Live URL**: placeholder. Space slug: `silent-hill`.
-
-Claim-door URLs contain secrets. Leave them out of git.
-
-Anonymous spaces expire about 33 hours after the last content-changing publish unless the space is claimed.
+- Short name: PreFlight
+- Pipeline: `pipe_2026-11-02_001`
+- Path: validate / medium (OPTIMIZE after Stage 9)

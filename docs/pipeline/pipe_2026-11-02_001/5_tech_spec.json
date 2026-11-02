@@ -1,0 +1,504 @@
+{
+  "pipeline_id": "pipe_2026-11-02_001",
+  "prd_id": "3885a71f-445e-4588-8948-11e910a5cb35",
+  "created_at": "2026-11-02T01:44:14.870004Z",
+  "product_title": "Pre-build demand & distribution toolkit for vibe-coded indie SaaS",
+  "architecture_overview": {
+    "diagram_description": "Static PreFlight demo (HTML/CSS/JS) for validate interviews + Spacefast private publish. Thin FastAPI backend for health, waitlist, experiments, and kill-score stubs. Optional SQLite/Postgres later; Redis not required in validate phase. Waitlist and experiment data can live in-memory for local demo.",
+    "key_components": [
+      {
+        "name": "PreFlight static demo",
+        "responsibility": "Clickable ICP interviews, waitlist kit, channel experiments, kill/continue score UI (localStorage)"
+      },
+      {
+        "name": "FastAPI validate API",
+        "responsibility": "Health, waitlist capture, experiment CRUD stubs, score computation stub"
+      },
+      {
+        "name": "SQLite / Postgres (later)",
+        "responsibility": "Persist founders, interviews, waitlist, experiments when leaving pure static demo"
+      },
+      {
+        "name": "Spacefast private host",
+        "responsibility": "Anonymous private publish of static demo for stakeholder walkthroughs"
+      }
+    ],
+    "data_flow": "Founder uses static demo \u2192 localStorage for UI state. Optional API: POST waitlist / experiments \u2192 in-memory store \u2192 GET /v1/score aggregates counts into kill|continue|more_data. Spacefast serves static files only for private share links."
+  },
+  "tech_stack": {
+    "frontend": {
+      "framework": "Static HTML + vanilla JS (demo); Next.js optional later",
+      "languages": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript (future)"
+      ],
+      "key_libraries": [
+        "none for demo (vanilla)",
+        "TanStack Query later"
+      ]
+    },
+    "backend": {
+      "framework": "FastAPI",
+      "language": "Python 3.12",
+      "runtime": "uvicorn",
+      "key_libraries": [
+        "Pydantic v2",
+        "httpx",
+        "pytest"
+      ]
+    },
+    "database": {
+      "primary": "In-memory for local stub; SQLite/Postgres 16 later",
+      "cache": "none in validate phase",
+      "search": "none"
+    },
+    "infrastructure": {
+      "hosting": "Local uvicorn + Spacefast private static; Railway/Neon optional later (not this run)",
+      "container_orchestration": "Docker Compose optional (Postgres only)",
+      "monitoring": [
+        "structured logs",
+        "Sentry stub later"
+      ],
+      "ci_cd": "Local pytest only; no remote push in this run"
+    }
+  },
+  "system_design": [
+    {
+      "component": "Interview Tracker",
+      "description": "Client-side and API stubs for ICP interview notes and WTP tags feeding the score engine.",
+      "technologies": [
+        "vanilla JS",
+        "FastAPI"
+      ],
+      "responsibilities": [
+        "Capture interview notes",
+        "Tag ICP fit and WTP",
+        "Count toward validation thresholds"
+      ]
+    },
+    {
+      "component": "Waitlist + Experiment API",
+      "description": "REST stubs for waitlist emails and channel experiment outcomes.",
+      "technologies": [
+        "FastAPI",
+        "Pydantic"
+      ],
+      "responsibilities": [
+        "Store waitlist with paid_intent",
+        "CRUD experiment results",
+        "Expose aggregates for score"
+      ]
+    },
+    {
+      "component": "Kill/Continue Score Engine",
+      "description": "Transparent rubric combining interview count, waitlist intent, and experiment evidence.",
+      "technologies": [
+        "Python",
+        "JS mirror in demo"
+      ],
+      "responsibilities": [
+        "Compute score band",
+        "Emit rationale bullets",
+        "Support memo export"
+      ]
+    }
+  ],
+  "api_contracts": [
+    {
+      "endpoint": "/health",
+      "method": "GET",
+      "description": "Liveness for local/demo deploy.",
+      "request_schema": {},
+      "response_schema": {
+        "status": "healthy",
+        "env": "local-demo"
+      },
+      "authentication": "none",
+      "rate_limits": "none"
+    },
+    {
+      "endpoint": "/v1/waitlist",
+      "method": "POST",
+      "description": "Capture waitlist email and paid-intent flag.",
+      "request_schema": {
+        "body": {
+          "email": "string",
+          "paid_intent": "bool",
+          "product_one_liner": "string?"
+        }
+      },
+      "response_schema": {
+        "ok": "bool",
+        "id": "uuid"
+      },
+      "authentication": "none (rate-limited)",
+      "rate_limits": "20/hour/IP"
+    },
+    {
+      "endpoint": "/v1/experiments",
+      "method": "GET",
+      "description": "List channel experiments and logged outcomes.",
+      "request_schema": {},
+      "response_schema": {
+        "experiments": [
+          {
+            "id": "uuid",
+            "name": "string",
+            "status": "string",
+            "reach": "int",
+            "signups": "int"
+          }
+        ]
+      },
+      "authentication": "none for demo",
+      "rate_limits": "60/min"
+    },
+    {
+      "endpoint": "/v1/experiments",
+      "method": "POST",
+      "description": "Create or update an experiment outcome log.",
+      "request_schema": {
+        "body": {
+          "name": "string",
+          "channel": "string",
+          "reach": "int?",
+          "replies": "int?",
+          "signups": "int?",
+          "status": "planned|running|done|killed"
+        }
+      },
+      "response_schema": {
+        "id": "uuid",
+        "ok": "bool"
+      },
+      "authentication": "none for demo",
+      "rate_limits": "30/min"
+    },
+    {
+      "endpoint": "/v1/score",
+      "method": "GET",
+      "description": "Compute kill/continue/more_data from in-memory aggregates.",
+      "request_schema": {
+        "query": {
+          "interviews": "int?",
+          "waitlist": "int?",
+          "paid_intent": "int?",
+          "experiments_done": "int?"
+        }
+      },
+      "response_schema": {
+        "decision": "kill|continue|more_data",
+        "score": "number",
+        "rationale": [
+          "string"
+        ]
+      },
+      "authentication": "none for demo",
+      "rate_limits": "60/min"
+    },
+    {
+      "endpoint": "/v1/interviews",
+      "method": "POST",
+      "description": "Save an ICP interview note stub.",
+      "request_schema": {
+        "body": {
+          "persona": "string",
+          "notes": "string",
+          "wtp": "int?",
+          "icp_fit": "int?"
+        }
+      },
+      "response_schema": {
+        "id": "uuid",
+        "ok": "bool"
+      },
+      "authentication": "none for demo",
+      "rate_limits": "60/min"
+    }
+  ],
+  "database_schema": {
+    "tables": [
+      {
+        "name": "founders",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "email",
+            "type": "text",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "product_one_liner",
+            "type": "text",
+            "nullable": true,
+            "default": null
+          },
+          {
+            "name": "created_at",
+            "type": "timestamptz",
+            "nullable": false,
+            "default": "now()"
+          }
+        ],
+        "primary_key": [
+          "id"
+        ],
+        "indexes": [
+          "email"
+        ],
+        "foreign_keys": []
+      },
+      {
+        "name": "interviews",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "founder_id",
+            "type": "uuid",
+            "nullable": true,
+            "default": null
+          },
+          {
+            "name": "persona",
+            "type": "text",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "notes",
+            "type": "text",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "wtp",
+            "type": "int",
+            "nullable": true,
+            "default": null
+          },
+          {
+            "name": "icp_fit",
+            "type": "int",
+            "nullable": true,
+            "default": null
+          }
+        ],
+        "primary_key": [
+          "id"
+        ],
+        "indexes": [
+          "founder_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "founder_id",
+            "references": "founders.id"
+          }
+        ]
+      },
+      {
+        "name": "waitlist_entries",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "email",
+            "type": "text",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "paid_intent",
+            "type": "boolean",
+            "nullable": false,
+            "default": "false"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamptz",
+            "nullable": false,
+            "default": "now()"
+          }
+        ],
+        "primary_key": [
+          "id"
+        ],
+        "indexes": [
+          "email"
+        ],
+        "foreign_keys": []
+      },
+      {
+        "name": "experiments",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "channel",
+            "type": "text",
+            "nullable": false,
+            "default": null
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": false,
+            "default": "planned"
+          },
+          {
+            "name": "reach",
+            "type": "int",
+            "nullable": false,
+            "default": "0"
+          },
+          {
+            "name": "signups",
+            "type": "int",
+            "nullable": false,
+            "default": "0"
+          },
+          {
+            "name": "outcomes_json",
+            "type": "jsonb",
+            "nullable": false,
+            "default": "{}"
+          }
+        ],
+        "primary_key": [
+          "id"
+        ],
+        "indexes": [
+          "channel",
+          "status"
+        ],
+        "foreign_keys": []
+      }
+    ]
+  },
+  "deployment_architecture": {
+    "environments": [
+      {
+        "name": "development",
+        "scaling": "single process on laptop",
+        "backup_strategy": "none (ephemeral)"
+      },
+      {
+        "name": "staging",
+        "scaling": "local demo + Spacefast private static",
+        "backup_strategy": "artifact snapshot under 8_local_artifacts/"
+      },
+      {
+        "name": "production",
+        "scaling": "deferred until validate interviews pass",
+        "backup_strategy": "N/A"
+      }
+    ],
+    "deployment_process": "Serve static demo via Spacefast anonymous private publish; run FastAPI locally for TestClient/health. No paid cloud this run.",
+    "monitoring_alerts": [
+      "Waitlist POST error rate > 5%",
+      "Score endpoint 5xx",
+      "Spacefast claim expiry approaching"
+    ]
+  },
+  "security_considerations": {
+    "authentication": "None for public waitlist stub; JWT later for founder accounts.",
+    "authorization": "Demo is single-tenant local; multi-tenant auth deferred.",
+    "data_protection": "No real PII in Spacefast static demo; rate-limit waitlist; never commit claim keys to git packs.",
+    "compliance": [
+      "GDPR delete/export when EU emails appear",
+      "Anti-spam policy in channel playbooks"
+    ],
+    "threat_mitigations": [
+      "Rate-limit waitlist",
+      "No secrets in static demo",
+      "Claim URLs only in /tmp env, not pipeline docs for PR"
+    ]
+  },
+  "scalability_plan": {
+    "expected_load": "Validate: hundreds of waitlist hits and tens of active founders \u2014 not millions DAU.",
+    "vertical_scaling": "Single uvicorn + SQLite enough through validate.",
+    "horizontal_scaling": "Move to Postgres + stateless API later if cohort launches.",
+    "bottleneck_analysis": "Founder behavior change and interview throughput, not QPS.",
+    "performance_targets": [
+      "Static demo TTI < 2s on broadband",
+      "API p95 < 100ms in-memory",
+      "Score compute < 50ms"
+    ]
+  },
+  "development_phases": [
+    {
+      "phase": "Phase 1 \u2014 Static PreFlight demo + API stubs",
+      "duration_weeks": 2,
+      "deliverables": [
+        "Clickable demo UI",
+        "FastAPI health/waitlist/experiments/score",
+        "Local pytest"
+      ],
+      "dependencies": [],
+      "success_criteria": [
+        "Demo walkthrough completes kill/continue path",
+        "Tests green"
+      ]
+    },
+    {
+      "phase": "Phase 2 \u2014 Persistence + memo export + pricing",
+      "duration_weeks": 2,
+      "deliverables": [
+        "SQLite persistence",
+        "Markdown memo export",
+        "Pricing/checkout stub"
+      ],
+      "dependencies": [
+        "Phase 1 \u2014 Static PreFlight demo + API stubs"
+      ],
+      "success_criteria": [
+        "Data survives reload",
+        "Memo includes score rationale"
+      ]
+    },
+    {
+      "phase": "Phase 3 \u2014 Validate launch kit",
+      "duration_weeks": 2,
+      "deliverables": [
+        "Spacefast private share",
+        "Concierge intake",
+        "Stage 8/9 artifacts + interview recruiting"
+      ],
+      "dependencies": [
+        "Phase 2 \u2014 Persistence + memo export + pricing"
+      ],
+      "success_criteria": [
+        "12 founder interviews scheduled or completed",
+        "OPTIMIZE decision with evidence"
+      ]
+    }
+  ],
+  "estimated_effort_hours": 200
+}

@@ -1,0 +1,98 @@
+{
+  "pipeline_id": "pipe_2026-11-02_001",
+  "code_delivery_id": "02b42be9-1455-44ee-a738-cc01d06d314f",
+  "created_at": "2026-11-02T01:44:56Z",
+  "product_title": "Pre-build demand & distribution toolkit for vibe-coded indie SaaS",
+  "deployment_environment": {
+    "name": "staging",
+    "url": "http://127.0.0.1:3000",
+    "infrastructure_provider": "local-demo+spacefast-private",
+    "region": "local / spacefast",
+    "instance_type": "laptop + anonymous private space"
+  },
+  "deployment_timestamp": "2026-11-02T01:44:56Z",
+  "git_commit": "3b7d2d449ffdbec4e19445efbdfde046e01f6dc9",
+  "services_deployed": [
+    {
+      "name": "preflight-api",
+      "version": "0.1.0-local",
+      "health_check_status": "healthy",
+      "uptime_percentage": 100.0,
+      "error_rate": 0.0
+    },
+    {
+      "name": "preflight-demo-static",
+      "version": "0.1.0-spacefast-private",
+      "health_check_status": "healthy",
+      "uptime_percentage": 100.0,
+      "error_rate": 0.0
+    }
+  ],
+  "monitoring_setup": {
+    "dashboards": [
+      {
+        "name": "Local health",
+        "url": "http://127.0.0.1:3000/health",
+        "key_metrics": [
+          "status",
+          "latency"
+        ]
+      },
+      {
+        "name": "Demo index",
+        "url": "file://runs/pipe_2026-11-02_001/apps/demo/index.html",
+        "key_metrics": [
+          "static"
+        ]
+      }
+    ],
+    "alerts": [
+      {
+        "name": "API down",
+        "metric": "health_status",
+        "threshold": "not healthy",
+        "severity": "critical",
+        "notification_channels": [
+          "local-log"
+        ]
+      }
+    ],
+    "log_aggregation": "other",
+    "apm_tool": "other"
+  },
+  "incident_response_plan": {
+    "on_call_schedule": "Solo operator \u2014 business hours Asia/Shanghai for this demo run",
+    "escalation_process": [
+      {
+        "level": 1,
+        "contact": "local operator",
+        "response_time_minutes": 30
+      }
+    ],
+    "runbook_urls": [
+      "file:///workspace/ai-pain-pipeline/runs/pipe_2026-11-02_001/6_codebase/README.md"
+    ]
+  },
+  "success_criteria_met": {
+    "deployment_successful": true,
+    "zero_downtime": true,
+    "all_tests_passed": true,
+    "performance_baseline_met": true,
+    "data_migration_successful": true
+  },
+  "metrics_baseline": {
+    "api_latency_p95_ms": 5.0,
+    "api_error_rate": 0.0,
+    "database_connections_active": 0,
+    "cache_hit_rate": 0.0,
+    "cpu_usage_percent": 5.0,
+    "memory_usage_percent": 10.0,
+    "disk_usage_percent": 1.0
+  },
+  "rollback_plan": {
+    "can_rollback": true,
+    "rollback_procedure": "Stop uvicorn; checkout previous git commit in 6_codebase; republish previous static demo to Spacefast if needed.",
+    "estimated_rollback_minutes": 5
+  },
+  "notes": "Spacefast live URL is private and shared in chat only. Claim keys and door URLs are kept out of the git pack. DEMO.md intentionally omits them."
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PreFlight Waitlist</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#0b0f14;color:#e8eef6;margin:0;display:grid;place-items:center;min-height:100vh}
+.card{background:#151c24;border:1px solid #2a3544;border-radius:14px;padding:28px;max-width:420px;width:90%}
+h1{margin:0 0 8px;font-size:22px} p{color:#8b9bb0;font-size:14px;line-height:1.5}
+input,button{width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #2a3544;background:#12181f;color:inherit;font:inherit}
+button{background:#5b8cff;border:none;cursor:pointer;font-weight:600}
+label{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:13px;color:#8b9bb0}
+#msg{margin-top:12px;font-size:13px;color:#3ecf8e}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>PreFlight 候补名单</h1>
+  <p>开工前验证工具包。留下邮箱；勾选表示愿意付 $29/mo 或 $99 一次性。</p>
+  <form id="f">
+    <input type="email" name="email" required placeholder="you@startup.com" />
+    <label><input type="checkbox" name="paid_intent" /> 有付费意向</label>
+    <button type="submit">加入候补</button>
+  </form>
+  <div id="msg"></div>
+</div>
+<script>
+document.getElementById('f').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const body = { email: fd.get('email'), paid_intent: !!fd.get('paid_intent') };
+  try {
+    const r = await fetch('/v1/waitlist', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+    const j = await r.json();
+    document.getElementById('msg').textContent = j.ok ? '已记录（本地 demo）' : '失败';
+  } catch (err) {
+    document.getElementById('msg').textContent = 'API 未启动时仅前端收集：' + body.email;
+  }
+});
+</script>
+</body>
+</html>

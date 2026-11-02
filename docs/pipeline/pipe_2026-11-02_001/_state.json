@@ -1,0 +1,81 @@
+{
+  "pipeline_id": "pipe_2026-11-02_001",
+  "created_at": "2026-11-02T01:45:08Z",
+  "current_stage": 9,
+  "stage_status": {
+    "0": {
+      "status": "skipped",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": null
+    },
+    "1": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "1_pain_points.json"
+    },
+    "2": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "2_scored_pain_points.json"
+    },
+    "3": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "3_opportunity.json"
+    },
+    "4": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "4_prd.json"
+    },
+    "5": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "5_tech_spec.json"
+    },
+    "6": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "6_codebase"
+    },
+    "7": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "7_code_delivery.json"
+    },
+    "8": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "8_deployment.json"
+    },
+    "9": {
+      "status": "complete",
+      "completed_at": "2026-11-02T01:45:08Z",
+      "output_file": "9_growth_metrics.json"
+    }
+  },
+  "decisions": {
+    "1": {
+      "decision": "GO",
+      "reviewer": "executor_agent",
+      "decided_at": "2026-11-02T01:45:08Z"
+    },
+    "2": {
+      "decision": "PROCEED",
+      "reviewer": "executor_agent",
+      "decided_at": "2026-11-02T01:45:08Z"
+    },
+    "3": {
+      "decision": "MERGE",
+      "reviewer": "executor_agent",
+      "decided_at": "2026-11-02T01:45:08Z"
+    },
+    "4": {
+      "decision": "OPTIMIZE",
+      "reviewer": "executor_agent",
+      "decided_at": "2026-11-02T01:45:08Z"
+    }
+  },
+  "mode": "manual",
+  "updated_at": "2026-11-02T01:45:08Z"
+}

@@ -1,0 +1,239 @@
+{
+  "product_vision": "PreFlight is a guided pre-build demand & distribution toolkit for vibe-coded indie SaaS founders: ICP interviews, waitlist smoke tests, channel experiments, and a kill/continue score before another feature dump. North star: share of started experiments that produce an explicit kill or continue decision with evidence before more coding.",
+  "target_user_stories": [
+    {
+      "persona": "Vibe-coding indie founder about to launch",
+      "story": "As a vibe-coding indie founder about to ship, I want a structured ICP interview checklist and kill-score so that I pause or continue build with evidence instead of another abandoned MVP.",
+      "acceptance": [
+        "Interview script covers ICP, willingness-to-pay, and distribution wedge in under 30 minutes",
+        "Kill/continue score updates from interview + waitlist + channel inputs",
+        "User can export a one-page memo PDF/Markdown",
+        "Progress persists in localStorage for the demo and via API for signed-in MVP"
+      ]
+    },
+    {
+      "persona": "Vibe-coding indie founder about to launch",
+      "story": "As an indie founder, I want a waitlist landing smoke test with paid-intent checkbox so that I measure demand before writing more features.",
+      "acceptance": [
+        "Generates or hosts a simple waitlist page with email + intent checkbox",
+        "Captures signup count and paid-intent rate",
+        "Shows target thresholds from Stage 3 (≥80 emails or ≥12 paid-intent in 2 weeks)",
+        "Exports CSV for outreach"
+      ]
+    },
+    {
+      "persona": "OSS-first SaaS founder stuck on linear adoption",
+      "story": "As an OSS-first SaaS founder with linear star growth, I want non-spam channel experiment cards (HN/X/adopter interviews) so that I pick one distribution wedge without forum spam.",
+      "acceptance": [
+        "At least 5 channel experiment templates with success criteria",
+        "User logs outcomes (reach, replies, signups) per experiment",
+        "Scoreboard ranks experiments by evidence quality",
+        "Playbook copy explicitly discourages spam launches"
+      ]
+    },
+    {
+      "persona": "Paying bootstrap founder",
+      "story": "As a bootstrap founder on a personal card, I want clear $19–$49/mo or $99 one-shot pricing and a concierge sprint option so that I can buy validation help without an agency retainer.",
+      "acceptance": [
+        "Pricing page lists monthly, one-shot, and concierge tiers",
+        "Checkout stub or Stripe Payment Link ready for validate phase",
+        "Receipt email confirms entitlements (kit access vs concierge)",
+        "Cancel/refund path documented for monthly"
+      ]
+    }
+  ],
+  "core_features": [
+    {
+      "name": "ICP interview tracker",
+      "description": "Guided interview scripts, note capture, and evidence tags feeding the kill-score.",
+      "priority": "p0",
+      "effort_hours": 32,
+      "dependencies": [],
+      "acceptance_criteria": [
+        "At least 8 interview prompts with required/optional flags",
+        "Save notes per interviewee with WTP and ICP fit tags",
+        "Aggregate count of interviews toward Stage 3 success criterion (≥12)"
+      ]
+    },
+    {
+      "name": "Waitlist smoke-test kit",
+      "description": "Landing copy templates, email capture, paid-intent checkbox, and threshold dashboard.",
+      "priority": "p0",
+      "effort_hours": 28,
+      "dependencies": [],
+      "acceptance_criteria": [
+        "Template landing with editable headline and CTA",
+        "Stores email + paid_intent boolean",
+        "Dashboard shows progress vs 80/12 targets"
+      ]
+    },
+    {
+      "name": "Channel experiment board",
+      "description": "Non-spam distribution experiments (Show HN sequencing, adopter interviews, star→user conversion) with outcome logging.",
+      "priority": "p0",
+      "effort_hours": 36,
+      "dependencies": ["ICP interview tracker"],
+      "acceptance_criteria": [
+        "≥5 experiment cards with steps and anti-spam notes",
+        "Log reach/replies/signups per run",
+        "Mark experiment done/killed/continued"
+      ]
+    },
+    {
+      "name": "Kill/continue score engine",
+      "description": "Transparent rubric combining interviews, waitlist metrics, and channel evidence into kill / continue / more-data.",
+      "priority": "p0",
+      "effort_hours": 40,
+      "dependencies": ["ICP interview tracker", "Waitlist smoke-test kit", "Channel experiment board"],
+      "acceptance_criteria": [
+        "Score formula documented in UI",
+        "Outputs kill | continue | more_data with rationale bullets",
+        "Export memo includes score and evidence citations"
+      ]
+    },
+    {
+      "name": "Concierge demand sprint booking",
+      "description": "Optional $99 2-week sprint intake for founders who want human-guided validation.",
+      "priority": "p1",
+      "effort_hours": 20,
+      "dependencies": ["Kill/continue score engine"],
+      "acceptance_criteria": [
+        "Intake form collects product one-liner and ICP guess",
+        "Calendar or email handoff for scheduling",
+        "Marks sprint status in founder dashboard"
+      ]
+    },
+    {
+      "name": "Static clickable demo (PreFlight UI)",
+      "description": "Polished single-page demo for Spacefast private publish and interview walkthroughs.",
+      "priority": "p1",
+      "effort_hours": 24,
+      "dependencies": [],
+      "acceptance_criteria": [
+        "Works fully client-side without backend",
+        "Covers interviews, waitlist, experiments, score views",
+        "Mobile-usable layout"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Founder can complete a full validate loop in the demo",
+      "definition_of_done": "Walkthrough adds ≥3 fake interviews, a waitlist goal, one channel experiment, and produces a kill/continue memo",
+      "verification_method": "manual_qa"
+    },
+    {
+      "criterion": "API stubs support health, experiments, waitlist, and score",
+      "definition_of_done": "TestClient tests pass for /health, /v1/experiments, /v1/waitlist, /v1/score",
+      "verification_method": "automated_test"
+    },
+    {
+      "criterion": "Monetization path is clear for validate phase",
+      "definition_of_done": "PRD and demo show $19–49/mo and $99 one-shot; no fake live charges in this run",
+      "verification_method": "manual_qa"
+    },
+    {
+      "criterion": "Private Spacefast demo is publishable",
+      "definition_of_done": "Static apps/demo/index.html deploys as anonymous private Space with claim door",
+      "verification_method": "manual_qa"
+    },
+    {
+      "criterion": "No production secrets in pipeline pack",
+      "definition_of_done": "Pack excludes .env, claim keys, and nested .git",
+      "verification_method": "manual_qa"
+    },
+    {
+      "criterion": "Validate-path decisioning recorded",
+      "definition_of_done": "FLOW_COMPLETE documents GO → PROCEED → MERGE → OPTIMIZE",
+      "verification_method": "manual_qa"
+    }
+  ],
+  "success_metrics": {
+    "north_star": "Share of started PreFlight runs that end with an explicit kill or continue decision backed by ≥3 evidence items",
+    "key_metrics": [
+      {
+        "metric": "Interview completion rate (started → ≥1 saved note)",
+        "baseline": "0 (pre-launch)",
+        "target": "≥70%",
+        "measurement_window": "weekly"
+      },
+      {
+        "metric": "Waitlist paid-intent rate",
+        "baseline": "Unknown",
+        "target": "≥15% of signups check paid intent",
+        "measurement_window": "biweekly"
+      },
+      {
+        "metric": "Kill/continue memo export rate",
+        "baseline": "0%",
+        "target": "≥40% of active founders export within 14 days",
+        "measurement_window": "biweekly"
+      },
+      {
+        "metric": "Paid conversion (one-shot or monthly)",
+        "baseline": "0%",
+        "target": "≥5% of waitlist or ≥2 of 5 concierge sprints paid",
+        "measurement_window": "monthly"
+      }
+    ]
+  },
+  "constraints_and_assumptions": {
+    "technical_constraints": [
+      "MVP is static demo + light FastAPI stub; heavy CRM/marketing suites out of scope",
+      "Local/demo Stage 8 plus Spacefast private publish only — no paid cloud production spend",
+      "No real Stripe charges in this pipeline run"
+    ],
+    "business_constraints": [
+      "Recommendation remains validate/medium; PRD enables learning not forced scale",
+      "Crowded advice market — differentiate on instrumented experiments + kill-score",
+      "Solo/small-team ~6 week MVP budget"
+    ],
+    "assumptions": [
+      "Founders will pay for instrumented validation over free Twitter/HN advice",
+      "A transparent kill-score changes build behavior more than guilt/FOMO",
+      "HN-only evidence is directional; second source needed before build+high"
+    ]
+  },
+  "risks_and_mitigations": [
+    {
+      "risk": "Founders treat PreFlight as another checklist and ignore the kill recommendation",
+      "probability": "high",
+      "impact": "high",
+      "mitigation": "Require explicit acknowledge of score; concierge sprint delivers human memo; measure behavior change in interviews."
+    },
+    {
+      "risk": "Crowded GTM course market undercuts WTP",
+      "probability": "high",
+      "impact": "medium",
+      "mitigation": "Lead with instrumented experiments and score, not content; price at $19–49/mo or $99 one-shot."
+    },
+    {
+      "risk": "HN-only sample overstates demand",
+      "probability": "medium",
+      "impact": "high",
+      "mitigation": "Run Stage 3 validation experiments (12 interviews, 5 paid sprints, landing smoke test) before SCALE."
+    },
+    {
+      "risk": "Spammy channel tactics damage brand",
+      "probability": "medium",
+      "impact": "medium",
+      "mitigation": "Hard-code anti-spam guidance in experiment cards; refuse 'blast HN' templates."
+    }
+  ],
+  "competitive_positioning": {
+    "unique_value_prop": "Instrumented pre-build validation with a kill/continue score—not another indie GTM course or launch checklist.",
+    "why_us_over_competitors": [
+      "Ties ICP interviews, waitlist, and channel experiments into one decision score",
+      "Priced for bootstrap founders ($19–49/mo or $99 one-shot) vs agencies",
+      "Explicitly anti-spam distribution playbook for OSS-first founders"
+    ],
+    "market_window": "Vibe-coding made features cheap; distribution is the bottleneck now. Validate before the advice market saturates further."
+  },
+  "monetization_model": {
+    "model_type": "hybrid",
+    "pricing_strategy": "Self-serve kit at $19–$49/mo or $99 one-shot; optional $99 2-week concierge demand sprint; later B2B cohort pricing.",
+    "target_arr": 300000,
+    "customer_acquisition_cost": 40
+  },
+  "timeline_estimate_weeks": 6
+}
