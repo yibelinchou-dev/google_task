@@ -1,0 +1,193 @@
+{
+  "pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+  "related_pain_point_ids": [
+    "8217cb05-313c-58ad-afc1-2efef8f5c712"
+  ],
+  "title": "Pre-build demand & distribution toolkit for vibe-coded indie SaaS",
+  "one_liner": "Help solo founders validate buyers and pick a distribution wedge before shipping another short-lived feature dump that dies in ~1.5 years.",
+  "target_personas": [
+    {
+      "name": "Vibe-coding indie founder about to launch",
+      "pain_intensity": 8,
+      "willingness_to_pay": 7,
+      "persona_size_estimate": 300000,
+      "quotes": [
+        "A lot of products are being vibe coded, released, and soon after that abandoned.",
+        "Distribution and marketing have become much more important than before - within the context that everyone can build \"features\" for free."
+      ]
+    },
+    {
+      "name": "OSS-first SaaS founder stuck on linear adoption",
+      "pain_intensity": 7,
+      "willingness_to_pay": 6,
+      "persona_size_estimate": 80000,
+      "quotes": [
+        "We've been trying to grow the project for months, and it's lowkey growing in stars and adoption. But it's linear.",
+        "I hate to spam in places like hn or other forums, but what strategies have you found working?"
+      ]
+    }
+  ],
+  "existing_solutions": [
+    {
+      "name": "Generic indie GTM courses / Twitter gurus / Launch checklists",
+      "pricing": "$49–$499 courses; free Twitter threads",
+      "weaknesses": [
+        "Advice is generic and not tied to the founder's actual ICP evidence",
+        "No continuous measurement of whether demand exists before build",
+        "Optimizes for launches/spam rather than retained buyers"
+      ]
+    },
+    {
+      "name": "Product Hunt / HN Show / launch-day bursts",
+      "pricing": "Free–agency retainers",
+      "weaknesses": [
+        "One-day spikes without retention; OP already distrusts spam launches",
+        "Does not prevent building the wrong product first",
+        "OSS founder notes viral jumps are rare and hard to repeat"
+      ]
+    },
+    {
+      "name": "Full marketing suites (HubSpot, Mailchimp, SEO agencies)",
+      "pricing": "$50–$1000+/mo or agency fees",
+      "weaknesses": [
+        "Overkill and expensive for pre-PMF solo founders",
+        "Assume you already have a product and list",
+        "Do not answer 'should I even build this?'"
+      ]
+    }
+  ],
+  "market_size": {
+    "tam_usd": 5000000000,
+    "sam_usd": 250000000,
+    "som_usd": 3000000
+  },
+  "product_hypothesis": "MVP in 4–6 weeks: a guided pre-build kit that forces ICP interviews, waitlist smoke tests, channel experiments, and a kill/continue score before more vibe-coding. Pair with a lightweight distribution playbook for OSS-first SaaS (non-spam HN/X sequencing, adopter interviews, star→user conversion). Differentiator vs courses: instrumented experiments + decision score, not content. Monetize $19–$49/mo or $99 one-shot for indie founders; later B2B cohort.",
+  "recommendation": "validate",
+  "confidence": "medium",
+  "research_notes": "Anchored on highest ICE item this HN-only run (product lifespan collapse, ICE 336) plus related Ask HN on growing OSS projects (ICE 210). Agent-memory theme that topped pipe_2026-10-29_001 dropped out of this week's top50; Top theme therefore shifts to indie distribution/GTM. Evidence remains HN-only—treat as directional. Prefill switching_willingness=1 is a heuristic miss: posts explicitly say features became free and marketing/distribution is the bottleneck, and OSS founder is actively seeking non-spam growth tactics. Competition is crowded content/agencies; wedge must be instrumented validation not more advice. Next: interview 12 founders who shipped a vibe-coded MVP in 2026; measure whether they would pay for a kill-score before next build. Avoid build+high until a second source (Reddit/IndieHackers) confirms WTP.",
+  "confidence_basis": {
+    "source_count": 1,
+    "product_count": 2,
+    "cross_run": true,
+    "switch_intent_present": true,
+    "wtp_signal_present": true,
+    "rationale": "Two HN posts in one month (graveyard lifespan + OSS growth ask) describe distribution as the bottleneck after vibe-coding made building cheap. Same lifespan thread also appeared in the prior HN sample but was not Top then; this week it is the strongest ICE cluster after agent-memory posts left the set. Still single-source (HN), so confidence stays medium."
+  },
+  "evidence_ledger": [
+    {
+      "claim": "Indie SaaS product lifespan is collapsing as vibe-coding makes shipping features cheap while distribution fails.",
+      "strength": "high",
+      "evidence": [
+        {
+          "source": "hackernews",
+          "product": "SaaSHub / indie SaaS",
+          "pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+          "quote": "A lot of products are being vibe coded, released, and soon after that abandoned. It's become too cheap to produce software.",
+          "source_url": "https://news.ycombinator.com/item?id=50204125"
+        },
+        {
+          "source": "hackernews",
+          "product": "SaaSHub / indie SaaS",
+          "pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+          "quote": "Distribution and marketing have become much more important than before - within the context that everyone can build \"features\" for free.",
+          "source_url": "https://news.ycombinator.com/item?id=50204125"
+        }
+      ],
+      "assumptions": [
+        "Median lifespan drop on SaaSHub generalizes beyond that directory's selection bias."
+      ]
+    },
+    {
+      "claim": "OSS-first founders already shipping still struggle to convert linear stars into non-spammy adoption jumps.",
+      "strength": "medium",
+      "evidence": [
+        {
+          "source": "hackernews",
+          "product": "OSS SaaS startups",
+          "pain_point_id": "8217cb05-313c-58ad-afc1-2efef8f5c712",
+          "quote": "We've been trying to grow the project for months, and it's lowkey growing in stars and adoption. But it's linear.",
+          "source_url": "https://news.ycombinator.com/item?id=50242424"
+        },
+        {
+          "source": "hackernews",
+          "product": "OSS SaaS startups",
+          "pain_point_id": "8217cb05-313c-58ad-afc1-2efef8f5c712",
+          "quote": "I hate to spam in places like hn or other forums, but what strategies have you found working? Specially in the realm of AI.",
+          "source_url": "https://news.ycombinator.com/item?id=50242424"
+        }
+      ],
+      "assumptions": [
+        "Founders will pay for structured experiments rather than free HN comment advice."
+      ]
+    }
+  ],
+  "unsupported_assumptions": [
+    "Solo founders will pay for another validation toolkit instead of consuming free Twitter/HN advice.",
+    "An instrumented kill-score changes build behavior more than guilt/FOMO does.",
+    "OSS star growth tactics generalize into a retainable SaaS workflow."
+  ],
+  "validation_required": [
+    {
+      "experiment": "Interview 12 founders who shipped a vibe-coded MVP in 2026 and saw weak distribution.",
+      "success_criterion": "≥8 admit they would have paused build if a credible kill-score existed; ≥5 name a budget ≥$20/mo or ≥$99 one-shot.",
+      "priority": "high"
+    },
+    {
+      "experiment": "Concierge MVP: run 5 paid ($99) 2-week demand sprints (ICP calls + waitlist + one channel test) without building product UI.",
+      "success_criterion": "≥3 of 5 say the kill/continue memo changed their next sprint; ≥2 refer another founder.",
+      "priority": "high"
+    },
+    {
+      "experiment": "Landing-page smoke test: 'Don't vibe-code into the graveyard' waitlist with $29/mo intent checkbox.",
+      "success_criterion": "≥80 emails or ≥12 paid-intent checks in 2 weeks from HN/IndieHackers alone.",
+      "priority": "medium"
+    }
+  ],
+  "commercial_assessment": {
+    "pain_score": 7,
+    "frequency_score": 6,
+    "switching_willingness": 7,
+    "switching_cost": {
+      "score": 3,
+      "data_migration": 2,
+      "learning_curve": 4,
+      "team_collaboration": 2,
+      "ecosystem_lock_in": 3,
+      "sunk_cost": 5,
+      "rationale": "Switching from 'just ship features' to a validation ritual has low data migration; main cost is sunk vibe-coding ego/time and learning a new weekly habit."
+    },
+    "workaround_analysis": {
+      "current_workarounds": [
+        "Ship first, ask HN/X for growth tips later",
+        "Buy indie marketing courses / follow GTM influencers",
+        "One-shot Product Hunt / Show HN launches",
+        "Hire freelancers for SEO/content without ICP proof"
+      ],
+      "quality_score": 5,
+      "cost_to_user": "high",
+      "satisfaction": 3,
+      "rationale": "Workarounds are abundant but OP evidence shows products still die fast; OSS founder still stuck on linear growth and rejects spam. Advice market is crowded; quality uneven and unmeasured."
+    },
+    "buyer_mapping": {
+      "user": "Solo indie founder / OSS-first SaaS builder",
+      "beneficiary": "Same founder (avoids wasted build months)",
+      "buyer": "Founder on personal card or tiny bootstrap budget",
+      "champion": "Founder who already felt a failed or flat launch",
+      "buyer_exists_score": 7
+    },
+    "persistence": {
+      "root_cause_type": "structural_permanent",
+      "owner": "market",
+      "score": 6,
+      "rationale": "As long as AI keeps collapsing build cost, distribution remains the scarce factor; not a one-off platform bug. Structural for the indie SaaS market, though advice competitors are plentiful."
+    },
+    "economic_impact": {
+      "roi_score": 6,
+      "time_loss": "high",
+      "revenue_at_risk": "medium",
+      "cashflow_impact": "medium",
+      "quantification_notes": "Primary loss is months of build+hosting with near-zero revenue when products die at ~1.5y median; secondary is founder burnout. Killing bad ideas early saves more cash than another feature sprint."
+    },
+    "competition_score": 8
+  }
+}

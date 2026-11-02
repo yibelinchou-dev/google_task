@@ -1,0 +1,175 @@
+[
+  {
+    "pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+    "title_zh": "SaaS 产品中位寿命从约 4 年跌到约 1.5 年",
+    "ai_reasoning_zh": "SaaSHub 坟场显示产品寿命约 4→1.5 年；帖文把原因归到 vibe coding 让功能近乎免费，分发/营销成瓶颈。独立开发者对「先验证再做」工具有付费空间。",
+    "red_flags_zh": [
+      "仅单条 Ask HN（非多源）",
+      "偏宏观洞见，产品边界易发散"
+    ]
+  },
+  {
+    "pain_point_id": "eef3c39b-a3c1-5527-98ea-0dc69c415f79",
+    "title_zh": "求 HN：现在是不是没法注册 Apple Developer 了？",
+    "ai_reasoning_zh": "注册 Apple Developer 卡在护照地区与拒卡、客服罐头回复。真实门禁痛，但主要是苹果平台问题，难规模化成 SaaS。",
+    "red_flags_zh": [
+      "对手是苹果，身份/账单难自动化",
+      "客服问题可能需要人工中介"
+    ]
+  },
+  {
+    "pain_point_id": "90bb8151-a98f-5fcb-97ee-8882c57ea1de",
+    "title_zh": "「错误」邮箱：被封 LinkedIn 后客服表单只对错误邮箱放行",
+    "ai_reasoning_zh": "LinkedIn 账号受限后帮助表单对正确邮箱表面报错、对无关邮箱放行，属刻意锁死申诉。情绪强，但平台政策风险高、SaaS 护城河薄。",
+    "red_flags_zh": [
+      "平台可随时改表单行为",
+      "协助受限账号有法律/ToS 风险",
+      "难超越内容/代办形态"
+    ]
+  },
+  {
+    "pain_point_id": "4a281be0-564f-5d31-81ea-4e272acfb912",
+    "title_zh": "求 HN：Kimi Code 花掉约 $1.37 API 用量就撞上 5 小时限额",
+    "ai_reasoning_zh": "付 $19 的 Kimi Code 在小任务上撞 5 小时限额，用量约等于 $1.37 API；对比 Claude Code $20 档性价比差。编程助手订阅的配额透明与管理痛点清晰。",
+    "red_flags_zh": [
+      "厂商可自行修好配额 UX",
+      "若只做对比表则楔子太薄"
+    ]
+  },
+  {
+    "pain_point_id": "b5b12fba-05a1-51da-a23c-a89985c1d3c4",
+    "title_zh": "找技术工作像无助的数据录入噩梦",
+    "ai_reasoning_zh": "候选人花数百小时向各公司 ATS 重复填简历。经典求职摩擦，竞品多但痛感仍强。",
+    "red_flags_zh": [
+      "Teal/LazyApply/Simplify 等已拥挤",
+      "雇主侧激励不利于一键投递"
+    ]
+  },
+  {
+    "pain_point_id": "4f3ebb57-0767-588f-aa0f-995525fa662a",
+    "title_zh": "求 HN：我们共同的技术理想怎么了？",
+    "ai_reasoning_zh": "怀念 Bell Labs/PARC 式文化的元讨论，无可购痛点。",
+    "red_flags_zh": [
+      "无买家或切换信号",
+      "纯元讨论/哲学"
+    ]
+  },
+  {
+    "pain_point_id": "74232353-3516-5ab6-8c2d-1caac89a2e0e",
+    "title_zh": "GitHub 封了我的号，还提交不了工单",
+    "ai_reasoning_zh": "Claude Code 循环评 PR 触发 GitHub 封号且工单 401。Agent 自动化+平台信任缺口，量级存疑。",
+    "red_flags_zh": [
+      "GitHub 是守门人",
+      "边缘案例量可能仍小",
+      "客服剧场难做成 SaaS"
+    ]
+  },
+  {
+    "pain_point_id": "c6dd500f-6abb-5bcc-b5ba-3afe9094e71c",
+    "title_zh": "告知 HN：ChatGPT 与 Codex 用量将合并",
+    "ai_reasoning_zh": "OpenAI 将合并 ChatGPT 与 Codex 共用额度。重度用户配额更紧、工作流受扰，与 Kimi 限额帖同属配额可视/故障转移主题。",
+    "red_flags_zh": [
+      "OpenAI 可能自己改进计量 UX",
+      "过渡期抱怨可能消退"
+    ]
+  },
+  {
+    "pain_point_id": "b43e2f8f-6cff-5eaf-a4cb-419a6ca5c5a5",
+    "title_zh": "求 HN：面对逼近的 AI 编程乌托邦/反乌托邦我们能做什么",
+    "ai_reasoning_zh": "开发者对 agentic coding 取代平均工程师的职业焦虑，产品楔子模糊。",
+    "red_flags_zh": [
+      "存在主义表述发散",
+      "AI 职业内容市场拥挤"
+    ]
+  },
+  {
+    "pain_point_id": "c46c7e5b-065a-5a91-9f8c-5f130ec6796e",
+    "title_zh": "为什么 2026 年远程岗位正在灭绝？",
+    "ai_reasoning_zh": "印度营销求职者感到远程岗枯竭。宏观就业趋势，工具缺口弱。",
+    "red_flags_zh": [
+      "宏观招聘趋势非工具缺口",
+      "受地理/政策约束"
+    ]
+  },
+  {
+    "pain_point_id": "b5c28e61-82ef-5e4b-b68b-60fd5ccceb20",
+    "title_zh": "求 HN：大家知道 OpenAI Dots 会拦截 SSL 吗？",
+    "ai_reasoning_zh": "OpenAI Dot 云代理用受信任 CA 做 TLS 中间人；隐私用户取消订阅。受众窄、厂商可变。",
+    "red_flags_zh": [
+      "OpenAI 可改 Dot 架构",
+      "安全小众受众"
+    ]
+  },
+  {
+    "pain_point_id": "f74d498d-701a-5ae5-8cb9-9c269306f5e9",
+    "title_zh": "PSA：别再用「vibe coding」这个词",
+    "ai_reasoning_zh": "反对「vibe coding」用语，非产品机会。",
+    "red_flags_zh": [
+      "并非痛点",
+      "仅文化用词"
+    ]
+  },
+  {
+    "pain_point_id": "6c497d04-447d-5001-b8f6-2ad1311d6ffe",
+    "title_zh": "告知 HN：别用 Fathom Analytics（创始人在屏蔽批评）",
+    "ai_reasoning_zh": "Fathom 创始人疑似用「AI reply」屏蔽批评，分析工具买家有切换信号但单条轶事。",
+    "red_flags_zh": [
+      "单边 Tell HN",
+      "分析工具替代市场拥挤"
+    ]
+  },
+  {
+    "pain_point_id": "8217cb05-313c-58ad-afc1-2efef8f5c712",
+    "title_zh": "求 HN：你们怎么增长开源项目？",
+    "ai_reasoning_zh": "以 OSS 为主产品的创业者星标线性增长，求非灌水获客。与产品寿命帖同属分发/GTM 簇，买家已在出货。",
+    "red_flags_zh": [
+      "增长建议市场饱和",
+      "增长 SaaS ROI 难归因"
+    ]
+  },
+  {
+    "pain_point_id": "517e4f68-338b-54bd-97c7-2816afdfcf17",
+    "title_zh": "Seoul Viosys 开始生产无稀土白光发光器件",
+    "ai_reasoning_zh": "半导体硬件新闻，与互联网 SaaS 雷达弱相关，无产品化买家。",
+    "red_flags_zh": [
+      "内容偏题",
+      "无 SaaS 买家"
+    ]
+  },
+  {
+    "pain_point_id": "cd4dfcd8-cf03-5156-b138-577bd8130798",
+    "title_zh": "IEEE 因论文买卖作者身份撤销 1417 篇论文",
+    "ai_reasoning_zh": "学术出版诚信丑闻报道，买家是机构而非本雷达独立开发者 ICP。",
+    "red_flags_zh": [
+      "非本雷达 ICP",
+      "机构买家"
+    ]
+  },
+  {
+    "pain_point_id": "91855de6-3b21-5ade-bee1-3830dd497ea8",
+    "title_zh": "Heretic 2.0 发布：免训练语言模型修改",
+    "ai_reasoning_zh": "模型修改开源工具的发布说明，属产品上线信号而非用户痛点投诉。",
+    "red_flags_zh": [
+      "产品发布非痛点",
+      "政策/托管风险"
+    ]
+  },
+  {
+    "pain_point_id": "3b1d5771-451a-5231-9bd3-620938df455d",
+    "title_zh": "Ant：前所未有的收入增长能否追上不负责任的大额投资",
+    "ai_reasoning_zh": "Anthropic 投资与收入宏观财经文，非终端用户痛点。",
+    "red_flags_zh": [
+      "无可产品化痛点",
+      "旁观财经"
+    ]
+  },
+  {
+    "pain_point_id": "58cac2a1-bc48-596d-bf8c-b94345532c64",
+    "title_zh": "OccupySaaS——他们裁了我们，我们在重建他们的 SaaS",
+    "ai_reasoning_zh": "被裁员工重建雇主 SaaS 的倡议叙事，付费需求未验证。",
+    "red_flags_zh": [
+      "更像运动落地页而非验证需求",
+      "法律/IP 风险"
+    ]
+  }
+]

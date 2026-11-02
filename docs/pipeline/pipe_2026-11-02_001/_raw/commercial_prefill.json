@@ -1,0 +1,42 @@
+{
+  "pipeline_id": "pipe_2026-11-02_001",
+  "focus_pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+  "focus_title": "Median product \"lifespan\" has fallen from ~4y down to ~1.5y",
+  "ice_total": 288,
+  "cluster_id": "misc@ask_hn",
+  "cluster_size": 9,
+  "related_pain_point_ids": [
+    "b5b12fba-05a1-51da-a23c-a89985c1d3c4",
+    "4f3ebb57-0767-588f-aa0f-995525fa662a",
+    "74232353-3516-5ab6-8c2d-1caac89a2e0e",
+    "b43e2f8f-6cff-5eaf-a4cb-419a6ca5c5a5",
+    "c46c7e5b-065a-5a91-9f8c-5f130ec6796e",
+    "f74d498d-701a-5ae5-8cb9-9c269306f5e9",
+    "6c497d04-447d-5001-b8f6-2ad1311d6ffe",
+    "8217cb05-313c-58ad-afc1-2efef8f5c712"
+  ],
+  "suggested_scores": {
+    "pain_score": 8,
+    "switching_willingness": 1,
+    "workaround_quality_score": 1,
+    "persistence_score": 7,
+    "competition_score": 5
+  },
+  "persistence_prefill": {
+    "root_cause_type": "unknown",
+    "owner": "platform",
+    "score": 7,
+    "rationale": "Cluster persistence_hint=structural; no GitHub lifecycle data."
+  },
+  "switch_phrases": [],
+  "workaround_phrases": [],
+  "competitor_mentions": [],
+  "pricing_snippets": [],
+  "data_sources": {
+    "external_signals": true,
+    "pain_clusters": true,
+    "domain_focus": false,
+    "mode": "broad"
+  },
+  "agent_notes": "Prefill is heuristic — Agent must override with judgment and cite evidence_ledger. In focus mode, known_competitors from domain_context drive competitor_mentions."
+}

@@ -1,0 +1,260 @@
+{
+  "pipeline_id": "pipe_2026-11-02_001",
+  "mode": "broad",
+  "known_competitors": [],
+  "pain_point_count": 19,
+  "switch_intent_hits": 1,
+  "github_enriched": 0,
+  "by_pain_point_id": {
+    "0f1e3f6a-f992-5f7e-8164-7637f9b6e395": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "eef3c39b-a3c1-5527-98ea-0dc69c415f79": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "90bb8151-a98f-5fcb-97ee-8882c57ea1de": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "4a281be0-564f-5d31-81ea-4e272acfb912": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "b5b12fba-05a1-51da-a23c-a89985c1d3c4": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "4f3ebb57-0767-588f-aa0f-995525fa662a": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "74232353-3516-5ab6-8c2d-1caac89a2e0e": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "c6dd500f-6abb-5bcc-b5ba-3afe9094e71c": {
+      "switch_intent": {
+        "detected": true,
+        "phrases": [
+          "switching to",
+          "switching to the"
+        ],
+        "score": 7
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "b43e2f8f-6cff-5eaf-a4cb-419a6ca5c5a5": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "c46c7e5b-065a-5a91-9f8c-5f130ec6796e": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "b5c28e61-82ef-5e4b-b68b-60fd5ccceb20": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "f74d498d-701a-5ae5-8cb9-9c269306f5e9": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "6c497d04-447d-5001-b8f6-2ad1311d6ffe": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "8217cb05-313c-58ad-afc1-2efef8f5c712": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "517e4f68-338b-54bd-97c7-2816afdfcf17": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "cd4dfcd8-cf03-5156-b138-577bd8130798": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "91855de6-3b21-5ade-bee1-3830dd497ea8": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "3b1d5771-451a-5231-9bd3-620938df455d": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    },
+    "58cac2a1-bc48-596d-bf8c-b94345532c64": {
+      "switch_intent": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "workaround": {
+        "detected": false,
+        "phrases": [],
+        "score": 1
+      },
+      "platform_bug_signal": false
+    }
+  }
+}
