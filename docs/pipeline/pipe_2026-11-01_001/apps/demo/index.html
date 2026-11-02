@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskRefuge — local demo</title>
+  <style>
+    :root {
+      --bg: #f3efe7;
+      --sidebar: #faf7f2;
+      --main: #fffcf8;
+      --ink: #1f1a16;
+      --muted: #6d655c;
+      --line: #e6dfd4;
+      --accent: #0e6b52;
+      --accent-ink: #084536;
+      --accent-soft: #e5f4ed;
+      --pin: #9a5b12;
+      --danger: #8d3b3b;
+      --shadow: 0 18px 40px rgba(48, 36, 22, 0.12);
+      --top: 60px;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font: 16px/1.45 "Segoe UI", "Avenir Next", system-ui, sans-serif;
+      display: grid;
+      grid-template-rows: var(--top) 1fr;
+      height: 100dvh;
+      overflow: hidden;
+    }
+
+    button, input { font: inherit; color: inherit; }
+
+    button { cursor: pointer; }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
+      background: var(--main);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand { display: flex; flex-direction: column; min-width: 0; }
+    .mark { font-weight: 700; letter-spacing: -0.02em; }
+    .sub { color: var(--muted); font-size: 12px; }
+
+    .top-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill {
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #b7aea3;
+    }
+
+    .pill.api { color: var(--accent-ink); background: var(--accent-soft); }
+    .pill.api .dot { background: var(--accent); }
+    .pill.offline { color: #7a4b10; background: #f8ecd9; }
+    .pill.offline .dot { background: #c47b1a; }
+
+    .reset-tasks { margin: 16px 8px 0; }
+    .ghost, #nav-toggle {
+      border: 1px solid var(--line);
+      background: transparent;
+      border-radius: 999px;
+      padding: 6px 12px;
+      color: var(--muted);
+    }
+
+    .ghost:hover, #nav-toggle:hover { background: var(--bg); color: var(--ink); }
+
+    #nav-toggle { display: none; }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 0;
+    }
+
+    #sidebar {
+      background: var(--sidebar);
+      border-right: 1px solid var(--line);
+      min-height: 0;
+      overflow: hidden;
+      padding: 14px 12px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #list-nav {
+      overflow: auto;
+      min-height: 0;
+      flex: 1;
+    }
+
+    .search input {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--main);
+      border-radius: 10px;
+      padding: 8px 10px;
+      margin-bottom: 14px;
+    }
+
+    .group h2 {
+      margin: 14px 8px 6px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .group ul { list-style: none; margin: 0; padding: 0; }
+
+    .list-btn {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 16px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      text-align: left;
+      border: 0;
+      background: transparent;
+      border-radius: 10px;
+      padding: 8px 10px;
+    }
+
+    .list-btn:hover { background: rgba(14, 107, 82, 0.06); }
+
+    .list-btn[aria-current="true"] {
+      background: var(--accent-soft);
+      color: var(--accent-ink);
+      font-weight: 600;
+    }
+
+    .list-btn .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .star { width: 14px; height: 14px; fill: var(--pin); }
+    .star.empty { fill: none; }
+
+    .count {
+      min-width: 1.5em;
+      text-align: right;
+      font-size: 12px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .empty-filter {
+      margin: 12px 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      min-height: 0;
+      overflow: auto;
+      background: var(--main);
+    }
+
+    .task-wrap { max-width: 720px; padding: 28px 28px 64px; }
+
+    .list-head h1 { margin: 0 0 4px; font-size: 32px; letter-spacing: -0.03em; }
+    .list-head p { margin: 0 0 18px; color: var(--muted); }
+
+    .add-form { display: flex; gap: 8px; margin-bottom: 8px; }
+
+    .add-form input {
+      flex: 1;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+    }
+
+    .add-form button {
+      border: 0;
+      background: var(--accent);
+      color: white;
+      border-radius: var(--radius);
+      padding: 0 16px;
+      font-weight: 600;
+    }
+
+    .add-form button:hover { background: var(--accent-ink); }
+
+    .tasks { list-style: none; margin: 0; padding: 0; }
+
+    .task {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 2px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #c9c0b4;
+      background: white;
+      padding: 0;
+    }
+
+    .check[aria-pressed="true"] {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: inset 0 0 0 3px white;
+    }
+
+    .title { overflow-wrap: anywhere; }
+
+    .task.done .title { color: var(--muted); text-decoration: line-through; }
+
+    .delete {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 8px;
+      padding: 6px 8px;
+    }
+
+    .delete:hover { color: var(--danger); background: #f8ecec; }
+
+    .done-block { margin-top: 28px; }
+    .done-block h2 { margin: 0 0 6px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+    #backdrop { display: none; }
+
+    @media (max-width: 800px) {
+      #nav-toggle { display: inline-flex; }
+      .sub { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      .task-wrap { padding: 20px 16px 48px; }
+      .list-head h1 { font-size: 26px; }
+      #sidebar {
+        position: fixed;
+        z-index: 20;
+        top: var(--top);
+        bottom: 0;
+        left: 0;
+        width: min(320px, 88vw);
+        transform: translateX(-105%);
+        box-shadow: var(--shadow);
+        border-right: 1px solid var(--line);
+      }
+      #sidebar.open { transform: none; }
+      #backdrop {
+        display: block;
+        position: fixed;
+        inset: var(--top) 0 0 0;
+        background: rgba(31, 26, 22, 0.35);
+        z-index: 15;
+      }
+      #backdrop[hidden] { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #sidebar { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Lists</button>
+    <div class="brand">
+      <span class="mark">TaskRefuge</span>
+      <span class="sub">Local demo · multi-list tasks · not production</span>
+    </div>
+    <div class="top-actions">
+      <p id="api-status" class="pill"><span class="dot"></span><span>Loading lists…</span></p>
+    </div>
+  </header>
+  <div id="backdrop" hidden></div>
+  <div class="shell">
+    <aside id="sidebar" aria-label="Task lists">
+      <label class="search">
+        <span class="sr-only">Search lists</span>
+        <input id="search" type="search" placeholder="Search lists" autocomplete="off">
+      </label>
+      <div id="list-nav"></div>
+      <button id="reset" class="ghost reset-tasks" type="button">Reset tasks</button>
+    </aside>
+    <main>
+      <div class="task-wrap">
+        <div class="list-head">
+          <h1 id="list-title">Lists</h1>
+          <p id="list-meta">Loading…</p>
+        </div>
+        <form id="add-form" class="add-form">
+          <label class="sr-only" for="new-task">New task</label>
+          <input id="new-task" maxlength="200" placeholder="Add a task" autocomplete="off">
+          <button type="submit">Add</button>
+        </form>
+        <ul id="open-tasks" class="tasks"></ul>
+        <section id="done-block" class="done-block" hidden>
+          <h2>Completed</h2>
+          <ul id="done-tasks" class="tasks"></ul>
+        </section>
+      </div>
+    </main>
+  </div>
+  <p id="live" class="sr-only" aria-live="polite"></p>
+
+  <script>
+    const API_HOST = location.hostname === "localhost" ? "localhost" : "127.0.0.1";
+    const API_BASE = "http://" + API_HOST + ":3000";
+    const STORAGE_KEY = "taskrefuge.demo.v1";
+
+    const FALLBACK_LISTS = [
+      ["inbox", "Inbox", true],
+      ["today", "Today", true],
+      ["errands", "Errands", true],
+      ["work", "Work — Q4 launch", true],
+      ["groceries", "Groceries", true],
+      ["home", "Home projects", true],
+      ["kids", "Kids — school", false],
+      ["bills", "Bills & admin", false],
+      ["health", "Health", false],
+      ["reading", "Reading list", false],
+      ["side", "Side project", false],
+      ["travel", "Travel — Kyoto", false],
+      ["house", "House hunting", false],
+      ["car", "Car maintenance", false],
+      ["family", "Family", false],
+      ["gifts", "Gift ideas", false],
+      ["recipes", "Recipes to try", false],
+      ["move", "Apartment move", false],
+      ["taxes", "Taxes", false],
+      ["garden", "Garden", false],
+      ["fitness", "Fitness", false],
+      ["calls", "Calls to make", false],
+      ["waiting", "Waiting on", false],
+      ["someday", "Someday / maybe", false],
+      ["writing", "Writing", false],
+      ["oss", "Open source", false],
+      ["jobs", "Job search", false],
+      ["wedding", "Wedding planning", false],
+      ["pets", "Pet care", false],
+      ["subs", "Subscriptions", false],
+      ["weekend", "Weekend", false],
+      ["parents", "Parents", false],
+      ["languages", "Languages", false],
+      ["music", "Music practice", false],
+      ["photos", "Photo backlog", false],
+      ["budget", "Budget", false],
+      ["clients", "Clients", false],
+      ["research", "Research", false],
+      ["packing", "Packing list", false],
+      ["reference", "Reference", false]
+    ].map(function (row) {
+      return { id: row[0], name: row[1], pinned: row[2], task_count: 4 };
+    });
+
+    const TASK_TITLES = {
+      inbox: ["Reply to the school about Friday", "Forward the lease addendum", "Skim the co-op newsletter", "File the insurance card photo"],
+      today: ["Drop off the library books", "Send the launch notes", "10-minute tidy of the desk", "Pick up the prescription"],
+      errands: ["Pharmacy on the way home", "Return the too-small jacket", "Hardware store: command hooks", "Post office for stamps"],
+      work: ["Draft the Q4 launch checklist", "Review Priya's design notes", "Block focus time Thursday", "Send the status update"],
+      groceries: ["Oat milk", "Lemons", "Rice", "Spinach", "Coffee beans"],
+      home: ["Fix the closet door", "Replace the hallway bulb", "Measure the kitchen shelf", "Call about the dripping tap"],
+      kids: ["Sign the field-trip form", "Pack spare socks", "Email the teacher about pickup", "Order the missing workbook"],
+      bills: ["Pay the electric bill", "Check the rent cleared", "Download last month's statement", "Cancel the unused trial"],
+      health: ["Book the dental cleaning", "Refill the allergy meds", "Schedule the annual physical", "Log this week's walks"],
+      reading: ["Finish the Murakami chapter", "Return 'Project Hail Mary'", "Note quotes from the essay", "Pick the next library hold"],
+      side: ["Sketch the onboarding screen", "Write the empty-state copy", "Cut the unused endpoint", "Push the README draft"],
+      travel: ["Reserve the ryokan", "Check the rail pass rules", "Save offline maps", "List what stays in the carry-on"],
+      house: ["Tour the place on Elm", "Ask about the heating bill", "Compare the two leases", "Photograph the cracked step"],
+      car: ["Rotate the tires", "Replace the wipers", "Check the registration date", "Wash off the road salt"],
+      family: ["Plan Sunday lunch", "Send the group photo", "Confirm who brings dessert", "Add the recital to the calendar"],
+      gifts: ["Notebook for Mira", "Seeds for Dad", "Book for the neighbors", "Card for the new baby"],
+      recipes: ["Miso soup with tofu", "Sheet-pan chicken", "Lemon pasta", "Overnight oats"],
+      move: ["Order boxes", "Label the kitchen crate", "Schedule the truck", "Forward the mail"],
+      taxes: ["Gather the W-2s", "Find the donation receipts", "List the freelance invoices", "Book a question for the preparer"],
+      garden: ["Plant the basil", "Water the tomatoes", "Stake the peas", "Compost the clippings"],
+      fitness: ["Easy run, 3 miles", "Stretch the hip", "Book the Saturday class", "Refill the water bottle"],
+      calls: ["Call the landlord", "Call Grandma", "Call the clinic", "Call the insurer"],
+      waiting: ["Contractor quote", "Passport renewal", "Library hold", "Refund from the airline"],
+      someday: ["Learn to make dashi", "Visit the coast in winter", "Print the family archive", "Take a pottery class"],
+      writing: ["Outline the short essay", "Cut the second paragraph", "Read it aloud", "Send a draft to Jo"],
+      oss: ["Triage the oldest issue", "Reply on the CORS question", "Add a test for the empty list", "Update the changelog"],
+      jobs: ["Update the resume", "Write the cover note", "Ask Alex for a referral", "Prepare two project stories"],
+      wedding: ["Confirm the guest count", "Pick the dinner menu", "Send the hotel block", "Choose a processional song"],
+      pets: ["Buy more kibble", "Book the vet booster", "Trim nails", "Wash the bed cover"],
+      subs: ["Review streaming services", "Downgrade the storage plan", "Check the news renewal", "Export passwords before switching"],
+      weekend: ["Farmers market", "Long walk by the river", "Cook a big pot of soup", "No laptop after dinner"],
+      parents: ["Mail the photos", "Help with the router", "Ask about the doctor visit", "Plan the next visit"],
+      languages: ["Review 20 vocab cards", "Listen to one news clip", "Write four sentences", "Practice the past tense"],
+      music: ["Scales, 10 minutes", "Learn the bridge", "Record a rough take", "Tune before practice"],
+      photos: ["Delete the blurry burst", "Album for the trip", "Print two for the frame", "Back up the camera card"],
+      budget: ["Categorize this week", "Move money to savings", "Check the grocery average", "Note the unexpected vet bill"],
+      clients: ["Send the invoice", "Prep Friday's agenda", "Share the revised timeline", "Follow up on the unsigned SOW"],
+      research: ["Read the two papers", "Summarize the method", "Save the citation", "Write the open question"],
+      packing: ["Charger and cable", "Rain jacket", "Toiletry kit", "Printed reservation"],
+      reference: ["Wifi password card", "Account recovery codes", "Bike lock combination", "Preferred pharmacy address"]
+    };
+
+    const state = {
+      lists: [],
+      tasks: {},
+      selectedId: null,
+      query: "",
+      source: "loading",
+      navOpen: false
+    };
+
+    const listNav = document.getElementById("list-nav");
+    const titleEl = document.getElementById("list-title");
+    const metaEl = document.getElementById("list-meta");
+    const openEl = document.getElementById("open-tasks");
+    const doneEl = document.getElementById("done-tasks");
+    const doneBlock = document.getElementById("done-block");
+    const statusEl = document.getElementById("api-status");
+    const sidebar = document.getElementById("sidebar");
+    const backdrop = document.getElementById("backdrop");
+    const navToggle = document.getElementById("nav-toggle");
+    const live = document.getElementById("live");
+
+    function esc(value) {
+      return String(value).replace(/[&<>"']/g, function (ch) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+      });
+    }
+
+    function say(message) {
+      live.textContent = message;
+    }
+
+    function loadPersisted() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return { tasks: {}, selectedId: null };
+        const parsed = JSON.parse(raw);
+        return {
+          tasks: parsed.tasks && typeof parsed.tasks === "object" ? parsed.tasks : {},
+          selectedId: typeof parsed.selectedId === "string" ? parsed.selectedId : null
+        };
+      } catch (err) {
+        return { tasks: {}, selectedId: null };
+      }
+    }
+
+    function savePersisted() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        tasks: state.tasks,
+        selectedId: state.selectedId
+      }));
+    }
+
+    function seedTasks(list) {
+      const titles = TASK_TITLES[list.id] || [
+        "Capture a next step",
+        "Review notes",
+        "Clear one small item",
+        "Decide what can wait"
+      ];
+      return titles.map(function (title, index) {
+        return {
+          id: list.id + "-seed-" + index,
+          title: title,
+          done: index === titles.length - 1
+        };
+      });
+    }
+
+    function selectedList() {
+      return state.lists.find(function (list) { return list.id === state.selectedId; }) || null;
+    }
+
+    function tasksFor(listId) {
+      return state.tasks[listId] || [];
+    }
+
+    function openCount(listId) {
+      return tasksFor(listId).filter(function (task) { return !task.done; }).length;
+    }
+
+    function setStatus() {
+      const label = statusEl.querySelector("span:last-child");
+      statusEl.classList.remove("api", "offline");
+      if (state.source === "api") {
+        statusEl.classList.add("api");
+        label.textContent = "API connected";
+      } else if (state.source === "offline") {
+        statusEl.classList.add("offline");
+        label.textContent = "Offline mock";
+      } else {
+        label.textContent = "Loading lists…";
+      }
+    }
+
+    function setNavOpen(open) {
+      state.navOpen = open;
+      sidebar.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (window.matchMedia("(max-width: 800px)").matches) {
+        backdrop.hidden = !open;
+      } else {
+        backdrop.hidden = true;
+      }
+    }
+
+    function taskItem(task) {
+      const action = task.done ? "Mark not done" : "Mark done";
+      return (
+        '<li class="task' + (task.done ? " done" : "") + '" data-task-id="' + esc(task.id) + '">' +
+          '<button type="button" class="check" data-action="toggle" aria-pressed="' + (task.done ? "true" : "false") + '" aria-label="' + esc(action + ": " + task.title) + '"></button>' +
+          '<span class="title">' + esc(task.title) + "</span>" +
+          '<button type="button" class="delete" data-action="delete" aria-label="' + esc("Delete " + task.title) + '">Delete</button>' +
+        "</li>"
+      );
+    }
+
+    function starSvg(pinned) {
+      if (!pinned) return '<svg class="star empty" viewBox="0 0 16 16" aria-hidden="true"></svg>';
+      return '<svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.4 9.7 5.4l4.4.5-3.3 2.9.9 4.3L8 11.1 4.3 13.1l.9-4.3L1.9 5.9l4.4-.5L8 1.4Z"/></svg>';
+    }
+
+    function listButton(list) {
+      const current = list.id === state.selectedId;
+      return (
+        "<li><button type=\"button\" class=\"list-btn\" data-list-id=\"" + esc(list.id) + "\" aria-current=\"" + (current ? "true" : "false") + "\">" +
+          starSvg(list.pinned) +
+          '<span class="name">' + esc(list.name) + "</span>" +
+          '<span class="count">' + openCount(list.id) + "</span>" +
+        "</button></li>"
+      );
+    }
+
+    function renderLists() {
+      const query = state.query.trim().toLowerCase();
+      const matches = state.lists.filter(function (list) {
+        return !query || list.name.toLowerCase().indexOf(query) !== -1;
+      });
+      const pinned = matches.filter(function (list) { return list.pinned; });
+      const rest = matches.filter(function (list) { return !list.pinned; });
+      if (!matches.length) {
+        listNav.innerHTML = '<p class="empty-filter">No lists match “' + esc(state.query.trim()) + "”.</p>";
+        return;
+      }
+      let html = "";
+      if (pinned.length) {
+        html += '<section class="group"><h2>Pinned</h2><ul>' + pinned.map(listButton).join("") + "</ul></section>";
+      }
+      if (rest.length) {
+        html += '<section class="group"><h2>All lists</h2><ul>' + rest.map(listButton).join("") + "</ul></section>";
+      }
+      listNav.innerHTML = html;
+    }
+
+    function renderTasks() {
+      const list = selectedList();
+      if (!list) {
+        titleEl.textContent = "No list";
+        metaEl.textContent = "Choose a list.";
+        openEl.innerHTML = "";
+        doneBlock.hidden = true;
+        return;
+      }
+      const tasks = tasksFor(list.id);
+      const open = tasks.filter(function (task) { return !task.done; });
+      const done = tasks.filter(function (task) { return task.done; });
+      titleEl.textContent = list.name;
+      const sourceNote = state.source === "api"
+        ? "Lists loaded from the local API. "
+        : "API unreachable, so these lists are an offline mock. ";
+      metaEl.textContent = open.length + " open · " + done.length + " done. " + sourceNote + "Add, complete, and delete stay in this browser.";
+      openEl.innerHTML = open.map(taskItem).join("");
+      doneEl.innerHTML = done.map(taskItem).join("");
+      doneBlock.hidden = done.length === 0;
+    }
+
+    function render() {
+      setStatus();
+      renderLists();
+      renderTasks();
+    }
+
+    function mutate(listId, updater) {
+      const next = updater(tasksFor(listId).slice());
+      state.tasks[listId] = next;
+      savePersisted();
+      render();
+    }
+
+    listNav.addEventListener("click", function (event) {
+      const button = event.target.closest("[data-list-id]");
+      if (!button) return;
+      state.selectedId = button.getAttribute("data-list-id");
+      savePersisted();
+      render();
+      if (window.matchMedia("(max-width: 800px)").matches) setNavOpen(false);
+      const list = selectedList();
+      if (list) say("Opened " + list.name);
+    });
+
+    document.getElementById("open-tasks").addEventListener("click", onTaskClick);
+    document.getElementById("done-tasks").addEventListener("click", onTaskClick);
+
+    function onTaskClick(event) {
+      const button = event.target.closest("[data-action]");
+      if (!button || !state.selectedId) return;
+      const item = button.closest("[data-task-id]");
+      const taskId = item.getAttribute("data-task-id");
+      const action = button.getAttribute("data-action");
+      mutate(state.selectedId, function (tasks) {
+        if (action === "delete") {
+          const removed = tasks.find(function (task) { return task.id === taskId; });
+          if (removed) say("Deleted " + removed.title);
+          return tasks.filter(function (task) { return task.id !== taskId; });
+        }
+        return tasks.map(function (task) {
+          if (task.id !== taskId) return task;
+          const done = !task.done;
+          say((done ? "Completed " : "Reopened ") + task.title);
+          return { id: task.id, title: task.title, done: done };
+        });
+      });
+    }
+
+    document.getElementById("add-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const input = document.getElementById("new-task");
+      const title = input.value.trim();
+      if (!title || !state.selectedId) return;
+      mutate(state.selectedId, function (tasks) {
+        tasks.unshift({ id: crypto.randomUUID(), title: title, done: false });
+        return tasks;
+      });
+      input.value = "";
+      input.focus();
+      say("Added " + title);
+    });
+
+    document.getElementById("search").addEventListener("input", function (event) {
+      state.query = event.target.value;
+      renderLists();
+    });
+
+    navToggle.addEventListener("click", function () {
+      setNavOpen(!state.navOpen);
+    });
+
+    backdrop.addEventListener("click", function () {
+      setNavOpen(false);
+    });
+
+    document.getElementById("reset").addEventListener("click", function () {
+      const next = {};
+      state.lists.forEach(function (list) { next[list.id] = seedTasks(list); });
+      state.tasks = next;
+      savePersisted();
+      render();
+      say("Restored sample tasks.");
+    });
+
+    window.addEventListener("resize", function () {
+      if (!window.matchMedia("(max-width: 800px)").matches) setNavOpen(false);
+    });
+
+    async function boot() {
+      const persisted = loadPersisted();
+      state.tasks = persisted.tasks;
+      state.selectedId = persisted.selectedId;
+      try {
+        const response = await fetch(API_BASE + "/v1/lists");
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        const data = await response.json();
+        if (!data.lists || !data.lists.length) throw new Error("empty");
+        state.lists = data.lists;
+        state.source = "api";
+      } catch (err) {
+        state.lists = FALLBACK_LISTS;
+        state.source = "offline";
+      }
+      state.lists.forEach(function (list) {
+        if (!Array.isArray(state.tasks[list.id])) state.tasks[list.id] = seedTasks(list);
+      });
+      if (!state.lists.some(function (list) { return list.id === state.selectedId; })) {
+        const first = state.lists.find(function (list) { return list.pinned; }) || state.lists[0];
+        state.selectedId = first ? first.id : null;
+      }
+      savePersisted();
+      render();
+    }
+
+    boot();
+  </script>
+</body>
+</html>
