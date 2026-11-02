@@ -1,0 +1,147 @@
+{
+  "pipeline_id": "pipe_2026-11-02_001",
+  "deployment_id": "1292f18a-ba1e-4e16-a398-b9c2dfc61129",
+  "created_at": "2026-11-02T01:45:08Z",
+  "product_title": "Pre-build demand & distribution toolkit for vibe-coded indie SaaS",
+  "reporting_period": {
+    "start_date": "2026-10-26",
+    "end_date": "2026-11-02"
+  },
+  "product_metrics": {
+    "dau": 9,
+    "wau": 28,
+    "mau": 55,
+    "avg_session_length_minutes": 6.2,
+    "sessions_per_user": 1.8,
+    "retention_day_1": 48.0,
+    "retention_day_7": 31.0,
+    "retention_day_30": 14.0
+  },
+  "business_metrics": {
+    "total_signups": 64,
+    "new_signups_this_period": 22,
+    "conversion_rate_percent": 4.1,
+    "arr_usd": 3600.0,
+    "mrr_usd": 300.0,
+    "average_revenue_per_user_usd": 29.0,
+    "customer_lifetime_value_usd": 120.0,
+    "customer_acquisition_cost_usd": 35.0,
+    "payback_period_months": 4.0
+  },
+  "acquisition_channels": [
+    {
+      "channel": "organic",
+      "signups": 40,
+      "cost_usd": 0,
+      "cac_usd": 0,
+      "roas": 0,
+      "trending": "up"
+    },
+    {
+      "channel": "other",
+      "signups": 24,
+      "cost_usd": 180,
+      "cac_usd": 7.5,
+      "roas": 1.8,
+      "trending": "flat"
+    }
+  ],
+  "churn_analysis": {
+    "monthly_churn_rate": 8.0,
+    "churned_users": 4,
+    "reasons": [
+      {
+        "reason": "Wanted human concierge only",
+        "percentage": 40.0,
+        "mitigation": "Ship $99 sprint intake"
+      },
+      {
+        "reason": "Still prefer free HN advice",
+        "percentage": 35.0,
+        "mitigation": "Sharpen kill-score ROI messaging"
+      },
+      {
+        "reason": "Demo-only felt incomplete",
+        "percentage": 25.0,
+        "mitigation": "Add persistence + memo export"
+      }
+    ],
+    "retention_improvement_plan": "Finish 12 founder interviews, ship memo export, and run 5 paid concierge sprints before SCALE."
+  },
+  "feature_adoption": [
+    {
+      "feature_name": "Waitlist signup",
+      "adoption_rate": 100.0,
+      "usage_frequency": "once",
+      "user_feedback_score": 4.1,
+      "trend": "trending_up"
+    },
+    {
+      "feature_name": "ICP interview tracker",
+      "adoption_rate": 55.0,
+      "usage_frequency": "weekly",
+      "user_feedback_score": 3.8,
+      "trend": "stable"
+    },
+    {
+      "feature_name": "Kill/continue score",
+      "adoption_rate": 42.0,
+      "usage_frequency": "weekly",
+      "user_feedback_score": 3.5,
+      "trend": "stable"
+    },
+    {
+      "feature_name": "Channel experiments",
+      "adoption_rate": 38.0,
+      "usage_frequency": "weekly",
+      "user_feedback_score": 3.4,
+      "trend": "stable"
+    }
+  ],
+  "revenue_summary": {
+    "total_revenue": 300.0,
+    "revenue_by_plan": [
+      {
+        "plan_name": "Kit monthly ($29)",
+        "subscribers": 8,
+        "revenue_usd": 232.0
+      },
+      {
+        "plan_name": "One-shot ($99)",
+        "subscribers": 2,
+        "revenue_usd": 68.0
+      }
+    ],
+    "notes": "Synthetic demo metrics for validate-path walkthrough \u2014 not live billing."
+  },
+  "growth_recommendations": [
+    {
+      "priority": "high",
+      "action": "Interview 12 vibe-coded founders (Stage 3 validation)",
+      "expected_impact": "Confirm WTP before build spend"
+    },
+    {
+      "priority": "high",
+      "action": "Run 5 paid $99 concierge demand sprints",
+      "expected_impact": "Behavior-change proof for kill-score"
+    },
+    {
+      "priority": "medium",
+      "action": "Landing smoke test with $29/mo intent checkbox via private Spacefast demo",
+      "expected_impact": "\u226580 emails or \u226512 paid-intent in 2 weeks"
+    }
+  ],
+  "comparison_to_plan": {
+    "on_track": true,
+    "notes": "Validate-path local+Spacefast demo only; metrics are synthetic placeholders pending real waitlist."
+  },
+  "next_quarter_plan": {
+    "goals": [
+      "Finish 12 founder interviews",
+      "5 concierge sprints",
+      "Decide build vs skip after OPTIMIZE"
+    ],
+    "budget_usd": 4000,
+    "hire_plan": "none \u2014 solo validate"
+  }
+}

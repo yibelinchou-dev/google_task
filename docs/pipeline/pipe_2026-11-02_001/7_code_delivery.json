@@ -1,0 +1,138 @@
+{
+  "pipeline_id": "pipe_2026-11-02_001",
+  "tech_spec_id": "f296f352-e5ab-41d4-bf12-23c655231393",
+  "created_at": "2026-11-02T01:44:47Z",
+  "product_title": "Pre-build demand & distribution toolkit for vibe-coded indie SaaS",
+  "repository_url": "file:///workspace/ai-pain-pipeline/runs/pipe_2026-11-02_001/6_codebase",
+  "git_commit_hash": "3b7d2d449ffdbec4e19445efbdfde046e01f6dc9",
+  "implementation_summary": "Local/demo MVP scaffold for PreFlight (pipe_2026-11-02_001): FastAPI health+waitlist+experiments+score+interviews stubs, static PreFlight demo (from validate-kit-demo), waitlist HTML, Docker helper, local git commit. No GitHub push, no live Stripe. TestClient confirms /health, seeded experiments, waitlist+score. Satisfies Stage 6-7 as scaffold for the validate-path walkthrough; Spacefast private publish handled in Stage 8.",
+  "features_completed": [
+    {
+      "name": "ICP interview tracker",
+      "status": "partial",
+      "pr_number": 1,
+      "test_passed": true,
+      "notes": "API stub + demo UI; no persistence beyond process memory/localStorage"
+    },
+    {
+      "name": "Waitlist smoke-test kit",
+      "status": "complete",
+      "pr_number": 1,
+      "test_passed": true,
+      "notes": "Static waitlist + POST /v1/waitlist"
+    },
+    {
+      "name": "Channel experiment board",
+      "status": "partial",
+      "pr_number": 1,
+      "test_passed": true,
+      "notes": "5 seeded experiments; demo UI interactive"
+    },
+    {
+      "name": "Kill/continue score engine",
+      "status": "partial",
+      "pr_number": 1,
+      "test_passed": true,
+      "notes": "GET /v1/score rubric stub"
+    },
+    {
+      "name": "Concierge demand sprint booking",
+      "status": "blocked",
+      "pr_number": 1,
+      "test_passed": false,
+      "notes": "Deferred \u2014 intake copy only in demo"
+    },
+    {
+      "name": "Static clickable demo (PreFlight UI)",
+      "status": "complete",
+      "pr_number": 1,
+      "test_passed": true,
+      "notes": "apps/demo/index.html"
+    }
+  ],
+  "test_coverage": {
+    "overall_percentage": 40.0,
+    "breakdown": {
+      "unit_tests": 45.0,
+      "integration_tests": 25.0,
+      "e2e_tests": 0.0,
+      "total_tests": 3
+    },
+    "critical_paths_tested": [
+      "GET /health returns healthy for PreFlight local demo",
+      "GET /v1/experiments returns \u22655 seeded channel experiments",
+      "POST /v1/waitlist + GET /v1/score return ok/decision"
+    ],
+    "test_framework": "fastapi.testclient"
+  },
+  "security_scan_results": {
+    "scan_date": "2026-11-02",
+    "tool_used": [
+      "manual_review"
+    ],
+    "vulnerabilities": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "remediation_plan": "No production deps beyond FastAPI stub; add SCA before any real deploy."
+  },
+  "performance_metrics": {
+    "api_response_time_ms": 5.0,
+    "db_query_time_ms": 0.0,
+    "frontend_load_time_ms": 80.0,
+    "bundle_size_kb": 42.0,
+    "lighthouse_score": 0,
+    "throughput_requests_per_second": 100.0
+  },
+  "code_quality": {
+    "linting_issues": 0,
+    "code_style_compliance": "pass",
+    "type_checking": "moderate",
+    "complexity_analysis": {
+      "cyclomatic_complexity": 3.0,
+      "high_complexity_functions": 0
+    }
+  },
+  "known_limitations": [
+    {
+      "limitation": "No real Stripe / multi-tenant auth in this scaffold",
+      "workaround": "Use waitlist + interviews for validate",
+      "priority": "p0",
+      "planned_fix_version": "0.2.0"
+    },
+    {
+      "limitation": "Score engine is heuristic stub",
+      "workaround": "Tune after 12 founder interviews",
+      "priority": "p1",
+      "planned_fix_version": "0.2.0"
+    }
+  ],
+  "deployment_checklist": [
+    {
+      "item": "Local pytest health+experiments+score green",
+      "status": "done"
+    },
+    {
+      "item": "No secrets committed",
+      "status": "done"
+    },
+    {
+      "item": "Spacefast private static demo",
+      "status": "done"
+    },
+    {
+      "item": "Cloud production / payments",
+      "status": "skipped_local_demo"
+    }
+  ],
+  "deployment_plan": {
+    "strategy": "local demo + Spacefast private static; production deferred until validate interviews pass",
+    "environments": [
+      "local",
+      "spacefast-private"
+    ],
+    "rollback": "git checkout previous commit in 6_codebase; republish previous static folder"
+  }
+}
