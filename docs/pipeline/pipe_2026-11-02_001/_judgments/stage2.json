@@ -1,0 +1,213 @@
+[
+  {
+    "pain_point_id": "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+    "impact": 8,
+    "confidence": 7,
+    "ease": 6,
+    "ai_reasoning": "SaaSHub graveyard shows median product lifespan collapsing ~4y→1.5y; OP ties it to vibe-coding making features free while distribution/marketing become the bottleneck. Clear indie founder WTP for validation/GTM tooling before building empty products.",
+    "red_flags": [
+      "Single Ask HN thread (not multi-source)",
+      "Meta market insight may be hard to productize narrowly"
+    ]
+  },
+  {
+    "pain_point_id": "eef3c39b-a3c1-5527-98ea-0dc69c415f79",
+    "impact": 6,
+    "confidence": 5,
+    "ease": 2,
+    "ai_reasoning": "Indie founder stuck >1 month on Apple Developer enrollment: passport region mismatch, cards declined, canned support. Real gatekeeping pain for App Store indie apps, but mostly Apple platform policy—concierge/guide services possible, not scalable SaaS.",
+    "red_flags": [
+      "Incumbent is Apple; hard to automate identity/billing",
+      "Support-theater problem may need human agency"
+    ]
+  },
+  {
+    "pain_point_id": "90bb8151-a98f-5fcb-97ee-8882c57ea1de",
+    "impact": 7,
+    "confidence": 6,
+    "ease": 3,
+    "ai_reasoning": "Restricted LinkedIn accounts face silent support-form rejection keyed to the account email; switching to an unrelated email succeeds. Classic support-theater / account-recovery pain with high emotional intensity; productizable as documented playbooks or multi-platform recovery concierge, but LinkedIn policy risk and thin SaaS moat.",
+    "red_flags": [
+      "Platform can change form behavior overnight",
+      "Legal/ToS risk helping restricted accounts",
+      "Hard to productize beyond content/agency"
+    ]
+  },
+  {
+    "pain_point_id": "4a281be0-564f-5d31-81ea-4e272acfb912",
+    "impact": 7,
+    "confidence": 7,
+    "ease": 5,
+    "ai_reasoning": "Paid $19 Kimi Code burned 5-hour quota after ~$1.37 API-equivalent tokens on tiny tasks; OP contrasts with Claude Code $20 processing far more. Strong pricing-transparency and quota-management pain across coding-agent subscriptions; buyers already paying monthly.",
+    "red_flags": [
+      "Vendors can fix quota UX themselves",
+      "Thin wedge if only a comparison spreadsheet"
+    ]
+  },
+  {
+    "pain_point_id": "b5b12fba-05a1-51da-a23c-a89985c1d3c4",
+    "impact": 8,
+    "confidence": 7,
+    "ease": 4,
+    "ai_reasoning": "Candidate spent hundreds of hours re-entering resume into bespoke ATS forms despite strong experience. Classic multi-apply ATS friction with high time cost—autofill/profile graph products exist but still painful.",
+    "red_flags": [
+      "Teal/LazyApply/Simplify already compete",
+      "Employer-side incentives oppose easy apply"
+    ]
+  },
+  {
+    "pain_point_id": "4f3ebb57-0767-588f-aa0f-995525fa662a",
+    "impact": 2,
+    "confidence": 4,
+    "ease": 2,
+    "ai_reasoning": "Nostalgia for Bell Labs/PARC research culture vs modern tech monopolies. Cultural essay, not a purchasable pain for indie SaaS buyers.",
+    "red_flags": [
+      "No buyer or switching signal",
+      "Pure meta / philosophy"
+    ]
+  },
+  {
+    "pain_point_id": "74232353-3516-5ab6-8c2d-1caac89a2e0e",
+    "impact": 7,
+    "confidence": 6,
+    "ease": 3,
+    "ai_reasoning": "Claude Code agent looped gh pr comment and triggered GitHub suspension; support ticket flow returns 401. Agent-automation + platform trust/support gap; niche but intensifying as coding agents act on GitHub.",
+    "red_flags": [
+      "GitHub is the gatekeeper",
+      "Edge-case volume may stay small",
+      "Support-theater hard to SaaS"
+    ]
+  },
+  {
+    "pain_point_id": "c6dd500f-6abb-5bcc-b5ba-3afe9094e71c",
+    "impact": 7,
+    "confidence": 6,
+    "ease": 5,
+    "ai_reasoning": "OpenAI will merge ChatGPT and Codex into a shared allowance. Power users who already juggle quotas across tools face tighter/uncertain budgets and workflow disruption—pairs with Kimi limit surprise as a quota-visibility and failover-planning need.",
+    "red_flags": [
+      "First-party OpenAI may improve metering UX",
+      "Complaint may fade after transition"
+    ]
+  },
+  {
+    "pain_point_id": "b43e2f8f-6cff-5eaf-a4cb-419a6ca5c5a5",
+    "impact": 5,
+    "confidence": 5,
+    "ease": 2,
+    "ai_reasoning": "Developers lament agentic coding displacing average engineers and ask for collective counter-moves. Career anxiety is real but product wedge unclear beyond education/community.",
+    "red_flags": [
+      "Diffuse existential framing",
+      "Crowded AI-career content market"
+    ]
+  },
+  {
+    "pain_point_id": "c46c7e5b-065a-5a91-9f8c-5f130ec6796e",
+    "impact": 6,
+    "confidence": 5,
+    "ease": 3,
+    "ai_reasoning": "India-based marketer sees remote roles drying up after prior relocation friction. Labor-market shift; job boards/visa tooling exist; weak indie SaaS wedge from this single Ask HN.",
+    "red_flags": [
+      "Macro hiring trend not a tool gap",
+      "Geographic/policy constrained"
+    ]
+  },
+  {
+    "pain_point_id": "b5c28e61-82ef-5e4b-b68b-60fd5ccceb20",
+    "impact": 6,
+    "confidence": 5,
+    "ease": 3,
+    "ai_reasoning": "OpenAI Dot cloud proxy uses trusted CA to MITM TLS; Firefox fresh profile refuses. Privacy-conscious users canceling subscriptions—signal for privacy tooling/audits, but narrow and vendor-specific.",
+    "red_flags": [
+      "OpenAI can change Dot architecture",
+      "Security niche audience"
+    ]
+  },
+  {
+    "pain_point_id": "f74d498d-701a-5ae5-8cb9-9c269306f5e9",
+    "impact": 1,
+    "confidence": 5,
+    "ease": 1,
+    "ai_reasoning": "Terminology rant against 'vibe coding'. No product opportunity.",
+    "red_flags": [
+      "Not a pain point",
+      "Culture/wording only"
+    ]
+  },
+  {
+    "pain_point_id": "6c497d04-447d-5001-b8f6-2ad1311d6ffe",
+    "impact": 5,
+    "confidence": 5,
+    "ease": 6,
+    "ai_reasoning": "Founder of privacy analytics product allegedly blocks criticism as 'AI reply'. Trust/churn signal for analytics buyers seeking alternatives—switching willingness present but single anecdote.",
+    "red_flags": [
+      "One-sided Tell HN",
+      "Crowded analytics alternative market"
+    ]
+  },
+  {
+    "pain_point_id": "8217cb05-313c-58ad-afc1-2efef8f5c712",
+    "impact": 7,
+    "confidence": 6,
+    "ease": 5,
+    "ai_reasoning": "OSS-first startup founder sees linear stars/adoption, wants non-spammy growth tactics especially in AI. Same GTM/distribution cluster as product-lifespan post; clear buyer already shipping, asking how to get customers.",
+    "red_flags": [
+      "Advice market saturated",
+      "Hard to attribute ROI of growth SaaS"
+    ]
+  },
+  {
+    "pain_point_id": "517e4f68-338b-54bd-97c7-2816afdfcf17",
+    "impact": 1,
+    "confidence": 8,
+    "ease": 1,
+    "ai_reasoning": "Hardware semiconductor news; off-topic for internet SaaS radar.",
+    "red_flags": [
+      "Off-topic",
+      "No SaaS buyer"
+    ]
+  },
+  {
+    "pain_point_id": "cd4dfcd8-cf03-5156-b138-577bd8130798",
+    "impact": 3,
+    "confidence": 6,
+    "ease": 2,
+    "ai_reasoning": "Academic publishing fraud cleanup. Integrity tooling exists in research vertical; not indie SaaS focus of this radar.",
+    "red_flags": [
+      "Wrong ICP for this radar",
+      "Institutional buyers"
+    ]
+  },
+  {
+    "pain_point_id": "91855de6-3b21-5ade-bee1-3830dd497ea8",
+    "impact": 3,
+    "confidence": 5,
+    "ease": 4,
+    "ai_reasoning": "Positive Show/launch of model-modification OSS. Demand signal for uncensored/custom LLM tooling but this item is a release note, not a pain complaint.",
+    "red_flags": [
+      "Product launch not pain",
+      "Policy/hosting risk"
+    ]
+  },
+  {
+    "pain_point_id": "3b1d5771-451a-5231-9bd3-620938df455d",
+    "impact": 2,
+    "confidence": 5,
+    "ease": 1,
+    "ai_reasoning": "Macro finance essay on Anthropic investment vs revenue. Not an end-user pain.",
+    "red_flags": [
+      "No productizable pain",
+      "Spectator finance"
+    ]
+  },
+  {
+    "pain_point_id": "58cac2a1-bc48-596d-bf8c-b94345532c64",
+    "impact": 4,
+    "confidence": 4,
+    "ease": 3,
+    "ai_reasoning": "Laid-off workers rebuilding employer SaaS as Occupy-style project. Narrative/competition signal; unclear recurring pain for paying buyers.",
+    "red_flags": [
+      "Campaign/landing more than validated demand",
+      "Legal/IP risk"
+    ]
+  }
+]

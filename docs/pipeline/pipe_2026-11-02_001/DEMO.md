@@ -14,7 +14,7 @@ The page is one self-contained file, [`apps/demo/index.html`](./apps/demo/index.
 
 This snapshot belongs to the pipe folder. Root `apps/` stays the TaskRefuge mainline.
 
-Stage reports for this run are not in this folder. Do not treat this note as a substitute for stage JSON.
+Stage 1–3 research for this run is in this folder: [sample-exec-summary.zh.md](./sample-exec-summary.zh.md) and [sample-opportunity-report.md](./sample-opportunity-report.md). Do not treat this note as a substitute for stage JSON.
 
 ## Open locally
 

@@ -1,0 +1,185 @@
+[
+  {
+    "sentiment": "mixed",
+    "keywords": [
+      "distribution",
+      "marketing",
+      "saas",
+      "product-lifespan",
+      "vibe-coding",
+      "acquisition"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "apple-developer",
+      "enrollment",
+      "billing",
+      "identity-verification",
+      "support"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "linkedin",
+      "account-restriction",
+      "support",
+      "customer-service",
+      "lockout"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "usage-limits",
+      "pricing",
+      "coding-agents",
+      "subscription",
+      "quota",
+      "kimi"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "job-search",
+      "ats",
+      "data-entry",
+      "resume",
+      "hiring"
+    ]
+  },
+  {
+    "sentiment": "neutral",
+    "keywords": [
+      "ethos",
+      "research-culture",
+      "tech-industry",
+      "meta"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "github",
+      "account-suspension",
+      "support",
+      "automation",
+      "agent"
+    ]
+  },
+  {
+    "sentiment": "mixed",
+    "keywords": [
+      "chatgpt",
+      "codex",
+      "usage-limits",
+      "quota",
+      "openai",
+      "subscription"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "agentic-coding",
+      "developer-career",
+      "automation",
+      "ai-risk"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "remote-work",
+      "hiring",
+      "marketing-jobs",
+      "relocation"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "ssl",
+      "privacy",
+      "openai",
+      "certificate",
+      "proxy"
+    ]
+  },
+  {
+    "sentiment": "neutral",
+    "keywords": [
+      "vibe-coding",
+      "terminology",
+      "ai-coding"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "analytics",
+      "founder-behavior",
+      "trust",
+      "criticism",
+      "churn"
+    ]
+  },
+  {
+    "sentiment": "mixed",
+    "keywords": [
+      "oss",
+      "growth",
+      "distribution",
+      "marketing",
+      "adoption",
+      "saas"
+    ]
+  },
+  {
+    "sentiment": "neutral",
+    "keywords": [
+      "semiconductor",
+      "hardware",
+      "off-topic"
+    ]
+  },
+  {
+    "sentiment": "negative",
+    "keywords": [
+      "academic-fraud",
+      "publishing",
+      "integrity"
+    ]
+  },
+  {
+    "sentiment": "positive",
+    "keywords": [
+      "open-source",
+      "llm",
+      "model-modification",
+      "uncensored"
+    ]
+  },
+  {
+    "sentiment": "neutral",
+    "keywords": [
+      "anthropic",
+      "ipo",
+      "ai-investment",
+      "finance"
+    ]
+  },
+  {
+    "sentiment": "mixed",
+    "keywords": [
+      "saas",
+      "layoff",
+      "open-source",
+      "rebuild",
+      "competition"
+    ]
+  }
+]

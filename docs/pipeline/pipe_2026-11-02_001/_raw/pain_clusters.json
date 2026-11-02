@@ -1,0 +1,111 @@
+{
+  "pain_point_count": 19,
+  "cluster_count": 4,
+  "multi_member_clusters": 4,
+  "by_pain_point_id": {
+    "0f1e3f6a-f992-5f7e-8164-7637f9b6e395": "misc@ask_hn",
+    "b5b12fba-05a1-51da-a23c-a89985c1d3c4": "misc@ask_hn",
+    "4f3ebb57-0767-588f-aa0f-995525fa662a": "misc@ask_hn",
+    "74232353-3516-5ab6-8c2d-1caac89a2e0e": "misc@ask_hn",
+    "b43e2f8f-6cff-5eaf-a4cb-419a6ca5c5a5": "misc@ask_hn",
+    "c46c7e5b-065a-5a91-9f8c-5f130ec6796e": "misc@ask_hn",
+    "f74d498d-701a-5ae5-8cb9-9c269306f5e9": "misc@ask_hn",
+    "6c497d04-447d-5001-b8f6-2ad1311d6ffe": "misc@ask_hn",
+    "8217cb05-313c-58ad-afc1-2efef8f5c712": "misc@ask_hn",
+    "517e4f68-338b-54bd-97c7-2816afdfcf17": "misc@story",
+    "cd4dfcd8-cf03-5156-b138-577bd8130798": "misc@story",
+    "91855de6-3b21-5ade-bee1-3830dd497ea8": "misc@story",
+    "3b1d5771-451a-5231-9bd3-620938df455d": "misc@story",
+    "58cac2a1-bc48-596d-bf8c-b94345532c64": "misc@story",
+    "eef3c39b-a3c1-5527-98ea-0dc69c415f79": "billing_pricing@ask_hn",
+    "4a281be0-564f-5d31-81ea-4e272acfb912": "billing_pricing@ask_hn",
+    "b5c28e61-82ef-5e4b-b68b-60fd5ccceb20": "billing_pricing@ask_hn",
+    "90bb8151-a98f-5fcb-97ee-8882c57ea1de": "migration@ask_hn",
+    "c6dd500f-6abb-5bcc-b5ba-3afe9094e71c": "migration@ask_hn"
+  },
+  "clusters": [
+    {
+      "cluster_id": "misc@ask_hn",
+      "theme": "misc",
+      "product": "ask_hn",
+      "size": 9,
+      "source_count": 1,
+      "pain_point_ids": [
+        "0f1e3f6a-f992-5f7e-8164-7637f9b6e395",
+        "b5b12fba-05a1-51da-a23c-a89985c1d3c4",
+        "4f3ebb57-0767-588f-aa0f-995525fa662a",
+        "74232353-3516-5ab6-8c2d-1caac89a2e0e",
+        "b43e2f8f-6cff-5eaf-a4cb-419a6ca5c5a5",
+        "c46c7e5b-065a-5a91-9f8c-5f130ec6796e",
+        "f74d498d-701a-5ae5-8cb9-9c269306f5e9",
+        "6c497d04-447d-5001-b8f6-2ad1311d6ffe",
+        "8217cb05-313c-58ad-afc1-2efef8f5c712"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": true,
+        "persistence_hint": "structural"
+      }
+    },
+    {
+      "cluster_id": "misc@story",
+      "theme": "misc",
+      "product": "story",
+      "size": 5,
+      "source_count": 1,
+      "pain_point_ids": [
+        "517e4f68-338b-54bd-97c7-2816afdfcf17",
+        "cd4dfcd8-cf03-5156-b138-577bd8130798",
+        "91855de6-3b21-5ade-bee1-3830dd497ea8",
+        "3b1d5771-451a-5231-9bd3-620938df455d",
+        "58cac2a1-bc48-596d-bf8c-b94345532c64"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": true,
+        "persistence_hint": "structural"
+      }
+    },
+    {
+      "cluster_id": "billing_pricing@ask_hn",
+      "theme": "billing_pricing",
+      "product": "ask_hn",
+      "size": 3,
+      "source_count": 1,
+      "pain_point_ids": [
+        "eef3c39b-a3c1-5527-98ea-0dc69c415f79",
+        "4a281be0-564f-5d31-81ea-4e272acfb912",
+        "b5c28e61-82ef-5e4b-b68b-60fd5ccceb20"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.0,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": true,
+        "persistence_hint": "structural"
+      }
+    },
+    {
+      "cluster_id": "migration@ask_hn",
+      "theme": "migration",
+      "product": "ask_hn",
+      "size": 2,
+      "source_count": 1,
+      "pain_point_ids": [
+        "90bb8151-a98f-5fcb-97ee-8882c57ea1de",
+        "c6dd500f-6abb-5bcc-b5ba-3afe9094e71c"
+      ],
+      "commercial_hints": {
+        "switch_intent_ratio": 0.5,
+        "platform_bug_ratio": 0.0,
+        "workaround_ratio": 0.0,
+        "single_source_echo": false,
+        "persistence_hint": "unknown"
+      }
+    }
+  ]
+}

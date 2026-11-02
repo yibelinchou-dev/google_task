@@ -1,0 +1,204 @@
+[
+  {
+    "title_zh": "SaaS 产品中位寿命从约 4 年跌到约 1.5 年",
+    "summary_zh": "SaaSHub 产品坟场显示寿命骤降；发帖人认为 vibe coding 让功能近乎免费，分发与营销成真正瓶颈，大量产品空桶后废弃。",
+    "keywords_zh": [
+      "分发",
+      "营销",
+      "saas",
+      "产品寿命",
+      "获客",
+      "vibe-coding"
+    ]
+  },
+  {
+    "title_zh": "求 HN：现在是不是没法注册 Apple Developer 了？",
+    "summary_zh": "为 Delaware LLC 注册 Apple Developer 超过一个月失败：护照地区核验、多张美卡被拒、官方支持罐头回复。",
+    "keywords_zh": [
+      "苹果开发者",
+      "注册",
+      "账单",
+      "身份核验",
+      "客服"
+    ]
+  },
+  {
+    "title_zh": "「错误」邮箱：被封 LinkedIn 后客服表单只对错误邮箱放行",
+    "summary_zh": "账号受限后 LinkedIn 帮助表单表面报错，实则拒绝受限账号邮箱；换无关邮箱立刻成功，属于刻意锁死申诉通道。",
+    "keywords_zh": [
+      "linkedin",
+      "账号限制",
+      "客服",
+      "锁死",
+      "申诉"
+    ]
+  },
+  {
+    "title_zh": "求 HN：Kimi Code 花掉约 $1.37 API 用量就撞上 5 小时限额",
+    "summary_zh": "付 $19 试用 Kimi Code，小仓库两任务未完成就耗尽 5 小时额度；日志显示约 1.59M token≈$1.37，远逊 Claude Code $20 档。",
+    "keywords_zh": [
+      "用量限额",
+      "定价",
+      "编程助手",
+      "订阅",
+      "配额",
+      "kimi"
+    ]
+  },
+  {
+    "title_zh": "找技术工作像无助的数据录入噩梦",
+    "summary_zh": "候选人花数百小时向各公司定制 ATS 表格反复填简历，经验扎实仍一年多找不到开发岗，质疑 AI 时代求职门槛。",
+    "keywords_zh": [
+      "求职",
+      "ats",
+      "数据录入",
+      "简历",
+      "招聘"
+    ]
+  },
+  {
+    "title_zh": "求 HN：我们共同的技术理想怎么了？",
+    "summary_zh": "独立顾问怀念 Bell Labs/PARC 式开放探索，对比今日巨头垄断与短视，偏文化感慨而非可产品化痛点。",
+    "keywords_zh": [
+      "技术理想",
+      "研究文化",
+      "科技业",
+      "元讨论"
+    ]
+  },
+  {
+    "title_zh": "GitHub 封了我的号，还提交不了工单",
+    "summary_zh": "用 Claude Code 在自有仓库对 vendor PR 连续评论疑似触发封号；support 表单提交 401，无法申诉。",
+    "keywords_zh": [
+      "github",
+      "账号封禁",
+      "客服",
+      "自动化",
+      "agent"
+    ]
+  },
+  {
+    "title_zh": "告知 HN：ChatGPT 与 Codex 用量将合并",
+    "summary_zh": "OpenAI 邮件称即将统一体验，ChatGPT 与 Codex 共用额度；重度用户担心配额更紧、工作流被打乱。",
+    "keywords_zh": [
+      "chatgpt",
+      "codex",
+      "用量限额",
+      "配额",
+      "openai",
+      "订阅"
+    ]
+  },
+  {
+    "title_zh": "求 HN：面对逼近的 AI 编程乌托邦/反乌托邦我们能做什么",
+    "summary_zh": "开发者感到 agentic coding 正替代平均工程师，希望社区提出对策，偏职业焦虑元帖。",
+    "keywords_zh": [
+      "agent编程",
+      "开发者职业",
+      "自动化",
+      "ai风险"
+    ]
+  },
+  {
+    "title_zh": "为什么 2026 年远程岗位正在灭绝？",
+    "summary_zh": "印度营销求职者发现英美远程岗难寻，曾因无法 relocation 离开大厂，质疑全球远程是否已死。",
+    "keywords_zh": [
+      "远程办公",
+      "招聘",
+      "营销岗",
+      "relocation"
+    ]
+  },
+  {
+    "title_zh": "求 HN：大家知道 OpenAI Dots 会拦截 SSL 吗？",
+    "summary_zh": "试用 OpenAI Dot 时发现云代理用 OpenAI CA 签发证书；Firefox 新配置不信任。用户已因隐私取消订阅。",
+    "keywords_zh": [
+      "ssl",
+      "隐私",
+      "openai",
+      "证书",
+      "代理"
+    ]
+  },
+  {
+    "title_zh": "PSA：别再用「vibe coding」这个词",
+    "summary_zh": "批评术语含糊无用，与真正的 agentic/工程管理差很远；偏用语与文化讨论。",
+    "keywords_zh": [
+      "vibe-coding",
+      "术语",
+      "ai编程"
+    ]
+  },
+  {
+    "title_zh": "告知 HN：别用 Fathom Analytics（创始人在屏蔽批评）",
+    "summary_zh": "试图向 Fathom 创始人留批评回复被标「AI reply」屏蔽；多起疑似正当批评遭同样对待，信任受损。",
+    "keywords_zh": [
+      "分析工具",
+      "创始人行为",
+      "信任",
+      "批评",
+      "流失"
+    ]
+  },
+  {
+    "title_zh": "求 HN：你们怎么增长开源项目？",
+    "summary_zh": "以 OSS 为主产品的创业者星标与采用线性增长，羡慕病毒式跳涨；讨厌灌水，求 AI 领域有效增长策略。",
+    "keywords_zh": [
+      "开源",
+      "增长",
+      "分发",
+      "营销",
+      "采用",
+      "saas"
+    ]
+  },
+  {
+    "title_zh": "Seoul Viosys 开始生产无稀土白光发光器件",
+    "summary_zh": "半导体硬件新闻，与互联网 SaaS 痛点弱相关。",
+    "keywords_zh": [
+      "半导体",
+      "硬件",
+      "偏题"
+    ]
+  },
+  {
+    "title_zh": "IEEE 因论文买卖作者身份撤销 1417 篇论文",
+    "summary_zh": "学术出版诚信丑闻报道，非 SaaS 产品机会。",
+    "keywords_zh": [
+      "学术造假",
+      "出版",
+      "诚信"
+    ]
+  },
+  {
+    "title_zh": "Heretic 2.0 发布：免训练语言模型修改",
+    "summary_zh": "开源工具从去审查扩展到抑制 slop/谄媚等模型修改，社区反响正面。",
+    "keywords_zh": [
+      "开源",
+      "大模型",
+      "模型修改",
+      "去审查"
+    ]
+  },
+  {
+    "title_zh": "Ant：前所未有的收入增长能否追上不负责任的大额投资",
+    "summary_zh": "关于 Anthropic 营收与投资节奏的财经分析帖，非一线用户痛点。",
+    "keywords_zh": [
+      "anthropic",
+      "ipo",
+      "ai投资",
+      "财经"
+    ]
+  },
+  {
+    "title_zh": "OccupySaaS——他们裁了我们，我们在重建他们的 SaaS",
+    "summary_zh": "被裁员工宣称重建原雇主 SaaS 的倡议站点，带竞争与开源重建叙事。",
+    "keywords_zh": [
+      "saas",
+      "裁员",
+      "开源",
+      "重建",
+      "竞争"
+    ]
+  }
+]
